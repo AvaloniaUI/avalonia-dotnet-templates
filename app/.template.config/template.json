@@ -1,0 +1,12 @@
+{
+"author": "AvaloniaUI",
+"classifications": [ "ui", "xaml" ],
+"name": "Avalonia .NET Core App",
+"identity": "Avalonia.App",
+"shortName": "avalonia.app",
+"tags": {
+    "language": "C#"
+},
+"sourceName": "AvaloniaAppTemplate",
+"preferNameDirectory" : "true"
+}

@@ -1,0 +1,4 @@
+<Window xmlns="https://github.com/avaloniaui"
+        Title="Avalonia Demo">
+    Hello World!
+</Window>
