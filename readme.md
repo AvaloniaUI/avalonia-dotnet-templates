@@ -10,7 +10,7 @@ Clone this repository and run:
 dotnet new --install [path-to-repository]
 ```
 
-The templates should new be available in `dotnet`:
+The templates should now be available in `dotnet`:
 
 ```
 Templates                   Short Name        Language      Tags
