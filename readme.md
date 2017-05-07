@@ -33,3 +33,11 @@ To create a new application called `MyApp` in its own subdirectory, run:
 ```
 dotnet new avalonia.app -o MyApp
 ```
+
+# Creating a new Window
+
+To create a new application called `MyNewWindow`, in the namespace `MyApp` run:
+
+```
+dotnet new avalonia.window -na MyApp -n MyNewWindow
+```
