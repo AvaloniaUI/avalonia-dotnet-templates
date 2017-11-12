@@ -9,10 +9,10 @@
     },
     "sourceName": "NewWindow",
     "primaryOutputs": [ 
-        { "path": "NewWindow.cs" }, 
+        { "path": "NewWindow.xaml.cs" }, 
         { "path": "NewWindow.xaml" } 
     ],
-    "defaultName": "NewWindow",
+    "defaultName": "Window",
     "symbols": {
         "namespace": {
             "description": "Namespace for the generated code",
