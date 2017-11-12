@@ -10,6 +10,7 @@
     <EmbeddedResource Include="**\*.xaml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Assets\*"/>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.5.2-build4232-alpha" />
