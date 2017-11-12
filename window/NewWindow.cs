@@ -1,3 +1,4 @@
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
@@ -8,6 +9,7 @@ namespace AvaloniaAppTemplate.Namespace
         public NewWindow()
         {
             InitializeComponent();
+            this.AttachDevTools();
         }
 
         private void InitializeComponent()

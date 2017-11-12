@@ -9,6 +9,7 @@ namespace AvaloniaAppTemplate
         {
             AppBuilder.Configure<App>()
                 .UsePlatformDetect()
+                .LogToDebug()
                 .Start<MainWindow>();
         }
     }
