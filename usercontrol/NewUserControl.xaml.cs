@@ -6,7 +6,7 @@ namespace AvaloniaAppTemplate.Namespace
 {
     public class NewUserControl : UserControl
     {
-        public NewWindow()
+        public NewUserControl()
         {
             InitializeComponent();
         }
