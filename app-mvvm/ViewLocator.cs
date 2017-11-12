@@ -23,7 +23,7 @@ namespace AvaloniaAppTemplate
             }
             else
             {
-                return new TextBlock { Text = name };
+                return new TextBlock { Text = "Not Found: " + name };
             }
         }
 
