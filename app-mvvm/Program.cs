@@ -1,5 +1,7 @@
 ﻿using System;
 using Avalonia;
+using AvaloniaAppTemplate.ViewModels;
+using AvaloniaAppTemplate.Views;
 
 namespace AvaloniaAppTemplate
 {
@@ -9,8 +11,9 @@ namespace AvaloniaAppTemplate
         {
             AppBuilder.Configure<App>()
                 .UsePlatformDetect()
+                .UseReactiveUI()
                 //.LogToDebug()
-                .Start<MainWindow>();
+                .Start<MainWindow>(() => new MainWindowViewModel());
         }
     }
 }
