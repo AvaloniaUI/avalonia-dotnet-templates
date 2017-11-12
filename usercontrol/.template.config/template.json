@@ -1,9 +1,9 @@
 {
     "author": "AvaloniaUI",
     "classifications": [ "ui", "xaml" ],
-    "name": "Avalonia Window",
-    "identity": "Avalonia.Window",
-    "shortName": "avalonia.window",
+    "name": "Avalonia UserControl",
+    "identity": "Avalonia.UserControl",
+    "shortName": "avalonia.usercontrol",
     "tags": {
         "language": "C#"
     },
