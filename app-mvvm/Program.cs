@@ -17,6 +17,8 @@ namespace AvaloniaAppTemplate
         }
 
         public static AppBuilder BuildAvaloniaApp()
-            => AppBuilder.Configure<App>().UsePlatformDetect().UseReactiveUI();
+            => AppBuilder.Configure<App>()
+            .UsePlatformDetect()
+            .UseReactiveUI();
     }
 }
