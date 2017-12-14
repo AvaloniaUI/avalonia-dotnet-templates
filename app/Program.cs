@@ -7,10 +7,7 @@ namespace AvaloniaAppTemplate
     {
         static void Main(string[] args)
         {
-            AppBuilder.Configure<App>()
-                .UsePlatformDetect()
-                //.LogToDebug()
-                .Start<MainWindow>();
+            BuildAvaloniaApp().Start<MainWindow>();
         }
 
         public static AppBuilder BuildAvaloniaApp()
