@@ -5,7 +5,8 @@
     "identity": "Avalonia.UserControl",
     "shortName": "avalonia.usercontrol",
     "tags": {
-        "language": "C#"
+        "language": "C#",
+        "type" : "item"
     },
     "sourceName": "NewUserControl",
     "primaryOutputs": [ 

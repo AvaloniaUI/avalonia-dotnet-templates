@@ -5,7 +5,8 @@
     "identity": "Avalonia.App.Mvvm",
     "shortName": "avalonia.mvvm",
     "tags": {
-        "language": "C#"
+        "language": "C#",
+        "type" : "project"
     },
     "sourceName": "AvaloniaAppTemplate",
     "preferNameDirectory" : "true"
