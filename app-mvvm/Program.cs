@@ -15,5 +15,8 @@ namespace AvaloniaAppTemplate
                 //.LogToDebug()
                 .Start<MainWindow>(() => new MainWindowViewModel());
         }
+
+        public static AppBuilder BuildAvaloniaApp()
+            => AppBuilder.Configure<App>().UsePlatformDetect().UseReactiveUI();
     }
 }
