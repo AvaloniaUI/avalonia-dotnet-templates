@@ -1,5 +1,6 @@
 ﻿using System;
 using Avalonia;
+using Avalonia.Logging.Serilog;
 
 namespace AvaloniaAppTemplate
 {
@@ -12,6 +13,7 @@ namespace AvaloniaAppTemplate
 
         public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
-            .UsePlatformDetect();
+            .UsePlatformDetect()
+            .LogToDebug();
     }
 }
