@@ -9,7 +9,9 @@ namespace AvaloniaAppTemplate.Namespace
         public NewWindow()
         {
             InitializeComponent();
+#if DEBUG
             this.AttachDevTools();
+#endif
         }
 
         private void InitializeComponent()
