@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFrameworks>netcoreapp2.0;net461</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="**\*.xaml.cs">
@@ -12,7 +12,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.5.2-build4426-alpha" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.5.2-build4426-alpha" />
+    <PackageReference Include="Avalonia" Version="0.6.0" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.6.0" />
   </ItemGroup>
 </Project>
