@@ -1,11 +1,13 @@
 {
     "author": "AvaloniaUI",
     "classifications": [ "ui", "xaml" ],
+    "description": "A project for creating a UI application that can run on .NET Core on Windows, Linux and macOS, iOS and Android",
     "name": "Avalonia .NET Core App",
     "identity": "Avalonia.App",
     "shortName": "avalonia.app",
     "tags": {
-        "language": "C#"
+        "language": "C#",
+        "type" : "project"
     },
     "sourceName": "AvaloniaAppTemplate",
     "preferNameDirectory" : "true"

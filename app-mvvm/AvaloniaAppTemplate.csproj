@@ -10,9 +10,11 @@
     <EmbeddedResource Include="**\*.xaml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Assets\*"/>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.6.0" />
     <PackageReference Include="Avalonia.Desktop" Version="0.6.0" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.6.0" />
   </ItemGroup>
 </Project>

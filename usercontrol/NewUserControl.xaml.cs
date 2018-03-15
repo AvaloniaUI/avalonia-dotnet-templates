@@ -1,11 +1,12 @@
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace AvaloniaAppTemplate
+namespace AvaloniaAppTemplate.Namespace
 {
-    public class MainWindow : Window
+    public class NewUserControl : UserControl
     {
-        public MainWindow()
+        public NewUserControl()
         {
             InitializeComponent();
         }

@@ -9,5 +9,5 @@ namespace AvaloniaAppTemplate
         {
             AvaloniaXamlLoader.Load(this);
         }
-    }
+   }
 }
