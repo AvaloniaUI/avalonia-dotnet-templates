@@ -7,6 +7,8 @@ namespace AvaloniaAppTemplate
     {
         public override void Initialize()
         {
+            var x = this.GetType();
+
             AvaloniaXamlLoader.Load(this);
         }
    }
