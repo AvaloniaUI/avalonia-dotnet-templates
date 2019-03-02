@@ -8,7 +8,6 @@ open Avalonia.Layout
 
 [<AutoOpen>]
 module AvaloniaExtensions =
-    
 
     type Styles with
         member this.Load (source: string) = 

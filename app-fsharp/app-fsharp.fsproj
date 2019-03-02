@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia.Desktop" Version="0.7.0" />
+    <ProjectReference Include="..\..\Avalonia\src\Avalonia.Desktop\Avalonia.Desktop.csproj" />
   </ItemGroup>
 
   <ItemGroup>

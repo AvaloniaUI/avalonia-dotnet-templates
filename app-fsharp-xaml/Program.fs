@@ -3,18 +3,12 @@
 open Avalonia
 open Avalonia.Logging.Serilog
 open Avalonia.Controls
-open Avalonia.Styling
-open Avalonia.Markup.Xaml.Styling
-open System
-open Avalonia.Layout
 open Avalonia.Markup.Xaml
-
 
 type MainWindow() as this =
     inherit Window()
 
     do
-        let x = this.GetType()
         AvaloniaXamlLoader.Load(this)
         
 type App() =
