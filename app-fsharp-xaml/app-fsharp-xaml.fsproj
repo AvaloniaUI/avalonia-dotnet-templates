@@ -6,8 +6,6 @@
     <RootNamespace>AvaloniaAppTemplate</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup />
-
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -19,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Avalonia\src\Avalonia.Desktop\Avalonia.Desktop.csproj" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.7.0" />
   </ItemGroup>
   
   <ItemGroup>
