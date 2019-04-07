@@ -29,9 +29,20 @@ Avalonia Window             avalonia.window      [C#]          ui/xaml
 Solution File               sln                                Solution
 ```
 
+# Creating a new MVVM Application
+
+MVVM is the recommended pattern for creating Avalonia applications. The MVVM application template
+uses [ReactiveUI](https://reactiveui.net/) to ease building applications with complex interactions.
+
+To create a new MVVM application called `MyApp` in its own subdirectory, run:
+
+```
+dotnet new avalonia.mvvm -o MyApp
+```
+
 # Creating a new Application
 
-To create a new application called `MyApp` in its own subdirectory, run:
+To create a new barebones application called `MyApp` in its own subdirectory, run:
 
 ```
 dotnet new avalonia.app -o MyApp
@@ -43,4 +54,12 @@ To create a new application called `MyNewWindow`, in the namespace `MyApp` run:
 
 ```
 dotnet new avalonia.window -na MyApp -n MyNewWindow
+```
+
+# Creating a new UserControl
+
+To create a new `UserControl` called `MyNewView`, in the namespace `MyApp` run:
+
+```
+dotnet new avalonia.window -na MyApp -n MyNewView
 ```
