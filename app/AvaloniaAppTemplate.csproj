@@ -3,7 +3,7 @@
     <OutputType>Exe</OutputType>
     <TargetFrameworks>netcoreapp2.1</TargetFrameworks>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <Compile Update="**\*.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
@@ -12,7 +12,7 @@
       <SubType>Designer</SubType>
     </AvaloniaResource>
   </ItemGroup>
-  
+
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.8.0" />
     <PackageReference Include="Avalonia.Desktop" Version="0.8.0" />
