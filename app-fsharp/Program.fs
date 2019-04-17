@@ -1,46 +1,29 @@
-﻿open Avalonia
-open Avalonia.Logging.Serilog
-open Avalonia.Controls
-open Avalonia.Styling
-open Avalonia.Markup.Xaml.Styling
+﻿namespace AvaloniaAppTemplate
+
 open System
-open Avalonia.Layout
+open Avalonia
+open Avalonia.Logging.Serilog
 
-[<AutoOpen>]
-module AvaloniaExtensions =
+module Program =
 
-    type Styles with
-        member this.Load (source: string) = 
-            let style = new StyleInclude(null)
-            style.Source <- new Uri(source)
-            this.Add(style)
+    // Avalonia configuration, don't remove; also used by visual designer.
+    [<CompiledName "BuildAvaloniaApp">]
+    let buildAvaloniaApp() =
+        AppBuilder
+            .Configure<App>()
+            .UsePlatformDetect()
+            .LogToDebug();
 
-type MainWindow() =
-    inherit Window()
+    // Your application's entry point.
+    [<CompiledName "AppMain">]
+    let appMain (app: Application) (args: string[]) =
+        app.Run(new MainWindow())
 
-    do
-        base.Title <- "Avalonia"
-        base.Height <- 600.0
-        base.Width <- 800.0
-
-        base.Content <- TextBlock (
-            Text = "Hello World",
-            VerticalAlignment = VerticalAlignment.Center,
-            HorizontalAlignment = HorizontalAlignment.Center
-            )
-
-type App() =
-    inherit Application()
-    
-    override this.Initialize () =
-        this.Styles.Load "resm:Avalonia.Themes.Default.DefaultTheme.xaml?assembly=Avalonia.Themes.Default"
-        this.Styles.Load "resm:Avalonia.Themes.Default.Accents.BaseLight.xaml?assembly=Avalonia.Themes.Default"
-
-[<EntryPoint>]
-let main argv =
-    AppBuilder
-        .Configure<App>()
-        .UsePlatformDetect()
-        .LogToDebug()
-        .Start<MainWindow>()
-    0
+    // Initialization code. Don't use any Avalonia, third-party APIs or any
+    // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
+    // yet and stuff might break.
+    [<EntryPoint>]
+    [<CompiledName "Main">]
+    let main(args: string[]) =
+        buildAvaloniaApp().Start(appMain, args)
+        0
