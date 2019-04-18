@@ -22,7 +22,7 @@ xUnit Test Project          xunit                [C#], F#      Test/xUnit
 ASP.NET Core Empty          web                  [C#]          Web/Empty
 ASP.NET Core Web App        mvc                  [C#], F#      Web/MVC
 ASP.NET Core Web API        webapi               [C#]          Web/WebAPI
-Avalonia .NET Core App      avalonia.app         [C#]          ui/xaml
+Avalonia .NET Core App      avalonia.app         [C#], F#      ui/xaml
 Avalonia .NET Core MVVM App avalonia.mvvm        [C#]          ui/xaml
 Avalonia UserControl        avalonia.usercontrol [C#]          ui/xaml
 Avalonia Window             avalonia.window      [C#]          ui/xaml
@@ -41,11 +41,18 @@ dotnet new avalonia.mvvm -o MyApp
 ```
 
 # Creating a new Application
+Avalonia barebones application template supports both C# and F#.
 
-To create a new barebones application called `MyApp` in its own subdirectory, run:
+To create a new barebones C# application called `MyApp` in its own subdirectory, run:
 
 ```
 dotnet new avalonia.app -o MyApp
+```
+
+And for F# run:
+
+```
+dotnet new avalonia.app -o MyApp -lang F#
 ```
 
 # Creating a new Window
