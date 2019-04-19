@@ -23,26 +23,28 @@ ASP.NET Core Empty          web                  [C#]          Web/Empty
 ASP.NET Core Web App        mvc                  [C#], F#      Web/MVC
 ASP.NET Core Web API        webapi               [C#]          Web/WebAPI
 Avalonia .NET Core App      avalonia.app         [C#], F#      ui/xaml
-Avalonia .NET Core MVVM App avalonia.mvvm        [C#]          ui/xaml
-Avalonia UserControl        avalonia.usercontrol [C#]          ui/xaml
-Avalonia Window             avalonia.window      [C#]          ui/xaml
+Avalonia .NET Core MVVM App avalonia.mvvm        [C#], F#      ui/xaml
+Avalonia UserControl        avalonia.usercontrol [C#], F#      ui/xaml
+Avalonia Window             avalonia.window      [C#], F#      ui/xaml
 Solution File               sln                                Solution
 ```
 
 # Creating a new MVVM Application
 
-MVVM is the recommended pattern for creating Avalonia applications. The MVVM application template
+MVVM is the recommended pattern for creating Avalonia C# applications, however you can use it in F# too. The MVVM application template
 uses [ReactiveUI](https://reactiveui.net/) to ease building applications with complex interactions.
 
-To create a new MVVM application called `MyApp` in its own subdirectory, run:
+To create a new C# MVVM application called `MyApp` in its own subdirectory, run:
 
 ```
 dotnet new avalonia.mvvm -o MyApp
 ```
+And for F# run:
+```
+dotnet new avalonia.mvvm -o MyApp -lang F#
+```
 
 # Creating a new Application
-Avalonia barebones application template supports both C# and F#.
-
 To create a new barebones C# application called `MyApp` in its own subdirectory, run:
 
 ```
@@ -59,14 +61,26 @@ dotnet new avalonia.app -o MyApp -lang F#
 
 To create a new application called `MyNewWindow`, in the namespace `MyApp` run:
 
+C#:
 ```
 dotnet new avalonia.window -na MyApp -n MyNewWindow
+```
+
+F#:
+```
+dotnet new avalonia.window -na MyApp -n MyNewWindow -lang F#
 ```
 
 # Creating a new UserControl
 
 To create a new `UserControl` called `MyNewView`, in the namespace `MyApp` run:
 
+C#:
 ```
 dotnet new avalonia.window -na MyApp -n MyNewView
+```
+
+F#:
+```
+dotnet new avalonia.window -na MyApp -n MyNewView -lang F#
 ```

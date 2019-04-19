@@ -1,20 +1,20 @@
 {
     "author": "AvaloniaUI",
     "classifications": [ "ui", "xaml" ],
-    "name": "Avalonia UserControl",
-    "identity": "Avalonia.UserControl.CSharp",
-    "shortName": "avalonia.usercontrol",
-    "groupIdentity": "Avalonia.UserControl",
+    "name": "Avalonia Window",
+    "identity": "Avalonia.Window.FSharp",
+    "shortName": "avalonia.window",
+    "groupIdentity": "Avalonia.Window",
     "tags": {
-        "language": "C#",
+        "language": "F#",
         "type" : "item"
     },
-    "sourceName": "NewUserControl",
+    "sourceName": "NewWindow",
     "primaryOutputs": [
-        { "path": "NewUserControl.xaml.cs" },
-        { "path": "NewUserControl.xaml" }
+        { "path": "NewWindow.xaml.fs" },
+        { "path": "NewWindow.xaml" }
     ],
-    "defaultName": "UserControl",
+    "defaultName": "Window",
     "symbols": {
         "namespace": {
             "description": "Namespace for the generated code",

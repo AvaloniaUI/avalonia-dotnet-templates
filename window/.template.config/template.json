@@ -2,16 +2,17 @@
     "author": "AvaloniaUI",
     "classifications": [ "ui", "xaml" ],
     "name": "Avalonia Window",
-    "identity": "Avalonia.Window",
+    "identity": "Avalonia.Window.CSharp",
     "shortName": "avalonia.window",
+    "groupIdentity": "Avalonia.Window",
     "tags": {
         "language": "C#",
         "type" : "item"
     },
     "sourceName": "NewWindow",
-    "primaryOutputs": [ 
-        { "path": "NewWindow.xaml.cs" }, 
-        { "path": "NewWindow.xaml" } 
+    "primaryOutputs": [
+        { "path": "NewWindow.xaml.cs" },
+        { "path": "NewWindow.xaml" }
     ],
     "defaultName": "Window",
     "symbols": {
