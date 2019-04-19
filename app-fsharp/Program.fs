@@ -12,7 +12,7 @@ module Program =
         AppBuilder
             .Configure<App>()
             .UsePlatformDetect()
-            .LogToDebug();
+            .LogToDebug()
 
     // Your application's entry point.
     [<CompiledName "AppMain">]
