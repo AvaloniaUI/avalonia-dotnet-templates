@@ -2,16 +2,17 @@
     "author": "AvaloniaUI",
     "classifications": [ "ui", "xaml" ],
     "name": "Avalonia UserControl",
-    "identity": "Avalonia.UserControl",
+    "identity": "Avalonia.UserControl.CSharp",
     "shortName": "avalonia.usercontrol",
+    "groupIdentity": "Avalonia.UserControl",
     "tags": {
         "language": "C#",
         "type" : "item"
     },
     "sourceName": "NewUserControl",
-    "primaryOutputs": [ 
-        { "path": "NewUserControl.xaml.cs" }, 
-        { "path": "NewUserControl.xaml" } 
+    "primaryOutputs": [
+        { "path": "NewUserControl.xaml.cs" },
+        { "path": "NewUserControl.xaml" }
     ],
     "defaultName": "UserControl",
     "symbols": {
