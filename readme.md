@@ -50,7 +50,7 @@ dotnet new avalonia.app -o MyApp
 
 # Creating a new Window
 
-To create a new application called `MyNewWindow`, in the namespace `MyApp` run:
+To create a new `Window` called `MyNewWindow`, in the namespace `MyApp` run:
 
 ```
 dotnet new avalonia.window -na MyApp -n MyNewWindow
