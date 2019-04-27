@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="**\*.xaml.cs">
+    <Compile Update="**\*.xaml.fs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
     <AvaloniaResource Include="**\*.xaml">
