@@ -61,5 +61,5 @@ dotnet new avalonia.window -na MyApp -n MyNewWindow
 To create a new `UserControl` called `MyNewView`, in the namespace `MyApp` run:
 
 ```
-dotnet new avalonia.window -na MyApp -n MyNewView
+dotnet new avalonia.usercontrol -na MyApp -n MyNewView
 ```
