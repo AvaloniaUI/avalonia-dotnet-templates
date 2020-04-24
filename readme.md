@@ -4,7 +4,13 @@ For more information about `dotnet new` templates see [here](https://blogs.msdn.
 
 ## Installing the templates
 
-Clone this repository and run:
+Clone this repository:
+
+```
+git clone https://github.com/AvaloniaUI/avalonia-dotnet-templates.git
+```
+
+Then run the following:
 
 ```
 dotnet new --install [path-to-repository]
