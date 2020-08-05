@@ -63,3 +63,19 @@ To create a new `UserControl` called `MyNewView`, in the namespace `MyApp` run:
 ```
 dotnet new avalonia.usercontrol -na MyApp -n MyNewView
 ```
+
+# Creating a new Styles list
+
+To create a new `Styles` list called `MyStyles`, run:
+
+```
+dotnet new avalonia.styles -n MyStyles
+```
+
+# Creating a new ResourceDictionary
+
+To create a new `ResourceDictionary` called `MyResources`, run:
+
+```
+dotnet new avalonia.resource -n MyResources
+```

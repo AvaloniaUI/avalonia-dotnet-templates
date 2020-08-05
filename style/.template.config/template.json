@@ -1,0 +1,15 @@
+{
+    "author": "AvaloniaUI",
+    "classifications": [ "ui", "xaml" ],
+    "name": "Avalonia Styles List",
+    "identity": "Avalonia.Styles",
+    "shortName": "avalonia.styles",
+    "tags": {
+        "type" : "item"
+    },
+    "sourceName": "NewStyles",
+    "primaryOutputs": [
+        { "path": "NewStyles.xaml" }
+    ],
+    "defaultName": "Styles"
+}
