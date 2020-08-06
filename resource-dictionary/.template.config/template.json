@@ -1,0 +1,15 @@
+{
+    "author": "AvaloniaUI",
+    "classifications": [ "ui", "xaml" ],
+    "name": "Avalonia Resource Dictionary",
+    "identity": "Avalonia.ResourceDictionary",
+    "shortName": "avalonia.resource",
+    "tags": {
+        "type" : "item"
+    },
+    "sourceName": "NewResourceDictionary",
+    "primaryOutputs": [
+        { "path": "NewResourceDictionary.xaml" }
+    ],
+    "defaultName": "ResourceDictionary"
+}
