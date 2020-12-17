@@ -1,0 +1,19 @@
+pool:
+    vmImage: 'windows-2019'
+steps:
+  - task: UseDotNet@2
+    displayName: 'Use .NET Core SDK 5.0.x'
+    inputs:
+      packageType: 'sdk'
+      version: 5.0.x
+  - task: DotNetCoreCLI@2
+    inputs:
+      packagesToPack: 'Avalonia.Templates.csproj'
+      command: pack
+      outputDir: '$(Build.ArtifactStagingDirectory)/NuGet'
+      verbosityPack: normal
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '$(Build.ArtifactStagingDirectory)/NuGet'
+      artifactName: 'NuGet'
+    condition: succeeded()
