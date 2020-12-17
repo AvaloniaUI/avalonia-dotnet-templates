@@ -9,9 +9,11 @@ namespace AvaloniaAppTemplate.Views
         public MainWindow()
         {
             InitializeComponent();
+//-:cnd:noEmit
 #if DEBUG
             this.AttachDevTools();
 #endif
+//+:cnd:noEmit
         }
 
         private void InitializeComponent()
