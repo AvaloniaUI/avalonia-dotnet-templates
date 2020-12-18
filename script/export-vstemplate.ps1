@@ -12,7 +12,7 @@ Get-ChildItem -Path vstemplate -File -Filter SAFEPROJECTNAME.csproj -Recurse | `
 # SAFEPROJECTNAME to $safeprojectname$
 # ROOTNAMESPACE to $rootnamespace$
 # SAFEITEMROOTNAME to $safeitemrootname$
-Get-ChildItem -Path vstemplate -File -Recurse | `
+Get-ChildItem -Path vstemplate -File -Recurse -Exclude *.ico | `
   ForEach-Object { 
     (Get-Content $_.PSPath) | ForEach-Object { `
       $_ -replace("SAFEPROJECTNAME", '$safeprojectname$') `
