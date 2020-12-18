@@ -40,7 +40,7 @@ function Test-Template {
     Exec { dotnet new avalonia.window -o output/$name -na $name -n NewWindow }
 
     # Build
-    Exec { dotnet build output/$name }
+    Exec { dotnet build -warnaserror output/$name }
 }
 
 Test-Template "avalonia.app" "AvaloniaApp"
