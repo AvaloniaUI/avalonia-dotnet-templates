@@ -1,6 +1,7 @@
 {
     "author": "AvaloniaUI",
-    "classifications": [ "ui", "xaml" ],
+    "classifications": [ "ui", "xaml", "avalonia", "avaloniaui"  ],
+    "description": "An Avalonia UI Window",
     "name": "Avalonia Window",
     "identity": "Avalonia.Window",
     "shortName": "avalonia.window",

@@ -1,6 +1,7 @@
 {
     "author": "AvaloniaUI",
-    "classifications": [ "ui", "xaml" ],
+    "classifications": [ "ui", "xaml", "avalonia", "avaloniaui"  ],
+    "description": "An Avalonia UI UserControl",
     "name": "Avalonia UserControl",
     "identity": "Avalonia.UserControl",
     "shortName": "avalonia.usercontrol",

@@ -1,7 +1,7 @@
 {
     "author": "AvaloniaUI",
-    "classifications": [ "ui", "xaml" ],
-    "description": "A project for creating an MVVM UI application that can run on .NET Core on Windows, Linux and macOS, iOS and Android",
+    "classifications": [ "ui", "xaml", "avalonia", "avaloniaui"  ],
+    "description": "A cross-platform Avalonia UI Application using the MVVM pattern",
     "name": "Avalonia .NET Core MVVM App",
     "identity": "Avalonia.App.Mvvm",
     "shortName": "avalonia.mvvm",
