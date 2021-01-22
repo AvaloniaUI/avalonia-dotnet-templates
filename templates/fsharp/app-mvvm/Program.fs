@@ -15,6 +15,6 @@ module Program =
             .LogToTrace(areas = Array.empty)
             .UseReactiveUI()
 
-    [<STAThread>][<EntryPoint>]
+    [<EntryPoint; STAThread>]
     let main argv =
         buildAvaloniaApp().StartWithClassicDesktopLifetime(argv)
