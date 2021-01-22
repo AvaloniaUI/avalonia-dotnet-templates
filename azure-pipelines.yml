@@ -1,0 +1,31 @@
+pool:
+    vmImage: 'windows-2019'
+steps:
+  - task: UseDotNet@2
+    displayName: 'Use .NET Core SDK 5.0.x'
+    inputs:
+      packageType: 'sdk'
+      version: 5.0.x
+  - task: DotNetCoreCLI@2
+    displayName: 'Pack Templates'
+    inputs:
+      packagesToPack: 'Avalonia.Templates.csproj'
+      command: pack
+      outputDir: '$(Build.ArtifactStagingDirectory)/NuGet'
+      verbosityPack: normal
+  - task: CmdLine@2
+    displayName: 'Install templates'
+    inputs:
+      script: 'dotnet new -i $(Build.ArtifactStagingDirectory)/NuGet/*.nupkg' 
+  - task: PowerShell@2
+    displayName: 'Run Tests'
+    inputs:
+      filePath: 'tests/build-test.ps1'
+      failOnStdError: true
+      workingDirectory: 'tests'
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Build Artifacts'
+    inputs:
+      pathtoPublish: '$(Build.ArtifactStagingDirectory)/NuGet'
+      artifactName: 'NuGet'
+    condition: succeeded()

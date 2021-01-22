@@ -1,0 +1,25 @@
+{
+    "author": "AvaloniaUI",
+    "classifications": [ "ui", "xaml", "avalonia", "avaloniaui"  ],
+    "description": "An Avalonia UI Window",
+    "name": "Avalonia Window",
+    "identity": "Avalonia.Window",
+    "shortName": "avalonia.window",
+    "tags": {
+        "language": "C#",
+        "type" : "item"
+    },
+    "sourceName": "NewWindow",
+    "primaryOutputs": [ 
+        { "path": "NewWindow.xaml.cs" }, 
+        { "path": "NewWindow.xaml" } 
+    ],
+    "defaultName": "Window",
+    "symbols": {
+        "namespace": {
+            "description": "Namespace for the generated code",
+            "replaces": "AvaloniaAppTemplate.Namespace",
+            "type": "parameter"
+        }
+    }
+}

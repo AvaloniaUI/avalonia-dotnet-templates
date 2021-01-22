@@ -4,14 +4,10 @@ For more information about `dotnet new` templates see [here](https://blogs.msdn.
 
 ## Installing the templates
 
-1. Clone this repository
-```
-git clone https://github.com/AvaloniaUI/avalonia-dotnet-templates --recursive
-```
-2. Run installation command (but enter your path):
+Run from a command line:
 
-```
-dotnet new --install [path-to-repository]
+```powershell
+dotnet new -i Avalonia.Templates
 ```
 
 The templates should now be available in `dotnet`:
@@ -19,18 +15,12 @@ The templates should now be available in `dotnet`:
 ```
 Templates                   Short Name         Language        Tags
 --------------------------------------------------------------------------
-Console Application         console              [C#], F#      Common/Console
-Class library               classlib             [C#], F#      Common/Library
-Unit Test Project           mstest               [C#], F#      Test/MSTest
-xUnit Test Project          xunit                [C#], F#      Test/xUnit
-ASP.NET Core Empty          web                  [C#]          Web/Empty
-ASP.NET Core Web App        mvc                  [C#], F#      Web/MVC
-ASP.NET Core Web API        webapi               [C#]          Web/WebAPI
-Avalonia .NET Core App      avalonia.app         [C#]          ui/xaml
-Avalonia .NET Core MVVM App avalonia.mvvm        [C#]          ui/xaml
-Avalonia UserControl        avalonia.usercontrol [C#]          ui/xaml
-Avalonia Window             avalonia.window      [C#]          ui/xaml
-Solution File               sln                                Solution
+Avalonia .NET Core MVVM App                       avalonia.mvvm             [C#]              ui/xaml/avalonia/avaloniaui
+Avalonia .NET Core App                            avalonia.app              [C#]              ui/xaml/avalonia/avaloniaui
+Avalonia UserControl                              avalonia.usercontrol      [C#]              ui/xaml/avalonia/avaloniaui
+Avalonia Window                                   avalonia.window           [C#]              ui/xaml/avalonia/avaloniaui
+Avalonia Resource Dictionary                      avalonia.resource                           ui/xaml/avalonia/avaloniaui
+Avalonia Styles                                   avalonia.styles                             ui/xaml/avalonia/avaloniaui
 ```
 
 # Creating a new MVVM Application
