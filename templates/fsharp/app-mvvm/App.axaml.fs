@@ -11,8 +11,8 @@ type App() as self =
 
     do AvaloniaXamlLoader.Load self
 
-    override x.OnFrameworkInitializationCompleted() =
-        match x.ApplicationLifetime with
+    override self.OnFrameworkInitializationCompleted() =
+        match self.ApplicationLifetime with
         | :? IClassicDesktopStyleApplicationLifetime as desktop ->
              desktop.MainWindow <- new MainWindow(DataContext=MainWindowViewModel())
         | _ -> ()
