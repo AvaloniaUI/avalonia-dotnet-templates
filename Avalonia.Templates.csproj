@@ -7,6 +7,8 @@
     <Title>Avalonia Templates</Title>
     <Description>Templates for creating Avalonia applications and libraries.</Description>
     <PackageTags>dotnet-new;templates;avalonia</PackageTags>
+    <PackageProjectUrl>https://github.com/AvaloniaUI/avalonia-dotnet-templates</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/AvaloniaUI/avalonia-dotnet-templates.git</RepositoryUrl>
     <TargetFramework>netstandard2.0</TargetFramework>
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
