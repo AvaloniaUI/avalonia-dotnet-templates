@@ -8,5 +8,14 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="AvaloniaAppTemplate">
     
-    <TextBlock Name="GreetingTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock x:Name="Greeting"
+                   FontSize="20" />
+        <TextBox x:Name="Name" Margin="0 10 0 10"
+                 Watermark="Please, enter name..."
+                 UseFloatingWatermark="True"/>
+        <TextBlock x:Name="NameValidation" 
+                   Foreground="Red"
+                   FontSize="12" />
+    </StackPanel>
 </Window>
