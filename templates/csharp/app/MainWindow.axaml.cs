@@ -4,7 +4,7 @@ using Avalonia.Markup.Xaml;
 
 namespace AvaloniaAppTemplate
 {
-    public class MainWindow : Window
+    public partial class MainWindow : Window
     {
         public MainWindow()
         {

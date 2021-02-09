@@ -4,7 +4,7 @@ using Avalonia.Markup.Xaml;
 
 namespace AvaloniaAppTemplate.Namespace
 {
-    public class NewUserControl : UserControl
+    public partial class NewUserControl : UserControl
     {
         public NewUserControl()
         {
