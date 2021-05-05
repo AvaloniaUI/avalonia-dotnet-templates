@@ -1,0 +1,25 @@
+{
+    "author": "AvaloniaUI",
+    "classifications": [ "ui", "xaml", "avalonia", "avaloniaui"  ],
+    "description": "An Avalonia UI TemplatedControl",
+    "name": "Avalonia TemplatedControl",
+    "identity": "Avalonia.TemplatedControl",
+    "shortName": "avalonia.templatedcontrol",
+    "tags": {
+        "language": "C#",
+        "type" : "item"
+    },
+    "sourceName": "NewTemplatedControl",
+    "primaryOutputs": [ 
+        { "path": "NewTemplatedControl.xaml.cs" }, 
+        { "path": "NewTemplatedControl.xaml" } 
+    ],
+    "defaultName": "TemplatedControl",
+    "symbols": {
+        "namespace": {
+            "description": "Namespace for the generated code",
+            "replaces": "AvaloniaAppTemplate.Namespace",
+            "type": "parameter"
+        }
+    }
+}
