@@ -1,0 +1,14 @@
+{
+    "author": "AvaloniaUI",
+    "classifications": [ "ui", "xaml", "avalonia", "avaloniaui"  ],
+    "description": "A cross-platform Avalonia UI Application using the ReactiveUI framework ",
+    "name": "Avalonia .NET Core ReactiveUI App",
+    "identity": "Avalonia.App.ReactiveUI",
+    "shortName": "avalonia.reactiveui",
+    "tags": {
+        "language": "C#",
+        "type" : "project"
+    },
+    "sourceName": "AvaloniaAppTemplate",
+    "preferNameDirectory" : "true"
+}
