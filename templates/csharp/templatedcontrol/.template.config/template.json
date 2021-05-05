@@ -1,20 +1,20 @@
 {
     "author": "AvaloniaUI",
     "classifications": [ "ui", "xaml", "avalonia", "avaloniaui"  ],
-    "description": "An Avalonia UI Window",
-    "name": "Avalonia Window",
-    "identity": "Avalonia.Window",
-    "shortName": "avalonia.window",
+    "description": "An Avalonia UI TemplatedControl",
+    "name": "Avalonia TemplatedControl",
+    "identity": "Avalonia.TemplatedControl",
+    "shortName": "avalonia.templatedcontrol",
     "tags": {
         "language": "C#",
         "type" : "item"
     },
-    "sourceName": "NewWindow",
+    "sourceName": "NewTemplatedControl",
     "primaryOutputs": [ 
-        { "path": "NewWindow.axaml.cs" }, 
-        { "path": "NewWindow.axaml" } 
+        { "path": "NewTemplatedControl.axaml.cs" }, 
+        { "path": "NewTemplatedControl.axaml" } 
     ],
-    "defaultName": "Window",
+    "defaultName": "TemplatedControl",
     "symbols": {
         "namespace": {
             "description": "Namespace for the generated code",
