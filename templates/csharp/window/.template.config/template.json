@@ -11,8 +11,8 @@
     },
     "sourceName": "NewWindow",
     "primaryOutputs": [ 
-        { "path": "NewWindow.xaml.cs" }, 
-        { "path": "NewWindow.xaml" } 
+        { "path": "NewWindow.axaml.cs" }, 
+        { "path": "NewWindow.axaml" } 
     ],
     "defaultName": "Window",
     "symbols": {

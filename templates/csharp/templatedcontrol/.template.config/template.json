@@ -11,8 +11,8 @@
     },
     "sourceName": "NewTemplatedControl",
     "primaryOutputs": [ 
-        { "path": "NewTemplatedControl.xaml.cs" }, 
-        { "path": "NewTemplatedControl.xaml" } 
+        { "path": "NewTemplatedControl.axaml.cs" }, 
+        { "path": "NewTemplatedControl.axaml" } 
     ],
     "defaultName": "TemplatedControl",
     "symbols": {

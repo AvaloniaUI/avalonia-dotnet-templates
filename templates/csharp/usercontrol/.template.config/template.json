@@ -11,8 +11,8 @@
     },
     "sourceName": "NewUserControl",
     "primaryOutputs": [ 
-        { "path": "NewUserControl.xaml.cs" }, 
-        { "path": "NewUserControl.xaml" } 
+        { "path": "NewUserControl.axaml.cs" }, 
+        { "path": "NewUserControl.axaml" } 
     ],
     "defaultName": "UserControl",
     "symbols": {
