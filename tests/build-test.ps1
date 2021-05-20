@@ -27,21 +27,28 @@ function Exec
 function Test-Template {
     param (
         [Parameter(Position=0,Mandatory=1)][string]$template,
-        [Parameter(Position=1,Mandatory=1)][string]$name
+        [Parameter(Position=1,Mandatory=1)][string]$name,
+        [Parameter(Position=2,Mandatory=1)][string]$lang
     )
 
     # Create the project
-    Exec { dotnet new $template -o output/$name }
+    Exec { dotnet new $template -o output/$lang/$name -lang $lang }
 
     # Instantiate each item template in the project
-    Exec { dotnet new avalonia.resource -o output/$name -n NewResourceDictionary }
-    Exec { dotnet new avalonia.styles -o output/$name -n NewStyles }
-    Exec { dotnet new avalonia.usercontrol -o output/$name -na $name -n NewUserControl }
-    Exec { dotnet new avalonia.window -o output/$name -na $name -n NewWindow }
+    Exec { dotnet new avalonia.resource -o output/$lang/$name -n NewResourceDictionary }
+    Exec { dotnet new avalonia.styles -o output/$lang/$name -n NewStyles }
+    Exec { dotnet new avalonia.usercontrol -o output/$lang/$name -na $name -n NewUserControl -lang $lang }
+    Exec { dotnet new avalonia.window -o output/$lang/$name -na $name -n NewWindow -lang $lang }
 
     # Build
-    Exec { dotnet build -warnaserror output/$name }
+    Exec { dotnet build -warnaserror output/$lang/$name }
 }
 
-Test-Template "avalonia.app" "AvaloniaApp"
-Test-Template "avalonia.mvvm" "AvaloniaMvvm"
+if (Test-Path "output") {
+    Remove-Item -Recurse output
+}
+
+Test-Template "avalonia.app" "AvaloniaApp" "C#"
+Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#"
+Test-Template "avalonia.app" "AvaloniaApp" "F#"
+Test-Template "avalonia.mvvm" "AvaloniaMvvm" "F#"
