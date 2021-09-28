@@ -13,7 +13,7 @@
     },
     "sourceName": "NewResourceDictionary",
     "primaryOutputs": [
-        { "path": "NewResourceDictionary.xaml" }
+        { "path": "NewResourceDictionary.axaml" }
     ],
     "defaultName": "ResourceDictionary"
 }

@@ -10,7 +10,7 @@
     },
     "sourceName": "NewStyles",
     "primaryOutputs": [
-        { "path": "NewStyles.xaml" }
+        { "path": "NewStyles.axaml" }
     ],
     "defaultName": "Styles"
 }
