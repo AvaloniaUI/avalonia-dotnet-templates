@@ -7,4 +7,7 @@ open Avalonia.Markup.Xaml
 type NewUserControl () as self = 
     inherit UserControl ()
 
-    do AvaloniaXamlLoader.Load self
+    do self.InitializeComponent()
+
+    member private this.InitializeComponent() =
+    AvaloniaXamlLoader.Load(this)

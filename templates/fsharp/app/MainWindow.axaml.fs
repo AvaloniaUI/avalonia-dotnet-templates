@@ -10,7 +10,9 @@ type MainWindow () as self =
     do self.InitializeComponent()
 
     member private this.InitializeComponent() =
- #if DEBUG
-        self.AttachDevTools()
- #endif
-        AvaloniaXamlLoader.Load(this)
+//-:cnd:noEmit
+#if DEBUG
+    self.AttachDevTools()
+#endif
+//+:cnd:noEmit
+    AvaloniaXamlLoader.Load(this)
