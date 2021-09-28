@@ -1,10 +1,7 @@
 {
     "author": "AvaloniaUI",
     "classifications": [ "ui", "xaml", "avalonia", "avaloniaui"  ],
-<<<<<<< HEAD
-=======
     "description": "An Avalonia UI Resource Dictionary XAML file",
->>>>>>> release-0.10
     "name": "Avalonia Resource Dictionary",
     "identity": "Avalonia.ResourceDictionary",
     "shortName": "avalonia.resource",
