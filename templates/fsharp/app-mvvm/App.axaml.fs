@@ -6,15 +6,16 @@ open Avalonia.Markup.Xaml
 open AvaloniaAppTemplate.ViewModels
 open AvaloniaAppTemplate.Views
 
-type App() as self =
+type App() =
     inherit Application()
 
-    do AvaloniaXamlLoader.Load self
+    override self.Initialize() =
+            AvaloniaXamlLoader.Load(self)
 
     override self.OnFrameworkInitializationCompleted() =
         match self.ApplicationLifetime with
         | :? IClassicDesktopStyleApplicationLifetime as desktop ->
-             desktop.MainWindow <- new MainWindow(DataContext=MainWindowViewModel())
+             desktop.MainWindow <- MainWindow()
         | _ -> ()
 
         base.OnFrameworkInitializationCompleted()
