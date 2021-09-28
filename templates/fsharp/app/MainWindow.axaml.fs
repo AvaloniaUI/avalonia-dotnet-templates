@@ -6,9 +6,11 @@ open Avalonia.Markup.Xaml
 
 type MainWindow () as self = 
     inherit Window ()
-//-:cnd:noEmit
-#if DEBUG
-    do self.AttachDevTools()
-#endif
-//+:cnd:noEmit
-    do AvaloniaXamlLoader.Load self
+
+    do self.InitializeComponent()
+
+    member private this.InitializeComponent() =
+ #if DEBUG
+        self.AttachDevTools()
+ #endif
+        AvaloniaXamlLoader.Load(this)
