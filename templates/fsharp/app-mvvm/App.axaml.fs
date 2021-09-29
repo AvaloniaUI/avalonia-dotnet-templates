@@ -15,7 +15,7 @@ type App() =
     override self.OnFrameworkInitializationCompleted() =
         match self.ApplicationLifetime with
         | :? IClassicDesktopStyleApplicationLifetime as desktop ->
-             desktop.MainWindow <- MainWindow()
+             desktop.MainWindow <- MainWindow(DataContext = MainWindowViewModel())
         | _ -> ()
 
         base.OnFrameworkInitializationCompleted()
