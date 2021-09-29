@@ -7,7 +7,6 @@ open AvaloniaAppTemplate.ViewModels
 
 type ViewLocator() =
     interface IDataTemplate with
-        member _.SupportsRecycling = false
         
         member _.Build(data) =
             let name = data.GetType().FullName.Replace("ViewModel", "View")
