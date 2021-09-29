@@ -12,7 +12,7 @@ type NewWindow () as self =
     member private this.InitializeComponent() =
 //-:cnd:noEmit
 #if DEBUG
-    self.AttachDevTools()
+        self.AttachDevTools()
 #endif
 //+:cnd:noEmit
-    AvaloniaXamlLoader.Load(this)
+        AvaloniaXamlLoader.Load(this)

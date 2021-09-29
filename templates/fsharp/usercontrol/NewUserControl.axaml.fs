@@ -10,4 +10,4 @@ type NewUserControl () as self =
     do self.InitializeComponent()
 
     member private this.InitializeComponent() =
-    AvaloniaXamlLoader.Load(this)
+        AvaloniaXamlLoader.Load(this)
