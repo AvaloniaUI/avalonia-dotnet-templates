@@ -5,13 +5,15 @@ open Avalonia.Controls
 open Avalonia.Controls.Templates
 open AvaloniaAppTemplate.ViewModels
 
-type ViewLocator () =
+type ViewLocator() =
     interface IDataTemplate with
-        member __.Match data = data :? ViewModelBase
-        member __.Build data : IControl =
+        member _.SupportsRecycling = false
+        
+        member _.Build(data) =
             let name = data.GetType().FullName.Replace("ViewModel", "View")
-            let type' = Type.GetType name
-            if type' <> null then
-                Activator.CreateInstance(type') :?> IControl
-            else
-                TextBlock(Text = "Not Found: " + name) :> IControl
+            let typ = Type.GetType(name)
+            match typ with
+            | null -> upcast TextBlock(Text = sprintf "Not Found: %s" name)
+            | _ -> downcast Activator.CreateInstance(typ)
+
+        member _.Match(data) = data :? ViewModelBase
