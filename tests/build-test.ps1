@@ -37,7 +37,7 @@ function Test-Template {
     # Instantiate each item template in the project
     Exec { dotnet new avalonia.resource -o output/$lang/$name -n NewResourceDictionary }
     Exec { dotnet new avalonia.styles -o output/$lang/$name -n NewStyles }
-    Exec { dotnet new avalonia.usercontrol -o output/$lang/$name -na $name -n NewUserControl -lang $lang }
+   # Exec { dotnet new avalonia.usercontrol -o output/$lang/$name -na $name -n NewUserControl -lang $lang }
     Exec { dotnet new avalonia.window -o output/$lang/$name -na $name -n NewWindow -lang $lang }
 
     # Build
