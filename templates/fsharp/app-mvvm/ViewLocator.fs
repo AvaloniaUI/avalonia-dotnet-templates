@@ -11,8 +11,9 @@ type ViewLocator() =
         member _.Build(data) =
             let name = data.GetType().FullName.Replace("ViewModel", "View")
             let typ = Type.GetType(name)
-            match typ with
-            | null -> upcast TextBlock(Text = sprintf "Not Found: %s" name)
-            | _ -> downcast Activator.CreateInstance(typ)
+            if isNull typ then
+                upcast TextBlock(Text = sprintf "Not Found: %s" name)
+            else
+                downcast Activator.CreateInstance(typ)
 
         member _.Match(data) = data :? ViewModelBase
