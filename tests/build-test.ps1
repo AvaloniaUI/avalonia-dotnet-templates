@@ -40,7 +40,7 @@ function Test-Template {
     Exec { dotnet new avalonia.usercontrol -o output/$lang/$name -na $name -n NewUserControl -lang $lang }
     If($lang -eq "F#")
     {
-        [xml]$doc = Get-Content ./output/$lang/$name.fsproj
+        [xml]$doc = Get-Content .\output\$lang\$name.fsproj
         $item = $doc.CreateElement('Compile')
         $item.SetAttribute('Include', 'NewUserControl.axaml.fs')
 
