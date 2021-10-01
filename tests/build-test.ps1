@@ -38,16 +38,16 @@ function Test-Template {
     Exec { dotnet new avalonia.resource -o output/$lang/$name -n NewResourceDictionary }
     Exec { dotnet new avalonia.styles -o output/$lang/$name -n NewStyles }
     Exec { dotnet new avalonia.usercontrol -o output/$lang/$name -na $name -n NewUserControl -lang $lang }
+    Exec { dotnet new avalonia.window -o output/$lang/$name -na $name -n NewWindow -lang $lang }
     If($lang -eq "F#")
     {
         [xml]$doc = Get-Content .\output\$lang\$name\$name.fsproj
         $item = $doc.CreateElement('Compile')
         $item.SetAttribute('Include', 'NewUserControl.axaml.fs')
-
+        $item.SetAttribute('Include', 'NewWindow.axaml.fs')
         $doc.Project.ItemGroup[0].PrependChild($item)
         $doc.Save([IO.Path]::GetFullPath("./output/$lang/$name/$name.fsproj"))
     }
-   # Exec { dotnet new avalonia.window -o output/$lang/$name -na $name -n NewWindow -lang $lang }
 
     # Build
     Exec { dotnet build -warnaserror output/$lang/$name }
