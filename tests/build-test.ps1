@@ -44,7 +44,7 @@ function Test-Template {
         $item = $doc.CreateElement('Compile')
         $item.SetAttribute('Include', 'NewUserControl.axaml.fs')
 
-        $doc.Project.ItemGroup.AppendChild($item)
+        $doc.Project.ItemGroup.PrependChild($item)
         $doc.Save([IO.Path]::GetFullPath("./output/$lang/$name/$name.fsproj"))
     }
    # Exec { dotnet new avalonia.window -o output/$lang/$name -na $name -n NewWindow -lang $lang }
