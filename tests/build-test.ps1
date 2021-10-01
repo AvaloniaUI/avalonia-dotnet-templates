@@ -44,8 +44,10 @@ function Test-Template {
         [xml]$doc = Get-Content .\output\$lang\$name\$name.fsproj
         $item = $doc.CreateElement('Compile')
         $item.SetAttribute('Include', 'NewUserControl.axaml.fs')
-        $item.SetAttribute('Include', 'NewWindow.axaml.fs')
         $doc.Project.ItemGroup[0].PrependChild($item)
+		$item = $doc.CreateElement('Compile')
+        $item.SetAttribute('Include', 'NewWindow.axaml.fs')
+		$doc.Project.ItemGroup[0].PrependChild($item)
         $doc.Save([IO.Path]::GetFullPath("./output/$lang/$name/$name.fsproj"))
     }
 
