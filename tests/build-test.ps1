@@ -37,7 +37,16 @@ function Test-Template {
     # Instantiate each item template in the project
     Exec { dotnet new avalonia.resource -o output/$lang/$name -n NewResourceDictionary }
     Exec { dotnet new avalonia.styles -o output/$lang/$name -n NewStyles }
-   # Exec { dotnet new avalonia.usercontrol -o output/$lang/$name -na $name -n NewUserControl -lang $lang }
+    Exec { dotnet new avalonia.usercontrol -o output/$lang/$name -na $name -n NewUserControl -lang $lang }
+    If($lang -eq "F#")
+    {
+        [xml]$doc = Get-Content ./output/$lang/$name.fsproj
+        $item = $doc.CreateElement('Compile')
+        $item.SetAttribute('Include', 'NewUserControl.axaml.fs')
+
+        $doc.Project.ItemGroup.AppendChild($item)
+        $doc.Save([IO.Path]::GetFullPath("./output/$lang/$name.fsproj"))
+    }
    # Exec { dotnet new avalonia.window -o output/$lang/$name -na $name -n NewWindow -lang $lang }
 
     # Build
