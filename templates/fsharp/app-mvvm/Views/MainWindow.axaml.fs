@@ -4,15 +4,15 @@ open Avalonia
 open Avalonia.Controls
 open Avalonia.Markup.Xaml
 
-type MainWindow () as self = 
+type MainWindow () as this = 
     inherit Window ()
 
-    do self.InitializeComponent()
+    do this.InitializeComponent()
 
     member private this.InitializeComponent() =
 //-:cnd:noEmit
 #if DEBUG
-        self.AttachDevTools()
+        this.AttachDevTools()
 #endif
 //+:cnd:noEmit
         AvaloniaXamlLoader.Load(this)

@@ -3,4 +3,4 @@
 type MainWindowViewModel() =
     inherit ViewModelBase()
 
-    member _.Greeting = "Welcome to Avalonia!"
+    member this.Greeting = "Welcome to Avalonia!"

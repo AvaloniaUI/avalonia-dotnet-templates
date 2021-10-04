@@ -8,7 +8,7 @@ open AvaloniaAppTemplate.ViewModels
 type ViewLocator() =
     interface IDataTemplate with
         
-        member _.Build(data) =
+        member this.Build(data) =
             let name = data.GetType().FullName.Replace("ViewModel", "View")
             let typ = Type.GetType(name)
             if isNull typ then
@@ -16,4 +16,4 @@ type ViewLocator() =
             else
                 downcast Activator.CreateInstance(typ)
 
-        member _.Match(data) = data :? ViewModelBase
+        member this.Match(data) = data :? ViewModelBase
