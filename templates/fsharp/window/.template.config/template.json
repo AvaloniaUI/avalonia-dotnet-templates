@@ -1,0 +1,25 @@
+{
+    "author": "AvaloniaUI",
+    "classifications": [ "ui", "xaml", "avalonia", "avaloniaui"  ],
+    "name": "Avalonia Window",
+    "identity": "Avalonia.Window.FSharp",
+    "groupidentity": "Avalonia.Window",
+    "shortName": "avalonia.window",
+    "tags": {
+        "language": "F#",
+        "type" : "item"
+    },
+    "sourceName": "NewWindow",
+    "primaryOutputs": [ 
+        { "path": "NewWindow.axaml.fs" }, 
+        { "path": "NewWindow.axaml" } 
+    ],
+    "defaultName": "Window",
+    "symbols": {
+        "namespace": {
+            "description": "Namespace for the generated code",
+            "replaces": "AvaloniaAppTemplate.Namespace",
+            "type": "parameter"
+        }
+    }
+}

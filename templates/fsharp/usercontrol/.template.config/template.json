@@ -1,0 +1,25 @@
+{
+    "author": "AvaloniaUI",
+    "classifications": [ "ui", "xaml", "avalonia", "avaloniaui"  ],
+    "name": "Avalonia UserControl",
+    "identity": "Avalonia.UserControl.FSharp",
+    "groupidentity": "Avalonia.UserControl",
+    "shortName": "avalonia.usercontrol",
+    "tags": {
+        "language": "F#",
+        "type" : "item"
+    },
+    "sourceName": "NewUserControl",
+    "primaryOutputs": [ 
+        { "path": "NewUserControl.axaml.fs" }, 
+        { "path": "NewUserControl.axaml" } 
+    ],
+    "defaultName": "UserControl",
+    "symbols": {
+        "namespace": {
+            "description": "Namespace for the generated code",
+            "replaces": "AvaloniaAppTemplate.Namespace",
+            "type": "parameter"
+        }
+    }
+}
