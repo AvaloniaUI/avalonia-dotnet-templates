@@ -1,0 +1,25 @@
+{
+    "author": "AvaloniaUI",
+    "classifications": [ "ui", "xaml", "avalonia", "avaloniaui"  ],
+    "description": "An Avalonia UI TemplatedControl",
+    "name": "Avalonia TemplatedControl",
+    "identity": "Avalonia.TemplatedControl",
+    "shortName": "avalonia.templatedcontrol",
+    "tags": {
+        "language": "F#",
+        "type" : "item"
+    },
+    "sourceName": "NewTemplatedControl",
+    "primaryOutputs": [ 
+        { "path": "NewTemplatedControl.axaml.fs" }, 
+        { "path": "NewTemplatedControl.axaml" } 
+    ],
+    "defaultName": "TemplatedControl",
+    "symbols": {
+        "namespace": {
+            "description": "Namespace for the generated code",
+            "replaces": "AvaloniaAppTemplate.Namespace",
+            "type": "parameter"
+        }
+    }
+}

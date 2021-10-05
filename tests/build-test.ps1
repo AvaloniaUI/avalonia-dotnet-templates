@@ -39,11 +39,15 @@ function Test-Template {
     Exec { dotnet new avalonia.styles -o output/$lang/$name -n NewStyles }
     Exec { dotnet new avalonia.usercontrol -o output/$lang/$name -na $name -n NewUserControl -lang $lang }
     Exec { dotnet new avalonia.window -o output/$lang/$name -na $name -n NewWindow -lang $lang }
+    Exec { dotnet new avalonia.templatedcontrol -o output/$lang/$name -na $name -n NewTemplatedControl -lang $lang }
     If($lang -eq "F#")
     {
         [xml]$doc = Get-Content .\output\$lang\$name\$name.fsproj
         $item = $doc.CreateElement('Compile')
         $item.SetAttribute('Include', 'NewUserControl.axaml.fs')
+        $doc.Project.ItemGroup[0].PrependChild($item)
+        $item = $doc.CreateElement('Compile')
+        $item.SetAttribute('Include', 'NewTemplatedControl.axaml.fs')
         $doc.Project.ItemGroup[0].PrependChild($item)
 		$item = $doc.CreateElement('Compile')
         $item.SetAttribute('Include', 'NewWindow.axaml.fs')
