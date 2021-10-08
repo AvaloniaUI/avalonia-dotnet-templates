@@ -1,25 +1,26 @@
 {
     "author": "AvaloniaUI",
-    "classifications": [ "ui", "xaml", "avalonia", "avaloniaui"  ],
+    "classifications": [ "ui", "xaml", "avalonia", "avaloniaui" ],
     "description": "An Avalonia UI UserControl",
     "name": "Avalonia UserControl",
     "identity": "Avalonia.UserControl",
+    "groupidentity": "Avalonia.UserControl",
     "shortName": "avalonia.usercontrol",
     "tags": {
-        "language": "C#",
-        "type" : "item"
+      "language": "C#",
+      "type": "item"
     },
     "sourceName": "NewUserControl",
-    "primaryOutputs": [ 
-        { "path": "NewUserControl.axaml.cs" }, 
-        { "path": "NewUserControl.axaml" } 
+    "primaryOutputs": [
+      { "path": "NewUserControl.axaml.cs" },
+      { "path": "NewUserControl.axaml" }
     ],
     "defaultName": "UserControl",
     "symbols": {
-        "namespace": {
-            "description": "Namespace for the generated code",
-            "replaces": "AvaloniaAppTemplate.Namespace",
-            "type": "parameter"
-        }
+      "namespace": {
+        "description": "Namespace for the generated code",
+        "replaces": "AvaloniaAppTemplate.Namespace",
+        "type": "parameter"
+      }
     }
 }

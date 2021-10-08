@@ -1,14 +1,15 @@
 {
     "author": "AvaloniaUI",
-    "classifications": [ "ui", "xaml", "avalonia", "avaloniaui"  ],
+    "classifications": [ "ui", "xaml", "avalonia", "avaloniaui" ],
     "description": "A cross-platform Avalonia UI Application",
     "name": "Avalonia .NET Core App",
     "identity": "Avalonia.App",
+    "groupidentity": "Avalonia.App",
     "shortName": "avalonia.app",
     "tags": {
-        "language": "C#",
-        "type" : "project"
+      "language": "C#",
+      "type": "project"
     },
     "sourceName": "AvaloniaAppTemplate",
-    "preferNameDirectory" : "true"
+    "preferNameDirectory": "true"
 }
