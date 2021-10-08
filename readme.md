@@ -15,20 +15,24 @@ The templates should now be available in `dotnet`:
 ```
 Templates                   Short Name         Language        Tags
 --------------------------------------------------------------------------
-Avalonia .NET Core MVVM App                       avalonia.mvvm             [C#]              ui/xaml/avalonia/avaloniaui
-Avalonia .NET Core App                            avalonia.app              [C#]              ui/xaml/avalonia/avaloniaui
-Avalonia UserControl                              avalonia.usercontrol      [C#]              ui/xaml/avalonia/avaloniaui
-Avalonia Window                                   avalonia.window           [C#]              ui/xaml/avalonia/avaloniaui
+Avalonia .NET Core MVVM App                       avalonia.mvvm             [C#],F#           ui/xaml/avalonia/avaloniaui
+Avalonia .NET Core App                            avalonia.app              [C#],F#           ui/xaml/avalonia/avaloniaui
+Avalonia UserControl                              avalonia.usercontrol      [C#],F#           ui/xaml/avalonia/avaloniaui
+Avalonia Window                                   avalonia.window           [C#],F#           ui/xaml/avalonia/avaloniaui
 Avalonia Resource Dictionary                      avalonia.resource                           ui/xaml/avalonia/avaloniaui
 Avalonia Styles                                   avalonia.styles                             ui/xaml/avalonia/avaloniaui
 ```
+
+**Note:**
+
+By default dotnet CLI would create a **C#** template,if you want to create **F#** template you will need to add ```-lang F#``` to the end of the command.
 
 # Creating a new MVVM Application
 
 MVVM is the recommended pattern for creating Avalonia applications. The MVVM application template
 uses [ReactiveUI](https://reactiveui.net/) to ease building applications with complex interactions.
 
-To create a new MVVM application called `MyApp` in its own subdirectory, run:
+To create a new C# MVVM application called `MyApp` in its own subdirectory, run:
 
 ```
 dotnet new avalonia.mvvm -o MyApp
