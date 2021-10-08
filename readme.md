@@ -32,7 +32,7 @@ By default dotnet CLI would create a **C#** template,if you want to create **F#*
 MVVM is the recommended pattern for creating Avalonia applications. The MVVM application template
 uses [ReactiveUI](https://reactiveui.net/) to ease building applications with complex interactions.
 
-To create a new  MVVM application called `MyApp` in its own subdirectory, run:
+To create a new MVVM application called `MyApp` in its own subdirectory, run:
 
 ```
 dotnet new avalonia.mvvm -o MyApp
