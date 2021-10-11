@@ -15,13 +15,17 @@ The templates should now be available in `dotnet`:
 ```
 Templates                   Short Name         Language        Tags
 --------------------------------------------------------------------------
-Avalonia .NET Core MVVM App                       avalonia.mvvm             [C#]              ui/xaml/avalonia/avaloniaui
-Avalonia .NET Core App                            avalonia.app              [C#]              ui/xaml/avalonia/avaloniaui
-Avalonia UserControl                              avalonia.usercontrol      [C#]              ui/xaml/avalonia/avaloniaui
-Avalonia Window                                   avalonia.window           [C#]              ui/xaml/avalonia/avaloniaui
+Avalonia .NET Core MVVM App                       avalonia.mvvm             [C#],F#           ui/xaml/avalonia/avaloniaui
+Avalonia .NET Core App                            avalonia.app              [C#],F#           ui/xaml/avalonia/avaloniaui
+Avalonia UserControl                              avalonia.usercontrol      [C#],F#           ui/xaml/avalonia/avaloniaui
+Avalonia Window                                   avalonia.window           [C#],F#           ui/xaml/avalonia/avaloniaui
 Avalonia Resource Dictionary                      avalonia.resource                           ui/xaml/avalonia/avaloniaui
 Avalonia Styles                                   avalonia.styles                             ui/xaml/avalonia/avaloniaui
 ```
+
+**Note:**
+
+By default dotnet CLI would create a **C#** template,if you want to create **F#** template you will need to add ```-lang F#``` to the end of the command.
 
 # Creating a new MVVM Application
 
