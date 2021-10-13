@@ -6,6 +6,7 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
+    <None Remove=".gitignore" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewModels\ViewModelBase.fs" />
