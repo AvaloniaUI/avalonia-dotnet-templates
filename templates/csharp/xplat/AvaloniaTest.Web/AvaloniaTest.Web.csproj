@@ -15,8 +15,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <Optimize>true</Optimize>
     <WasmNativeStrip>true</WasmNativeStrip>
-	<EmccCompileOptimizationFlag>-O3</EmccCompileOptimizationFlag>
-    <RunAOTCompilation>false</RunAOTCompilation>
+	  <EmccCompileOptimizationFlag>-O3</EmccCompileOptimizationFlag>
+    <EmccLinkOptimizationFlag>-O3</EmccLinkOptimizationFlag>
+    <RunAOTCompilation>true</RunAOTCompilation>
   </PropertyGroup>
   
   <ItemGroup>
