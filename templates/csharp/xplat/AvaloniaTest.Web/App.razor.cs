@@ -1,3 +1,4 @@
+using Avalonia.ReactiveUI;
 using Avalonia.Web.Blazor;
 
 namespace AvaloniaTest.Web;
@@ -8,6 +9,7 @@ public partial class App
     {
         base.OnParametersSet();
         
-        BlazorSingleViewLifetimeExtensions.SetupWithBlazorSingleViewLifetime<AvaloniaTest.App>();
+        BlazorSingleViewLifetimeExtensions.SetupWithBlazorSingleViewLifetime<AvaloniaTest.App>()
+            .UseReactiveUI();
     }
 }
