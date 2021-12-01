@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <RootNamespace>AvaloniaTest.NetCore</RootNamespace>
-    <AvaloniaVersion>0.10.999-cibuild0016970-beta</AvaloniaVersion>
+    <AvaloniaVersion>0.10.999-cibuild0016975-beta</AvaloniaVersion>
   </PropertyGroup>
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />
@@ -16,7 +16,6 @@
     <PackageReference Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Avalonia.Test\AvaloniaTest.csproj" />
     <ProjectReference Include="..\AvaloniaTest\AvaloniaTest.csproj" />
   </ItemGroup>
 </Project>
