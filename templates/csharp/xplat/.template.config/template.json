@@ -5,7 +5,7 @@
     "name": "Avalonia Cross Platform Application",
     "identity": "Avalonia.App.CrossPlatform",
     "groupidentity": "Avalonia.App.CrossPlatform",
-    "shortName": "avalonia.crossplat",
+    "shortName": "avalonia.xplat",
     "tags": {
       "language": "C#",
       "type": "project"
