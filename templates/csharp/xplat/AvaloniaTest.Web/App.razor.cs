@@ -9,7 +9,8 @@ public partial class App
     {
         base.OnParametersSet();
         
-        BlazorSingleViewLifetimeExtensions.SetupWithBlazorSingleViewLifetime<AvaloniaTest.App>()
-            .UseReactiveUI();
+        WebAppBuilder.Configure<LiveDemo.App>()
+            .UseReactiveUI()
+            .SetupWithSingleViewLifetime();
     }
 }
