@@ -9,7 +9,7 @@ public partial class App
     {
         base.OnParametersSet();
         
-        WebAppBuilder.Configure<LiveDemo.App>()
+        WebAppBuilder.Configure<AvaloniaTest.App>()
             .UseReactiveUI()
             .SetupWithSingleViewLifetime();
     }
