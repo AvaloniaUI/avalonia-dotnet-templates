@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <RootNamespace>AvaloniaTest.NetCore</RootNamespace>
-    <AvaloniaVersion>0.10.999-cibuild0016992-beta</AvaloniaVersion>
+    <AvaloniaVersion>0.10.999-cibuild0017024-beta</AvaloniaVersion>
   </PropertyGroup>
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />
