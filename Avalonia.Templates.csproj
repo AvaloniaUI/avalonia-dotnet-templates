@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>0.10.11-rc1</PackageVersion>
+    <PackageVersion>0.10.11</PackageVersion>
     <PackageId>Avalonia.Templates</PackageId>
     <Title>Avalonia Templates</Title>
     <Description>Templates for creating Avalonia applications and libraries.</Description>
