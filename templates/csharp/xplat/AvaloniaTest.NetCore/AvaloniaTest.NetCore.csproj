@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <RootNamespace>AvaloniaTest.NetCore</RootNamespace>
-    <AvaloniaVersion>0.10.11-rc.2</AvaloniaVersion>
+    <AvaloniaVersion>0.10.11</AvaloniaVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
