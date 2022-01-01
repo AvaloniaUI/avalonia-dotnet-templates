@@ -2,8 +2,8 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
-	<!--Temporal hack that fixes compilation in VS-->
-	<TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <!--Temporal hack that fixes compilation in VS-->
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
   </PropertyGroup>
 
   <!-- In debug, make builds faster by reducing optimizations -->
