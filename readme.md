@@ -1,3 +1,5 @@
+[![downloads](https://img.shields.io/nuget/dt/avalonia.templates)](https://www.nuget.org/packages/Avalonia.Templates/)
+[![Current stable version](https://img.shields.io/nuget/v/Avalonia.Templates.svg)](https://www.nuget.org/packages/Avalonia.Templates/)
 # Avalonia Templates for `dotnet new`
 
 For more information about `dotnet new` templates see [here](https://blogs.msdn.microsoft.com/dotnet/2017/04/02/how-to-create-your-own-templates-for-dotnet-new/).
@@ -13,14 +15,16 @@ dotnet new -i Avalonia.Templates
 The templates should now be available in `dotnet`:
 
 ```
-Templates                   Short Name         Language        Tags
---------------------------------------------------------------------------
-Avalonia .NET Core MVVM App                       avalonia.mvvm             [C#],F#           ui/xaml/avalonia/avaloniaui
-Avalonia .NET Core App                            avalonia.app              [C#],F#           ui/xaml/avalonia/avaloniaui
-Avalonia UserControl                              avalonia.usercontrol      [C#],F#           ui/xaml/avalonia/avaloniaui
-Avalonia Window                                   avalonia.window           [C#],F#           ui/xaml/avalonia/avaloniaui
-Avalonia Resource Dictionary                      avalonia.resource                           ui/xaml/avalonia/avaloniaui
-Avalonia Styles                                   avalonia.styles                             ui/xaml/avalonia/avaloniaui
+Templates                                  Short Name                 Language    Tags
+-------------------------------------------------------------------------------------------------------------
+Avalonia .NET Core App                     avalonia.app               [C#],F#     ui/xaml/avalonia/avaloniaui
+Avalonia .NET Core MVVM App                avalonia.mvvm              [C#],F#     ui/xaml/avalonia/avaloniaui
+Avalonia Cross Platform Application        avalonia.xplat             [C#]        ui/xaml/avalonia/avaloniaui
+Avalonia Resource Dictionary               avalonia.resource                      ui/xaml/avalonia/avaloniaui
+Avalonia Styles                            avalonia.styles                        ui/xaml/avalonia/avaloniaui
+Avalonia TemplatedControl                  avalonia.templatedcontrol  [C#]        ui/xaml/avalonia/avaloniaui
+Avalonia UserControl                       avalonia.usercontrol       [C#],F#     ui/xaml/avalonia/avaloniaui
+Avalonia Window                            avalonia.window            [C#],F#     ui/xaml/avalonia/avaloniaui
 ```
 
 **Note:**
@@ -37,6 +41,15 @@ To create a new MVVM application called `MyApp` in its own subdirectory, run:
 ```
 dotnet new avalonia.mvvm -o MyApp
 ```
+# Creating a new Cross-Platform application
+
+To create a new Cross-Platform application in its own subdirectory, run:
+
+```
+dotnet new avalonia.xplat 
+```
+**Note:**
+This type of template allows you to create a program that will work on Desktop and on Web via WASM (preview).
 
 # Creating a new Application
 
