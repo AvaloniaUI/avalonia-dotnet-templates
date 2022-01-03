@@ -2,10 +2,10 @@ pool:
     vmImage: 'windows-2019'
 steps:
   - task: UseDotNet@2
-    displayName: 'Use .NET Core SDK 5.0.x'
+    displayName: 'Use .NET 6.0.x SDK'
     inputs:
       packageType: 'sdk'
-      version: 5.0.x
+      version: 6.0.x
   - task: DotNetCoreCLI@2
     displayName: 'Pack Templates'
     inputs:
@@ -17,6 +17,10 @@ steps:
     displayName: 'Install templates'
     inputs:
       script: 'dotnet new -i $(Build.ArtifactStagingDirectory)/NuGet/*.nupkg' 
+  - task: CmdLine@2
+    displayName: 'Install WASM workload'
+    inputs:
+      script: 'dotnet workload install wasm-tools' 
   - task: PowerShell@2
     displayName: 'Run Tests'
     inputs:
