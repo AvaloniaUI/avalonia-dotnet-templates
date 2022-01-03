@@ -2,7 +2,7 @@ pool:
     vmImage: 'windows-2019'
 steps:
   - task: UseDotNet@2
-    displayName: 'Use .NET SDK 6.0.x'
+    displayName: 'Use .NET 6.0.x SDK'
     inputs:
       packageType: 'sdk'
       version: 6.0.x
