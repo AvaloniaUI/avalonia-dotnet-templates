@@ -17,6 +17,10 @@ steps:
     displayName: 'Install templates'
     inputs:
       script: 'dotnet new -i $(Build.ArtifactStagingDirectory)/NuGet/*.nupkg' 
+  - task: CmdLine@2
+    displayName: 'Install WASM workload'
+    inputs:
+      script: 'dotnet workload install wasm-tools' 
   - task: PowerShell@2
     displayName: 'Run Tests'
     inputs:
