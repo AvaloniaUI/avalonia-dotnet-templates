@@ -15,16 +15,16 @@ dotnet new -i Avalonia.Templates
 The templates should now be available in `dotnet`:
 
 ```
-Templates                                  Short Name                 Language    Tags
+Templates                               Short Name                 Language    Tags
 -------------------------------------------------------------------------------------------------------------
-Avalonia .NET Core App                     avalonia.app               [C#],F#     ui/xaml/avalonia/avaloniaui
-Avalonia .NET Core MVVM App                avalonia.mvvm              [C#],F#     ui/xaml/avalonia/avaloniaui
-Avalonia Cross Platform Application        avalonia.xplat             [C#]        ui/xaml/avalonia/avaloniaui
-Avalonia Resource Dictionary               avalonia.resource                      ui/xaml/avalonia/avaloniaui
-Avalonia Styles                            avalonia.styles                        ui/xaml/avalonia/avaloniaui
-Avalonia TemplatedControl                  avalonia.templatedcontrol  [C#]        ui/xaml/avalonia/avaloniaui
-Avalonia UserControl                       avalonia.usercontrol       [C#],F#     ui/xaml/avalonia/avaloniaui
-Avalonia Window                            avalonia.window            [C#],F#     ui/xaml/avalonia/avaloniaui
+Avalonia .NET Core App                  avalonia.app               [C#],F#     ui/xaml/avalonia/avaloniaui
+Avalonia .NET Core MVVM App             avalonia.mvvm              [C#],F#     ui/xaml/avalonia/avaloniaui
+Avalonia Cross Platform Application     avalonia.xplat             [C#]        ui/xaml/avalonia/avaloniaui
+Avalonia Resource Dictionary            avalonia.resource                      ui/xaml/avalonia/avaloniaui
+Avalonia Styles                         avalonia.styles                        ui/xaml/avalonia/avaloniaui
+Avalonia TemplatedControl               avalonia.templatedcontrol  [C#]        ui/xaml/avalonia/avaloniaui
+Avalonia UserControl                    avalonia.usercontrol       [C#],F#     ui/xaml/avalonia/avaloniaui
+Avalonia Window                         avalonia.window            [C#],F#     ui/xaml/avalonia/avaloniaui
 ```
 
 **Note:**
