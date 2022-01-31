@@ -2,17 +2,18 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace AvaloniaTest.Views;
-
-public class MainView : UserControl
+namespace AvaloniaTest.Views
 {
-    public MainView()
+    public partial class MainView : UserControl
     {
-        InitializeComponent();
-    }
+        public MainView()
+        {
+            InitializeComponent();
+        }
 
-    private void InitializeComponent()
-    {
-        AvaloniaXamlLoader.Load(this);
+        private void InitializeComponent()
+        {
+            AvaloniaXamlLoader.Load(this);
+        }
     }
 }

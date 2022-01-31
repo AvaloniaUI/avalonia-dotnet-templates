@@ -6,7 +6,7 @@ using AvaloniaAppTemplate.Views;
 
 namespace AvaloniaAppTemplate
 {
-    public class App : Application
+    public partial class App : Application
     {
         public override void Initialize()
         {
