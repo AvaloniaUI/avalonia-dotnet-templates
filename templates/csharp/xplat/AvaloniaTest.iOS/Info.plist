@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>IosTest1</string>
+	<string>AvaloniaTest</string>
 	<key>CFBundleIdentifier</key>
-	<string>Avalonia.IosTest1</string>
+	<string>companyName.AvaloniaTest</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
