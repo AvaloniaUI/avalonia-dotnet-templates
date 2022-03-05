@@ -4,6 +4,7 @@
     <Nullable>enable</Nullable>
     <!--Temporal hack that fixes compilation in VS-->
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <AvaloniaVersion>0.10.13</AvaloniaVersion>
   </PropertyGroup>
 
   <!-- In debug, make builds faster by reducing optimizations -->
@@ -24,7 +25,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0" PrivateAssets="all" />
-    <PackageReference Include="Avalonia.Web.Blazor" Version="0.10.11" />
+    <PackageReference Include="Avalonia.Web.Blazor" Version="$(AvaloniaVersion)" />
   </ItemGroup>
 
   <ItemGroup>
