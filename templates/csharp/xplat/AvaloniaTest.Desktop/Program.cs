@@ -1,8 +1,7 @@
 ﻿using System;
 using Avalonia;
-using Avalonia.ReactiveUI;
 
-namespace AvaloniaTest.NetCore
+namespace AvaloniaTest.Desktop
 {
     class Program
     {

@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaTest", "AvaloniaTest\AvaloniaTest.csproj", "{EBFA8512-1EA5-4D8C-B4AC-AB5B48A6D568}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaTest.NetCore", "AvaloniaTest.NetCore\AvaloniaTest.NetCore.csproj", "{ABC31E74-02FF-46EB-B3B2-4E6AE43B456C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaTest.Desktop", "AvaloniaTest.Desktop\AvaloniaTest.Desktop.csproj", "{ABC31E74-02FF-46EB-B3B2-4E6AE43B456C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaTest.Web", "AvaloniaTest.Web\AvaloniaTest.Web.csproj", "{1C1A049E-235C-4CD0-B6FA-D53AC418F4DA}"
 EndProject
