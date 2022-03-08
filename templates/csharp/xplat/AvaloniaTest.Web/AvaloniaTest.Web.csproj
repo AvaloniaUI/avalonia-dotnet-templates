@@ -4,7 +4,7 @@
     <Nullable>enable</Nullable>
     <!--Temporal hack that fixes compilation in VS-->
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
-    <AvaloniaVersion>0.10.999-cibuild0019067-beta</AvaloniaVersion>
+    <AvaloniaVersion>0.10.999-cibuild0019088-beta</AvaloniaVersion>
   </PropertyGroup>
 
   <!-- In debug, make builds faster by reducing optimizations -->

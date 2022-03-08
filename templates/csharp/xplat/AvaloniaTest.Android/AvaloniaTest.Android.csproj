@@ -9,7 +9,7 @@
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
     <AndroidPackageFormat>apk</AndroidPackageFormat>
     <MSBuildEnableWorkloadResolver>true</MSBuildEnableWorkloadResolver>
-    <AvaloniaVersion>0.10.999-cibuild0019067-beta</AvaloniaVersion>
+    <AvaloniaVersion>0.10.999-cibuild0019088-beta</AvaloniaVersion>
     <!--<RunAOTCompilation>true</RunAOTCompilation>
     <AndroidEnableProfiledAot>true</AndroidEnableProfiledAot>-->
   </PropertyGroup>
