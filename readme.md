@@ -49,7 +49,7 @@ To create a new Cross-Platform application in its own subdirectory, run:
 dotnet new avalonia.xplat 
 ```
 **Note:**
-This type of template allows you to create a program that will work on Desktop and on Web via WASM (preview).
+This type of template allows you to create an application that will work on Desktop, Browser (preview) and Mobile (iOS & Android) (preview).
 
 # Creating a new Application
 
