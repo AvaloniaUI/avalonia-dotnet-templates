@@ -2,7 +2,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0-ios</TargetFramework>
-    <AvaloniaVersion>0.10.999-cibuild0019088-beta</AvaloniaVersion>
     <SupportedOSPlatformVersion>10.0</SupportedOSPlatformVersion>
     <ProvisioningType>manual</ProvisioningType>
     <Nullable>enable</Nullable>
