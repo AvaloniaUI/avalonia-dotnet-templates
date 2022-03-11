@@ -13,6 +13,9 @@
     <AndroidEnableProfiledAot>true</AndroidEnableProfiledAot>-->
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Assets\AboutAssets.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Icon.png">
       <Link>Resources\drawable\Icon.png</Link>
     </AndroidResource>
