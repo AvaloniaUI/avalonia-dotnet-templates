@@ -1,8 +1,7 @@
 ﻿using System;
 using Avalonia;
-using Avalonia.ReactiveUI;
 
-namespace AvaloniaTest.NetCore
+namespace AvaloniaTest.Desktop
 {
     class Program
     {
@@ -17,7 +16,6 @@ namespace AvaloniaTest.NetCore
         public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
-                .LogToTrace()
-                .UseReactiveUI();
+                .LogToTrace();
     }
 }
