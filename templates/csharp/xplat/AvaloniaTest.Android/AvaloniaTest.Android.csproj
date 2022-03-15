@@ -4,7 +4,7 @@
     <TargetFramework>net6.0-android</TargetFramework>
     <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
     <Nullable>enable</Nullable>
-    <ApplicationId>com.CompanyName.avxplat</ApplicationId>
+    <ApplicationId>com.CompanyName.AvaloniaTest</ApplicationId>
     <ApplicationVersion>1</ApplicationVersion>
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
     <AndroidPackageFormat>apk</AndroidPackageFormat>
@@ -28,6 +28,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\avxplat\avxplat.csproj" />
+    <ProjectReference Include="..\AvaloniaTest\AvaloniaTest.csproj" />
   </ItemGroup>
 </Project>
