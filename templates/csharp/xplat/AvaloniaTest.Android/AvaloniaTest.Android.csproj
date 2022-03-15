@@ -1,16 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0-android</TargetFramework>
     <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
     <Nullable>enable</Nullable>
-    <ApplicationId>com.CompanyName.AvaloniaTest</ApplicationId>
+    <ApplicationId>com.CompanyName.avxplat</ApplicationId>
     <ApplicationVersion>1</ApplicationVersion>
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
     <AndroidPackageFormat>apk</AndroidPackageFormat>
-    <MSBuildEnableWorkloadResolver>true</MSBuildEnableWorkloadResolver>
-    <!--<RunAOTCompilation>true</RunAOTCompilation>
-    <AndroidEnableProfiledAot>true</AndroidEnableProfiledAot>-->
   </PropertyGroup>
   <ItemGroup>
     <AndroidResource Include="Icon.png">
@@ -18,15 +15,10 @@
     </AndroidResource>
   </ItemGroup>
 
-  <PropertyGroup Condition="'$(Configuration)'=='Release' and '$(TF_BUILD)' == ''">
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
     <RunAOTCompilation>True</RunAOTCompilation>
     <EnableLLVM>True</EnableLLVM>
-    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
-    <RunAOTCompilation>False</RunAOTCompilation>
+    <AndroidEnableProfiledAot>True</AndroidEnableProfiledAot>
   </PropertyGroup>
 
   <ItemGroup>
@@ -36,6 +28,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\AvaloniaTest\AvaloniaTest.csproj" />
+    <ProjectReference Include="..\avxplat\avxplat.csproj" />
   </ItemGroup>
 </Project>
