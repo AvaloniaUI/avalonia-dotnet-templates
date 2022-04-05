@@ -9,16 +9,6 @@ namespace AvaloniaAppTemplate.Namespace
         public NewWindow()
         {
             InitializeComponent();
-//-:cnd:noEmit
-#if DEBUG
-            this.AttachDevTools();
-#endif
-//+:cnd:noEmit
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
         }
     }
 }
