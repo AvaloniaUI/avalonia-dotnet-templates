@@ -10,10 +10,5 @@ namespace AvaloniaAppTemplate.Namespace
         {
             InitializeComponent();
         }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
     }
 }
