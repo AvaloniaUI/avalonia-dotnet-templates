@@ -1,5 +1,3 @@
 <Project>
-  <PropertyGroup>
-    <AvaloniaVersion>0.10.999-cibuild0019213-beta</AvaloniaVersion>
-  </PropertyGroup>
+  <Import Project="$(MSBuildThisFileDirectory)\AvaloniaVersion.props"/>
 </Project>
