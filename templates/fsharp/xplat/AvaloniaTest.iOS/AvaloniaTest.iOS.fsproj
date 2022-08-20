@@ -14,9 +14,8 @@
 
   <ItemGroup>
     <PackageReference Include="Avalonia.iOS" Version="$(AvaloniaVersion)" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\AvaloniaTest\AvaloniaTest.fsproj" />
+    <Compile Include="AppDelegate.fs"/>
+    <Compile Include="Main.fs"/>
   </ItemGroup>
 </Project>
