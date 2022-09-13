@@ -1,15 +1,16 @@
 {
-    "author": "AvaloniaUI",
-    "classifications": [ "ui", "xaml", "avalonia", "avaloniaui" ],
-    "description": "A cross-platform Avalonia UI Application",
-    "name": "Avalonia .NET Core App",
-    "identity": "Avalonia.App",
-    "groupidentity": "Avalonia.App",
-    "shortName": "avalonia.app",
-    "tags": {
-      "language": "C#",
-      "type": "project"
-    },
-    "sourceName": "AvaloniaAppTemplate",
-    "preferNameDirectory": "true"
+  "$schema": "http://json.schemastore.org/template",
+  "author": "AvaloniaUI",
+  "classifications": [ "ui", "xaml", "avalonia", "avaloniaui" ],
+  "description": "A cross-platform Avalonia UI Application",
+  "groupidentity": "Avalonia.App",
+  "identity": "Avalonia.App",
+  "name": "Avalonia .NET Core App",
+  "preferNameDirectory": true,
+  "shortName": "avalonia.app",
+  "sourceName": "AvaloniaAppTemplate",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
 }

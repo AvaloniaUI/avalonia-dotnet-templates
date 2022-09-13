@@ -1,15 +1,16 @@
 {
-    "author": "AvaloniaUI",
-    "classifications": [ "ui", "xaml", "avalonia", "avaloniaui" ],
-    "description": "A cross-platform Avalonia UI Application using the MVVM pattern",
-    "name": "Avalonia .NET Core MVVM App",
-    "identity": "Avalonia.App.Mvvm",
-    "groupidentity": "Avalonia.App.Mvvm",
-    "shortName": "avalonia.mvvm",
-    "tags": {
-      "language": "C#",
-      "type": "project"
-    },
-    "sourceName": "AvaloniaAppTemplate",
-    "preferNameDirectory": "true"
+  "$schema": "http://json.schemastore.org/template",
+  "author": "AvaloniaUI",
+  "classifications": [ "ui", "xaml", "avalonia", "avaloniaui" ],
+  "description": "A cross-platform Avalonia UI Application using the MVVM pattern",
+  "groupidentity": "Avalonia.App.Mvvm",
+  "identity": "Avalonia.App.Mvvm",
+  "name": "Avalonia .NET Core MVVM App",
+  "preferNameDirectory": true,
+  "shortName": "avalonia.mvvm",
+  "sourceName": "AvaloniaAppTemplate",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
 }
