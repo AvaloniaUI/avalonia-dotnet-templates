@@ -2,15 +2,15 @@
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "ddff", "ddff\ddff.fsproj", "{1BA45BCD-2115-4B63-9CA2-8645C2101140}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AvaloniaTest", "AvaloniaTest\AvaloniaTest.fsproj", "{1BA45BCD-2115-4B63-9CA2-8645C2101140}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "ddff.Android", "ddff.Android\ddff.Android.fsproj", "{087E4BBF-18F7-449F-A9AD-EB5F8EE0E0D6}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AvaloniaTest.Android", "AvaloniaTest.Android\AvaloniaTest.Android.fsproj", "{087E4BBF-18F7-449F-A9AD-EB5F8EE0E0D6}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "ddff.Desktop", "ddff.Desktop\ddff.Desktop.fsproj", "{5727F82E-585D-4784-8645-402C1647609F}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AvaloniaTest.Desktop", "AvaloniaTest.Desktop\AvaloniaTest.Desktop.fsproj", "{5727F82E-585D-4784-8645-402C1647609F}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "ddff.iOS", "ddff.iOS\ddff.iOS.fsproj", "{5EBAC5E0-39E9-45C7-852F-DE5FAE492A93}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AvaloniaTest.iOS", "AvaloniaTest.iOS\AvaloniaTest.iOS.fsproj", "{5EBAC5E0-39E9-45C7-852F-DE5FAE492A93}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "ddff.Web", "ddff.Web\ddff.Web.fsproj", "{A01CFE14-3798-4333-A1D9-8E9451CE92D2}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AvaloniaTest.Web", "AvaloniaTest.Web\AvaloniaTest.Web.fsproj", "{A01CFE14-3798-4333-A1D9-8E9451CE92D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
