@@ -12,6 +12,12 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AvaloniaTest.iOS", "Avaloni
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AvaloniaTest.Web", "AvaloniaTest.Web\AvaloniaTest.Web.fsproj", "{A01CFE14-3798-4333-A1D9-8E9451CE92D2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3DA99C4E-89E3-4049-9C22-0A7EC60D83D8}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		global.json = global.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
