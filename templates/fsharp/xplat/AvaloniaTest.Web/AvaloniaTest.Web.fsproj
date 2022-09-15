@@ -30,8 +30,6 @@
     <PackageReference Include="Avalonia.Web.Blazor" Version="$(AvaloniaVersion)" />
     <PackageReference Include="Avalonia.Skia" Version="$(AvaloniaVersion)" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />
-    <PackageReference Include="JaggerJo.Avalonia.FuncUI" Version="$(FuncUIVersion)" />
-    <PackageReference Include="JaggerJo.Avalonia.FuncUI.DSL" Version="$(FuncUIVersion)" />
     <PackageReference Include="Bolero" Version="0.20.17" />
     <PackageReference Include="Bolero.Build" Version="0.20.17" />
   </ItemGroup>

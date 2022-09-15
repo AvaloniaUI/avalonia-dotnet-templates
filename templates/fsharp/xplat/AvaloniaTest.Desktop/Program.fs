@@ -1,16 +1,19 @@
 namespace AvaloniaTest.Desktop
 open System
 open Avalonia
+open Avalonia.ReactiveUI
 open AvaloniaTest
 
 module Program =
-    let BuildAvaloniaApp() =
+
+    [<CompiledName "BuildAvaloniaApp">] 
+    let buildAvaloniaApp () = 
         AppBuilder
             .Configure<App>()
             .UsePlatformDetect()
-
+            .LogToTrace(areas = Array.empty)
+            .UseReactiveUI()
 
     [<EntryPoint; STAThread>]
     let main argv =
-        BuildAvaloniaApp().StartWithClassicDesktopLifetime(argv) |> ignore
-        0
+        buildAvaloniaApp().StartWithClassicDesktopLifetime(argv)
