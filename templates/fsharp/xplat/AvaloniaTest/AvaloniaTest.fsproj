@@ -9,8 +9,9 @@
   </ItemGroup>
   <ItemGroup>
 	<Compile Include="ViewModels\ViewModelBase.fs" />
-	<Compile Include="ViewModels\MainWindowViewModel.fs" />
+	<Compile Include="ViewModels\MainViewModel.fs" />
 	<Compile Include="Views\MainWindow.axaml.fs" />
+	<Compile Include="Views\MainView.axaml.fs" />
 	<Compile Include="ViewLocator.fs" />
 	<Compile Include="App.axaml.fs" />
   </ItemGroup>
