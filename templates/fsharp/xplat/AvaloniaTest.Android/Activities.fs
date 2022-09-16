@@ -4,7 +4,6 @@ open Android.Content
 open Android.Content.PM
 type Application = Android.App.Application
 
-open Avalonia
 open Avalonia.Android
 open AvaloniaTest
 

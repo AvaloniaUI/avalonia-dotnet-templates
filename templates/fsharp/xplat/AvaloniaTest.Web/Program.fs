@@ -1,5 +1,4 @@
 open Microsoft.AspNetCore.Components.WebAssembly.Hosting
-open Microsoft.AspNetCore.Components
 
 open Avalonia.ReactiveUI
 open Avalonia.Web.Blazor
