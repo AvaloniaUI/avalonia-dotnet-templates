@@ -4,6 +4,7 @@
     <Nullable>enable</Nullable>
     <!--Temporal hack that fixes compilation in VS-->
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+	<EmccTotalMemory>16777216</EmccTotalMemory>
   </PropertyGroup>
 
   <!-- In debug, make builds faster by reducing optimizations -->
