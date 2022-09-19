@@ -3,7 +3,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <!--Temporal hack that fixes compilation in VS-->
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
-	<EmccTotalMemory>16777216</EmccTotalMemory>
+    <EmccTotalMemory>16777216</EmccTotalMemory>
   </PropertyGroup>
 
   <!-- In debug, make builds faster by reducing optimizations -->
