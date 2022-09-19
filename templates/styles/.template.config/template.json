@@ -1,16 +1,17 @@
 {
-    "author": "AvaloniaUI",
-    "classifications": [ "ui", "xaml", "avalonia", "avaloniaui"  ],
-    "description": "An Avalonia UI Styles XAML file",
-    "name": "Avalonia Styles",
-    "identity": "Avalonia.Styles",
-    "shortName": "avalonia.styles",
-    "tags": {
-        "type" : "item"
-    },
-    "sourceName": "NewStyles",
-    "primaryOutputs": [
-        { "path": "NewStyles.axaml" }
-    ],
-    "defaultName": "Styles"
+  "$schema": "http://json.schemastore.org/template",
+  "author": "AvaloniaUI",
+  "classifications": [ "ui", "xaml", "avalonia", "avaloniaui" ],
+  "defaultName": "Styles",
+  "description": "An Avalonia UI Styles XAML file",
+  "identity": "Avalonia.Styles",
+  "name": "Avalonia Styles",
+  "primaryOutputs": [
+    { "path": "NewStyles.axaml" }
+  ],
+  "shortName": "avalonia.styles",
+  "sourceName": "NewStyles",
+  "tags": {
+    "type": "item"
+  }
 }

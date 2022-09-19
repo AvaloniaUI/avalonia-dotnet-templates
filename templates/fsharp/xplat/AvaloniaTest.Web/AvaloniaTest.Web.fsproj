@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <!--Temporal hack that fixes compilation in VS-->
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+  </PropertyGroup>
+
+  <!-- In debug, make builds faster by reducing optimizations -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <WasmNativeStrip>false</WasmNativeStrip>
+    <EmccCompileOptimizationFlag>-O1</EmccCompileOptimizationFlag>
+    <RunAOTCompilation>false</RunAOTCompilation>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>true</Optimize>
+    <WasmNativeStrip>true</WasmNativeStrip>
+  <EmccCompileOptimizationFlag>-O3</EmccCompileOptimizationFlag>
+    <EmccLinkOptimizationFlag>-O3</EmccLinkOptimizationFlag>
+    <RunAOTCompilation>true</RunAOTCompilation>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0" PrivateAssets="all" />
+    <PackageReference Include="Avalonia.Web.Blazor" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.Skia" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Bolero" Version="0.20.17" />
+    <PackageReference Include="Bolero.Build" Version="0.20.17" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AvaloniaTest\AvaloniaTest.fsproj" />
+  </ItemGroup>
+
+</Project>

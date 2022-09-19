@@ -1,25 +1,26 @@
 {
-    "author": "AvaloniaUI",
-    "classifications": [ "ui", "xaml", "avalonia", "avaloniaui"  ],
-    "description": "An Avalonia UI TemplatedControl",
-    "name": "Avalonia TemplatedControl",
-    "identity": "Avalonia.TemplatedControl",
-    "shortName": "avalonia.templatedcontrol",
-    "tags": {
-        "language": "C#",
-        "type" : "item"
-    },
-    "sourceName": "NewTemplatedControl",
-    "primaryOutputs": [ 
-        { "path": "NewTemplatedControl.axaml.cs" }, 
-        { "path": "NewTemplatedControl.axaml" } 
-    ],
-    "defaultName": "TemplatedControl",
-    "symbols": {
-        "namespace": {
-            "description": "Namespace for the generated code",
-            "replaces": "AvaloniaAppTemplate.Namespace",
-            "type": "parameter"
-        }
+  "$schema": "http://json.schemastore.org/template",
+  "author": "AvaloniaUI",
+  "classifications": [ "ui", "xaml", "avalonia", "avaloniaui" ],
+  "defaultName": "TemplatedControl",
+  "description": "An Avalonia UI TemplatedControl",
+  "identity": "Avalonia.TemplatedControl",
+  "name": "Avalonia TemplatedControl",
+  "primaryOutputs": [
+    { "path": "NewTemplatedControl.axaml.cs" },
+    { "path": "NewTemplatedControl.axaml" }
+  ],
+  "shortName": "avalonia.templatedcontrol",
+  "sourceName": "NewTemplatedControl",
+  "symbols": {
+    "namespace": {
+      "description": "Namespace for the generated code",
+      "replaces": "AvaloniaAppTemplate.Namespace",
+      "type": "parameter"
     }
+  },
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  }
 }

@@ -1,15 +1,16 @@
 {
-    "author": "AvaloniaUI",
-    "classifications": [ "ui", "xaml", "avalonia", "avaloniaui"  ],
-    "description": "A project for creating an MVVM UI application that can run on .NET Core on Windows, Linux and macOS, iOS and Android",
-    "name": "Avalonia .NET Core MVVM App",
-    "identity": "Avalonia.App.Mvvm.FSharp",
-    "groupidentity": "Avalonia.App.Mvvm",
-    "shortName": "avalonia.mvvm",
-    "tags": {
-        "language": "F#",
-        "type" : "project"
-    },
-    "sourceName": "AvaloniaAppTemplate",
-    "preferNameDirectory" : "true"
+  "$schema": "http://json.schemastore.org/template",
+  "author": "AvaloniaUI",
+  "classifications": [ "ui", "xaml", "avalonia", "avaloniaui" ],
+  "description": "A project for creating an MVVM UI application that can run on .NET Core on Windows, Linux and macOS, iOS and Android",
+  "groupidentity": "Avalonia.App.Mvvm",
+  "identity": "Avalonia.App.Mvvm.FSharp",
+  "name": "Avalonia .NET Core MVVM App",
+  "preferNameDirectory": true,
+  "shortName": "avalonia.mvvm",
+  "sourceName": "AvaloniaAppTemplate",
+  "tags": {
+    "language": "F#",
+    "type": "project"
+  }
 }

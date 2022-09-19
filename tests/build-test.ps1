@@ -55,12 +55,28 @@ function Test-Template {
     Exec { dotnet build -warnaserror output/$lang/$name }
 }
 
+function Create-And-Build {
+    param (
+        [Parameter(Position=0,Mandatory=1)][string]$template,
+        [Parameter(Position=1,Mandatory=1)][string]$name,
+        [Parameter(Position=2,Mandatory=1)][string]$lang
+    )
+
+    # Create the project
+    Exec { dotnet new $template -o output/$lang/$name -lang $lang }
+
+    # Build
+    Exec { dotnet build -warnaserror output/$lang/$name }
+}
+
 if (Test-Path "output") {
     Remove-Item -Recurse output
 }
 
+
 Test-Template "avalonia.app" "AvaloniaApp" "C#"
-Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#"
+Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#"
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#"
 Test-Template "avalonia.app" "AvaloniaApp" "F#"
-Test-Template "avalonia.mvvm" "AvaloniaMvvm" "F#"
-Test-Template "avalonia.xplat" "AvaloniaXplat" "C#"
+Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#"
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#"

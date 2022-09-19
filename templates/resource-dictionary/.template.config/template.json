@@ -1,16 +1,17 @@
 {
-    "author": "AvaloniaUI",
-    "classifications": [ "ui", "xaml", "avalonia", "avaloniaui"  ],
-    "description": "An Avalonia UI Resource Dictionary XAML file",
-    "name": "Avalonia Resource Dictionary",
-    "identity": "Avalonia.ResourceDictionary",
-    "shortName": "avalonia.resource",
-    "tags": {
-        "type" : "item"
-    },
-    "sourceName": "NewResourceDictionary",
-    "primaryOutputs": [
-        { "path": "NewResourceDictionary.axaml" }
-    ],
-    "defaultName": "ResourceDictionary"
+  "$schema": "http://json.schemastore.org/template",
+  "author": "AvaloniaUI",
+  "classifications": [ "ui", "xaml", "avalonia", "avaloniaui" ],
+  "defaultName": "ResourceDictionary",
+  "description": "An Avalonia UI Resource Dictionary XAML file",
+  "identity": "Avalonia.ResourceDictionary",
+  "name": "Avalonia Resource Dictionary",
+  "primaryOutputs": [
+    { "path": "NewResourceDictionary.axaml" }
+  ],
+  "shortName": "avalonia.resource",
+  "sourceName": "NewResourceDictionary",
+  "tags": {
+    "type": "item"
+  }
 }

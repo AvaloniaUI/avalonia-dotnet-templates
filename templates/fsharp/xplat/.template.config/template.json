@@ -3,14 +3,14 @@
   "author": "AvaloniaUI",
   "classifications": [ "ui", "xaml", "avalonia", "avaloniaui" ],
   "description": "A cross-platform Avalonia UI Application using the MVVM pattern targetting Desktop and Browser with WebAssembly",
-  "groupidentity": "Avalonia.App.CrossPlatform",
-  "identity": "Avalonia.App.CrossPlatform",
   "name": "Avalonia Cross Platform Application",
-  "preferNameDirectory": true,
+  "identity": "Avalonia.App.CrossPlatform.FSharp",
+  "groupidentity": "Avalonia.App.CrossPlatform",
   "shortName": "avalonia.xplat",
-  "sourceName": "AvaloniaTest",
   "tags": {
-    "language": "C#",
+    "language": "F#",
     "type": "project"
-  }
+  },
+  "sourceName": "AvaloniaTest",
+  "preferNameDirectory": true
 }
