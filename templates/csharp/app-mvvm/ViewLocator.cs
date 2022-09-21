@@ -1,7 +1,7 @@
 using System;
+using System.ComponentModel;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using AvaloniaAppTemplate.ViewModels;
 
 namespace AvaloniaAppTemplate
 {
@@ -22,7 +22,7 @@ namespace AvaloniaAppTemplate
 
         public bool Match(object data)
         {
-            return data is ViewModelBase;
+            return data is INotifyPropertyChanged;
         }
     }
 }

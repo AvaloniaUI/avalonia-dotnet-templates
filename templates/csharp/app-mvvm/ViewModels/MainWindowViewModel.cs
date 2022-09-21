@@ -1,6 +1,8 @@
-﻿namespace AvaloniaAppTemplate.ViewModels
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace AvaloniaAppTemplate.ViewModels
 {
-    public class MainWindowViewModel : ViewModelBase
+    public class MainWindowViewModel : ObservableObject
     {
         public string Greeting => "Welcome to Avalonia!";
     }
