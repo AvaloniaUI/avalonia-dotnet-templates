@@ -1,12 +1,13 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "AvaloniaUI",
-  "classifications": [ "ui", "xaml", "avalonia", "avaloniaui" ],
+  "classifications": [ "Desktop", "Xaml", "Avalonia", "Web", "Mobile" ],
   "description": "A cross-platform Avalonia UI Application using the MVVM pattern targetting Desktop and Browser with WebAssembly",
   "name": "Avalonia Cross Platform Application",
   "identity": "Avalonia.App.CrossPlatform.FSharp",
   "groupidentity": "Avalonia.App.CrossPlatform",
   "shortName": "avalonia.xplat",
+  "defaultName": "AvaloniaApplication",
   "tags": {
     "language": "F#",
     "type": "project"

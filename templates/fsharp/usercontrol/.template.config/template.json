@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "AvaloniaUI",
-  "classifications": [ "ui", "xaml", "avalonia", "avaloniaui" ],
+  "classifications": [ "Desktop", "Xaml", "Avalonia", "Windows", "Linux", "macOS" ],
   "defaultName": "UserControl",
   "groupidentity": "Avalonia.UserControl",
   "identity": "Avalonia.UserControl.FSharp",

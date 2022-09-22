@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "AvaloniaUI",
-  "classifications": [ "ui", "xaml", "avalonia", "avaloniaui" ],
+  "classifications": [ "Desktop", "Xaml", "Avalonia", "Windows", "Linux", "macOS" ],
   "defaultName": "Styles",
   "description": "An Avalonia UI Styles XAML file",
   "identity": "Avalonia.Styles",
