@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "AvaloniaUI",
-  "classifications": [ "Desktop", "Xaml", "Avalonia" ],
+  "classifications": [ "Desktop", "Xaml", "Avalonia", "Windows", "Linux", "macOS" ],
   "defaultName": "Window",
   "groupidentity": "Avalonia.Window",
   "identity": "Avalonia.Window.FSharp",
