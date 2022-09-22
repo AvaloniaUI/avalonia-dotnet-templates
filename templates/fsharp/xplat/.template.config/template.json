@@ -7,6 +7,7 @@
   "identity": "Avalonia.App.CrossPlatform.FSharp",
   "groupidentity": "Avalonia.App.CrossPlatform",
   "shortName": "avalonia.xplat",
+  "defaultName": "AvaloniaApplication",
   "tags": {
     "language": "F#",
     "type": "project"

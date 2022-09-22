@@ -9,6 +9,7 @@
   "preferNameDirectory": true,
   "shortName": "avalonia.mvvm",
   "sourceName": "AvaloniaAppTemplate",
+  "defaultName": "AvaloniaApplication",
   "tags": {
     "language": "F#",
     "type": "project"

@@ -9,6 +9,7 @@
   "preferNameDirectory": true,
   "shortName": "avalonia.xplat",
   "sourceName": "AvaloniaTest",
+  "defaultName": "AvaloniaApplication",
   "tags": {
     "language": "C#",
     "type": "project"
