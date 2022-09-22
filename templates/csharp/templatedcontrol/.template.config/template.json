@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "AvaloniaUI",
-  "classifications": [ "ui", "xaml", "avalonia", "avaloniaui" ],
+  "classifications": [ "Desktop", "Xaml", "Avalonia" ],
   "defaultName": "TemplatedControl",
   "description": "An Avalonia UI TemplatedControl",
   "identity": "Avalonia.TemplatedControl",
