@@ -1,7 +1,13 @@
 using System;
+using System.ComponentModel;
+#if (!ReactiveUIToolkitChosen)
+using System.ComponentModel;
+#endif
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
+#if (ReactiveUIToolkitChosen)
 using AvaloniaAppTemplate.ViewModels;
+#endif
 
 namespace AvaloniaAppTemplate
 {
@@ -22,7 +28,12 @@ namespace AvaloniaAppTemplate
 
         public bool Match(object data)
         {
+
+#if (ReactiveUIToolkitChosen)
             return data is ViewModelBase;
+#else
+            return data is INotifyPropertyChanged;
+#endif
         }
     }
 }

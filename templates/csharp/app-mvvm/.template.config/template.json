@@ -43,6 +43,22 @@
         }
       ],
       "defaultValue": "ReactiveUI"
+    },
+    "ReactiveUIToolkitChosen": {
+      "type": "computed",
+      "value": "(MVVM Toolkit == \"ReactiveUI\")"
     }
-  }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(!ReactiveUIToolkitChosen)",
+          "exclude": [
+            "ViewModels/ViewModelBase.cs"
+          ]
+        }
+      ]
+    }
+  ]
 }
