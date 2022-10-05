@@ -13,5 +13,52 @@
   "tags": {
     "language": "C#",
     "type": "project"
-  }
+  },
+  "symbols": {
+    "Framework": {
+      "type": "parameter",
+      "description": "The target framework for the project.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "net6.0",
+          "description": "Target net6.0"
+        }
+      ],
+      "replaces": "net6.0",
+      "defaultValue": "net6.0"
+    },
+    "MVVM Toolkit": {
+      "type": "parameter",
+      "description": "MVVM toolkit to use in the template.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "ReactiveUI",
+          "description": "Choose ReactiveUI as MVVM toolkit in the template."
+        },
+        {
+          "choice": "CommunityToolkit",
+          "description": "Choose CommunityToolkit as MVVM toolkit in the template."
+        }
+      ],
+      "defaultValue": "ReactiveUI"
+    },
+    "ReactiveUIToolkitChosen": {
+      "type": "computed",
+      "value": "(MVVM Toolkit == \"ReactiveUI\")"
+    }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(!ReactiveUIToolkitChosen)",
+          "exclude": [
+            "ViewModels/ViewModelBase.cs"
+          ]
+        }
+      ]
+    }
+  ]
 }

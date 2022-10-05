@@ -1,5 +1,7 @@
 ﻿using Avalonia;
+#if (ReactiveUIToolkitChosen)
 using Avalonia.ReactiveUI;
+#endif
 using System;
 
 namespace AvaloniaAppTemplate
@@ -17,7 +19,11 @@ namespace AvaloniaAppTemplate
         public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
+#if (!ReactiveUIToolkitChosen)
+                .LogToTrace();
+#else
                 .LogToTrace()
                 .UseReactiveUI();
+#endif
     }
 }
