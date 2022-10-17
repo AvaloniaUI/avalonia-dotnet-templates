@@ -11,17 +11,18 @@ open AvaloniaTest
     Label = "AvaloniaTest.Android",
     Theme = "@style/MyTheme.NoActionBar",
     Icon = "@drawable/icon",
-    LaunchMode = LaunchMode.SingleInstance,
+    LaunchMode = LaunchMode.SingleTop,
     ConfigurationChanges = (ConfigChanges.Orientation ||| ConfigChanges.ScreenSize))>]
 type MainActivity() =
-    inherit AvaloniaActivity<App>()
+    inherit AvaloniaMainActivity()
 
-    override _.CustomizeAppBuilder(builder) =
-        base.CustomizeAppBuilder(builder);
 
 [<Activity(Theme = "@style/MyTheme.Splash", MainLauncher = true, NoHistory = true)>]
 type SplashActivity() =
-    inherit Activity()
+    inherit  AvaloniaSplashActivity<App>()
+
+    override _.CustomizeAppBuilder(builder) =
+        base.CustomizeAppBuilder(builder);
 
     override x.OnResume() =
         base.OnResume()
