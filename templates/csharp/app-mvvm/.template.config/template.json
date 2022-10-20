@@ -28,7 +28,7 @@
       "replaces": "net6.0",
       "defaultValue": "net6.0"
     },
-    "MVVM Toolkit": {
+    "MVVMToolkit": {
       "type": "parameter",
       "description": "MVVM toolkit to use in the template.",
       "datatype": "choice",
@@ -46,7 +46,7 @@
     },
     "ReactiveUIToolkitChosen": {
       "type": "computed",
-      "value": "(MVVM Toolkit == \"ReactiveUI\")"
+      "value": "(MVVMToolkit == \"ReactiveUI\")"
     }
   },
   "sources": [
