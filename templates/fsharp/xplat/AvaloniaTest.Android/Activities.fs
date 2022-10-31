@@ -2,6 +2,7 @@ namespace AvaloniaTest.Android
 open Android.App
 open Android.Content
 open Android.Content.PM
+open Android.OS
 type Application = Android.App.Application
 
 open Avalonia.Android

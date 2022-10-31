@@ -1,5 +1,7 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.OS;
+using Avalonia.Android;
 using Application = Android.App.Application;
 using Avalonia;
 using Avalonia.Android;
