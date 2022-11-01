@@ -13,5 +13,40 @@
   "tags": {
     "language": "F#",
     "type": "project"
+  },
+  "symbols": {
+    "Framework": {
+      "type": "parameter",
+      "description": "The target framework for the project.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "net6.0",
+          "description": "Target net6.0"
+        }
+      ],
+      "replaces": "net6.0",
+      "defaultValue": "net6.0"
+    },
+    "AvaloniaVersion": {
+      "type": "parameter",
+      "description": "The target version of Avalonia NuGet packages.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "0.10.18",
+          "description": "Target 0.10.18 (Latest stable)."
+        },
+        {
+          "choice": "11.0.0-preview3",
+          "description": "Target 11.0.0-preview3"
+        }
+      ],
+      "defaultValue": "0.10.18"
+    },
+    "AvaloniaStableChosen": {
+      "type": "computed",
+      "value": "(AvaloniaVersion == \"0.10.18\")"
+    }
   }
 }
