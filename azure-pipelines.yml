@@ -20,7 +20,7 @@ steps:
   - task: CmdLine@2
     displayName: 'Install WASM workload'
     inputs:
-      script: 'dotnet workload install --no-cache --disable-parallel ios android wasm-tools --skip-manifest-update --source "https://api.nuget.org/v3/index.json"' 
+      script: 'dotnet workload install --no-cache --disable-parallel ios android wasm-tools --skip-manifest-update' 
   - task: PowerShell@2
     displayName: 'Run Tests'
     inputs:
