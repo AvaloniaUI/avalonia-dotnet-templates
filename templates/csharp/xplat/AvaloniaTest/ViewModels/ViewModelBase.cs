@@ -1,8 +1,7 @@
 ﻿using ReactiveUI;
 
-namespace AvaloniaTest.ViewModels
+namespace AvaloniaTest.ViewModels;
+
+public class ViewModelBase : ReactiveObject
 {
-    public class ViewModelBase : ReactiveObject
-    {
-    }
 }
