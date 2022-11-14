@@ -24,6 +24,7 @@ Avalonia Resource Dictionary         avalonia.resource                    Deskto
 Avalonia Styles                      avalonia.styles                      Desktop/Xaml/Avalonia/Windows/Linux/macOS
 Avalonia TemplatedControl            avalonia.templatedcontrol  [C#]      Desktop/Xaml/Avalonia/Windows/Linux/macOS
 Avalonia UserControl                 avalonia.usercontrol       [C#],F#   Desktop/Xaml/Avalonia/Windows/Linux/macOS
+Avalonia Window                      avalonia.window            [C#],F#   Desktop/Xaml/Avalonia/Windows/Linux/macOS
 ```
 
 **Note:**
