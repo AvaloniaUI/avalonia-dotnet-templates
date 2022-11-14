@@ -9,22 +9,21 @@ For more information about `dotnet new` templates see [here](https://blogs.msdn.
 Run from a command line:
 
 ```powershell
-dotnet new -i Avalonia.Templates
+dotnet new install Avalonia.Templates
 ```
 
-The templates should now be available in `dotnet`:
+The templates should now be available in `dotnet new list`:
 
 ```
-Templates                              Short Name                 Language    Tags
----------------------------------------------------------------------------------------------------------
-Avalonia .NET Core App                 avalonia.app               [C#],F#     ui/xaml/avalonia/avaloniaui
-Avalonia .NET Core MVVM App            avalonia.mvvm              [C#],F#     ui/xaml/avalonia/avaloniaui
-Avalonia Cross Platform Application    avalonia.xplat             [C#],F#     ui/xaml/avalonia/avaloniaui
-Avalonia Resource Dictionary           avalonia.resource                      ui/xaml/avalonia/avaloniaui
-Avalonia Styles                        avalonia.styles                        ui/xaml/avalonia/avaloniaui
-Avalonia TemplatedControl              avalonia.templatedcontrol  [C#]        ui/xaml/avalonia/avaloniaui
-Avalonia UserControl                   avalonia.usercontrol       [C#],F#     ui/xaml/avalonia/avaloniaui
-Avalonia Window                        avalonia.window            [C#],F#     ui/xaml/avalonia/avaloniaui
+Template Name                        Short Name                 Language  Tags
+-----------------------------------  -------------------------  --------  -----------------------------------------
+Avalonia .NET Core App               avalonia.app               [C#],F#   Desktop/Xaml/Avalonia/Windows/Linux/macOS
+Avalonia .NET Core MVVM App          avalonia.mvvm              [C#],F#   Desktop/Xaml/Avalonia/Windows/Linux/macOS
+Avalonia Cross Platform Application  avalonia.xplat             [C#],F#   Desktop/Xaml/Avalonia/Web/Mobile
+Avalonia Resource Dictionary         avalonia.resource                    Desktop/Xaml/Avalonia/Windows/Linux/macOS
+Avalonia Styles                      avalonia.styles                      Desktop/Xaml/Avalonia/Windows/Linux/macOS
+Avalonia TemplatedControl            avalonia.templatedcontrol  [C#]      Desktop/Xaml/Avalonia/Windows/Linux/macOS
+Avalonia UserControl                 avalonia.usercontrol       [C#],F#   Desktop/Xaml/Avalonia/Windows/Linux/macOS
 ```
 
 **Note:**
