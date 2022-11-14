@@ -31,7 +31,7 @@ function Test-Template {
         [Parameter(Position=2,Mandatory=1)][string]$lang
     )
 
-    $outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, ".\output"))
+    $outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "output"))
 
     # Create the project
     Exec { dotnet new $template -o $outDir/$lang/$name -lang $lang }
@@ -56,7 +56,7 @@ function Test-Template {
     }
 
     # Build
-    Exec { dotnet build output/$lang/$name }
+    Exec { dotnet build $outDir/$lang/$name }
 }
 
 function Create-And-Build {
