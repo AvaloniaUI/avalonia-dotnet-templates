@@ -38,8 +38,8 @@
           "description": "Target 0.10.18 (Latest stable)."
         },
         {
-          "choice": "11.0.0-preview3",
-          "description": "Target 11.0.0-preview3"
+          "choice": "11.0.0-preview4",
+          "description": "Target 11.0.0-preview4"
         }
       ],
       "defaultValue": "0.10.18"

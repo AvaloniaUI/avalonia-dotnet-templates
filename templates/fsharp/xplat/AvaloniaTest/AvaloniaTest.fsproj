@@ -1,12 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-	<TargetFramework>net6.0</TargetFramework>
+	<TargetFramework>net7.0</TargetFramework>
 	<Nullable>enable</Nullable>
 	<LangVersion>latest</LangVersion>
   </PropertyGroup>
+
   <ItemGroup>    
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
+
   <ItemGroup>
 	<Compile Include="ViewModels\ViewModelBase.fs" />
 	<Compile Include="ViewModels\MainViewModel.fs" />
@@ -15,6 +17,11 @@
 	<Compile Include="ViewLocator.fs" />
 	<Compile Include="App.axaml.fs" />
   </ItemGroup>
+
+  <ItemGroup>
+    <TrimmerRootDescriptor Include="Roots.xml" />
+  </ItemGroup>
+
   <ItemGroup>
 	<PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
 	<PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
