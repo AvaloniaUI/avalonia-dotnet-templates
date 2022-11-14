@@ -16,6 +16,7 @@ namespace AvaloniaTest.Desktop
         public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
-                .LogToTrace();
+                .LogToTrace()
+                .UseReactiveUI();
     }
 }
