@@ -1,0 +1,153 @@
+﻿/* HTML styles for the splash screen */
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#avalonia-splash {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(#16A757, #116336);
+    justify-content: center;
+    align-items: center;
+}
+
+.splash-close {
+    animation: fadeout 0.3s linear forwards;
+}
+
+.spinner-container {
+    display: flex;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    animation: delayedFadeIn 4s linear both;
+    background: transparent;
+}
+
+.noise-container {
+    opacity: 70%;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#out {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: collapse;
+        left: 100%;
+    }
+}
+
+@keyframes delayedFadeIn {
+    0% {
+        visibility: collapse;
+    }
+
+    99% {
+        visibility: collapse;
+    }
+
+    100% {
+        visibility: visible;
+    }
+}
+
+.loader {
+    animation: rotate 1s infinite;
+    height: 50px;
+    width: 50px;
+}
+
+.loader:before, .loader:after {
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 20px;
+    width: 20px;
+}
+
+.loader:before {
+    animation: ball1 1s infinite;
+    background-color: white;
+    box-shadow: 30px 0 0 white;
+    margin-bottom: 10px;
+}
+
+.loader:after {
+    animation: ball2 1s infinite;
+    background-color: white;
+    box-shadow: 30px 0 0 white;
+}
+
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg) scale(0.8);
+        -moz-transform: rotate(0deg) scale(0.8);
+    }
+
+    50% {
+        -webkit-transform: rotate(360deg) scale(1.2);
+        -moz-transform: rotate(360deg) scale(1.2);
+    }
+
+    100% {
+        -webkit-transform: rotate(720deg) scale(0.8);
+        -moz-transform: rotate(720deg) scale(0.8);
+    }
+}
+
+@keyframes ball1 {
+    0% {
+        box-shadow: 30px 0 0 white;
+    }
+
+    50% {
+        box-shadow: 0 0 0 white;
+        margin-bottom: 0;
+        -webkit-transform: translate(15px,15px);
+        -moz-transform: translate(15px, 15px);
+    }
+
+    100% {
+        box-shadow: 30px 0 0 white;
+        margin-bottom: 10px;
+    }
+}
+
+@keyframes ball2 {
+    0% {
+        box-shadow: 30px 0 0 white;
+    }
+
+    50% {
+        box-shadow: 0 0 0 white;
+        margin-top: -20px;
+        -webkit-transform: translate(15px,15px);
+        -moz-transform: translate(15px, 15px);
+    }
+
+    100% {
+        box-shadow: 30px 0 0 white;
+        margin-top: 0;
+    }
+}

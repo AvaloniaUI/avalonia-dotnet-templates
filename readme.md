@@ -45,7 +45,7 @@ Available parameters:
 
 *Description*: The target version of Avalonia NuGet packages.
 
-*Options*: **0.10.18**, **11.0.0-preview3**
+*Options*: **0.10.18**, **11.0.0-preview4**
 
 *By default*: 0.10.18
                                    
