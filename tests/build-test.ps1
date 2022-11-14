@@ -31,28 +31,32 @@ function Test-Template {
         [Parameter(Position=2,Mandatory=1)][string]$lang
     )
 
+    $outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, ".\output"))
+
     # Create the project
-    Exec { dotnet new $template -o output/$lang/$name -lang $lang }
+    Exec { dotnet new $template -o $outDir/$lang/$name -lang $lang }
 
     # Instantiate each item template in the project
-    Exec { dotnet new avalonia.resource -o output/$lang/$name -n NewResourceDictionary }
-    Exec { dotnet new avalonia.styles -o output/$lang/$name -n NewStyles }
-    Exec { dotnet new avalonia.usercontrol -o output/$lang/$name -na $name -n NewUserControl -lang $lang }
-    Exec { dotnet new avalonia.window -o output/$lang/$name -na $name -n NewWindow -lang $lang }
+    Exec { dotnet new avalonia.resource -o $outDir/$lang/$name -n NewResourceDictionary }
+    Exec { dotnet new avalonia.styles -o $outDir/$lang/$name -n NewStyles }
+    Exec { dotnet new avalonia.usercontrol -o $outDir/$lang/$name -n NewUserControl -lang $lang }
+    Exec { dotnet new avalonia.window -o $outDir/$lang/$name -n NewWindow -lang $lang }
     If($lang -eq "F#")
     {
-        [xml]$doc = Get-Content .\output\$lang\$name\$name.fsproj
+        $fsprojPath = [IO.Path]::Combine($outDir, $lang, $name, $name + '.fsproj')
+
+        [xml]$doc = Get-Content $fsprojPath
         $item = $doc.CreateElement('Compile')
         $item.SetAttribute('Include', 'NewUserControl.axaml.fs')
         $doc.Project.ItemGroup[0].PrependChild($item)
 		$item = $doc.CreateElement('Compile')
         $item.SetAttribute('Include', 'NewWindow.axaml.fs')
 		$doc.Project.ItemGroup[0].PrependChild($item)
-        $doc.Save([IO.Path]::GetFullPath("./output/$lang/$name/$name.fsproj"))
+        $doc.Save($fsprojPath)
     }
 
     # Build
-    Exec { dotnet build -warnaserror output/$lang/$name }
+    Exec { dotnet build output/$lang/$name }
 }
 
 function Create-And-Build {
@@ -66,7 +70,7 @@ function Create-And-Build {
     Exec { dotnet new $template -o output/$lang/$name -lang $lang }
 
     # Build
-    Exec { dotnet build -warnaserror output/$lang/$name }
+    Exec { dotnet build output/$lang/$name }
 }
 
 if (Test-Path "output") {

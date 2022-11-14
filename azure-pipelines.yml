@@ -16,7 +16,7 @@ steps:
   - task: CmdLine@2
     displayName: 'Install templates'
     inputs:
-      script: 'dotnet new -i $(Build.ArtifactStagingDirectory)/NuGet/*.nupkg' 
+      script: 'dotnet new install $(Build.ArtifactStagingDirectory)/NuGet/*.nupkg' 
   - task: CmdLine@2
     displayName: 'Install workload'
     inputs:
