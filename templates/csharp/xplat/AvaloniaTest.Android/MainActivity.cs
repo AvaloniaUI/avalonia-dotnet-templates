@@ -2,10 +2,9 @@
 using Android.Content.PM;
 using Avalonia.Android;
 
-namespace AvaloniaTest.Android
+namespace AvaloniaTest.Android;
+
+[Activity(Label = "AvaloniaTest.Android", Theme = "@style/MyTheme.NoActionBar", Icon = "@drawable/icon", LaunchMode = LaunchMode.SingleTop, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize)]
+public class MainActivity : AvaloniaMainActivity
 {
-    [Activity(Label = "AvaloniaTest.Android", Theme = "@style/MyTheme.NoActionBar", Icon = "@drawable/icon", LaunchMode = LaunchMode.SingleTop, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize)]
-    public class MainActivity : AvaloniaMainActivity
-    {
-    }
 }

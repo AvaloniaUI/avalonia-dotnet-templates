@@ -2,9 +2,8 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 
-namespace AvaloniaAppTemplate.Namespace
+namespace AvaloniaAppTemplate.Namespace;
+
+public class NewTemplatedControl : TemplatedControl
 {
-	public class NewTemplatedControl : TemplatedControl
-	{
-	}
 }

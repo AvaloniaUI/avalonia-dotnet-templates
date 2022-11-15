@@ -8,31 +8,30 @@ using Avalonia.Controls.Templates;
 using AvaloniaAppTemplate.ViewModels;
 #endif
 
-namespace AvaloniaAppTemplate
+namespace AvaloniaAppTemplate;
+
+public class ViewLocator : IDataTemplate
 {
-    public class ViewLocator : IDataTemplate
+    public IControl Build(object data)
     {
-        public IControl Build(object data)
-        {
-            var name = data.GetType().FullName!.Replace("ViewModel", "View");
-            var type = Type.GetType(name);
+        var name = data.GetType().FullName!.Replace("ViewModel", "View");
+        var type = Type.GetType(name);
 
-            if (type != null)
-            {
-                return (Control)Activator.CreateInstance(type)!;
-            }
-            
-            return new TextBlock { Text = "Not Found: " + name };
+        if (type != null)
+        {
+            return (Control)Activator.CreateInstance(type)!;
         }
+        
+        return new TextBlock { Text = "Not Found: " + name };
+    }
 
-        public bool Match(object data)
-        {
+    public bool Match(object data)
+    {
 
 #if (ReactiveUIToolkitChosen)
-            return data is ViewModelBase;
+        return data is ViewModelBase;
 #else
-            return data is INotifyPropertyChanged;
+        return data is INotifyPropertyChanged;
 #endif
-        }
     }
 }
