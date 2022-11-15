@@ -49,9 +49,9 @@ function Test-Template {
         $item = $doc.CreateElement('Compile')
         $item.SetAttribute('Include', 'NewUserControl.axaml.fs')
         $doc.Project.ItemGroup[0].PrependChild($item)
-		$item = $doc.CreateElement('Compile')
+        $item = $doc.CreateElement('Compile')
         $item.SetAttribute('Include', 'NewWindow.axaml.fs')
-		$doc.Project.ItemGroup[0].PrependChild($item)
+        $doc.Project.ItemGroup[0].PrependChild($item)
         $doc.Save($fsprojPath)
     }
 

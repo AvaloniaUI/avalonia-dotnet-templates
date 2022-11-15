@@ -1,21 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-	<TargetFramework>net7.0</TargetFramework>
-	<Nullable>enable</Nullable>
-	<LangVersion>latest</LangVersion>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
-  <ItemGroup>    
+  <ItemGroup>
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
 
   <ItemGroup>
-	<Compile Include="ViewModels\ViewModelBase.fs" />
-	<Compile Include="ViewModels\MainViewModel.fs" />
-	<Compile Include="Views\MainWindow.axaml.fs" />
-	<Compile Include="Views\MainView.axaml.fs" />
-	<Compile Include="ViewLocator.fs" />
-	<Compile Include="App.axaml.fs" />
+    <Compile Include="ViewModels\ViewModelBase.fs" />
+    <Compile Include="ViewModels\MainViewModel.fs" />
+    <Compile Include="Views\MainWindow.axaml.fs" />
+    <Compile Include="Views\MainView.axaml.fs" />
+    <Compile Include="ViewLocator.fs" />
+    <Compile Include="App.axaml.fs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,11 +23,11 @@
   </ItemGroup>
 
   <ItemGroup>
-	<PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
-	<PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
-	<PackageReference Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />
-	<!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-	<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
-	<PackageReference Include="XamlNameReferenceGenerator" Version="1.3.4" />
+    <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="XamlNameReferenceGenerator" Version="1.3.4" />
   </ItemGroup>
 </Project>

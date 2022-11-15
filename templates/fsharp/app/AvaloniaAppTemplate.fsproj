@@ -19,7 +19,7 @@
   <ItemGroup>
     <TrimmerRootDescriptor Include="Roots.xml" />
   </ItemGroup>
-	
+
   <ItemGroup>
 <!--#if (AvaloniaStableChosen) -->
     <PackageReference Include="Avalonia" Version="0.10.18" />
