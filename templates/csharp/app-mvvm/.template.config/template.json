@@ -47,6 +47,26 @@
     "ReactiveUIToolkitChosen": {
       "type": "computed",
       "value": "(MVVMToolkit == \"ReactiveUI\")"
+    },
+    "AvaloniaVersion": {
+      "type": "parameter",
+      "description": "The target version of Avalonia NuGet packages.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "0.10.18",
+          "description": "Target 0.10.18 (Latest stable)."
+        },
+        {
+          "choice": "11.0.0-preview4",
+          "description": "Target 11.0.0-preview4"
+        }
+      ],
+      "defaultValue": "0.10.18"
+    },
+    "AvaloniaStableChosen": {
+      "type": "computed",
+      "value": "(AvaloniaVersion == \"0.10.18\")"
     }
   },
   "sources": [
