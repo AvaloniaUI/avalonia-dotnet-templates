@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json.schemastore.org/ide.host",
+  "icon": "icon.png",
+  "symbolInfo": [
+    {
+      "id": "AvaloniaVersion",
+      "name": {
+        "text": "Avalonia Version"
+      },
+      "isVisible": true
+    },
+    {
+      "id": "MVVMToolkit",
+      "name": {
+        "text": "MVVM Toolkit"
+      },
+      "isVisible": true
+    }
+  ]
+}
