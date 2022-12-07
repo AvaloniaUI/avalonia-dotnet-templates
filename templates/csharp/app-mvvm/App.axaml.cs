@@ -1,7 +1,9 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
+#if (!ReactiveUIToolkitChosen)
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
+#endif
 using Avalonia.Markup.Xaml;
 using AvaloniaAppTemplate.ViewModels;
 using AvaloniaAppTemplate.Views;
@@ -19,9 +21,11 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
+#if (!ReactiveUIToolkitChosen)
             // Line below is needed to remove Avalonia data validation.
             // Without this line you will get duplicate validations from both Avalonia and CT
             ExpressionObserver.DataValidators.RemoveAll(x => x is DataAnnotationsValidationPlugin);
+#endif
             desktop.MainWindow = new MainWindow
             {
                 DataContext = new MainWindowViewModel(),
