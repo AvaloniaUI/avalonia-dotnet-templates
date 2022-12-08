@@ -61,6 +61,15 @@ dotnet new avalonia.mvvm -o MyApp
 ```
 
 Available parameters:
+
+``-A, --AvaloniaVersion``
+
+*Description*: The target version of Avalonia NuGet packages.
+
+*Options*: **0.10.18**, **11.0.0-preview4**
+
+*By default*: 0.10.18
+
 ``-M, --MVVMToolkit``
 
 *Description*: MVVM toolkit to use in the template.
