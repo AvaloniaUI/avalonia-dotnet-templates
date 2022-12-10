@@ -15,6 +15,13 @@
     "type": "project"
   },
   "symbols": {
+    "TargetFrameworkOverride": {
+      "type": "parameter",
+      "description": "Overrides the target framework",
+      "replaces": "TargetFrameworkOverride",
+      "datatype": "string",
+      "defaultValue": ""
+    },
     "Framework": {
       "type": "parameter",
       "description": "The target framework for the project.",
@@ -29,7 +36,7 @@
           "description": "Target net7.0"
         }
       ],
-      "replaces": "net6.0",
+      "replaces": "FrameworkParameter",
       "defaultValue": "net6.0"
     },
     "AvaloniaVersion": {
