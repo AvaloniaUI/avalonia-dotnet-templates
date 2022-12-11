@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Properties\**" />
+    <None Include="AppBundle\**" />
     <WasmExtraFilesToDeploy Include="AppBundle\**" />
   </ItemGroup>
 
@@ -16,9 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Properties\launchSettings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="runtimeconfig.template.json" />
   </ItemGroup>
 
