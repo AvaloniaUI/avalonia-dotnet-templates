@@ -4,7 +4,6 @@
     <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
     <WasmMainJSPath>AppBundle\main.js</WasmMainJSPath>
     <OutputType>Exe</OutputType>
-    <EmccTotalMemory>16777216</EmccTotalMemory>
   </PropertyGroup>
 
   <ItemGroup>
