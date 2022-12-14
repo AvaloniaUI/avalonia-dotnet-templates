@@ -1,8 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework Condition="'$(TargetFrameworkOverride)' == ''">FrameworkParameter-android</TargetFramework>
-    <TargetFramework Condition="'$(TargetFrameworkOverride)' != ''">TargetFrameworkOverride-android</TargetFramework>
+    <TargetFramework>FrameworkParameter-android</TargetFramework>
     <SupportedOSPlatformVersion>30</SupportedOSPlatformVersion>
     <ApplicationId>com.CompanyName.AvaloniaTest</ApplicationId>
     <ApplicationVersion>1</ApplicationVersion>
