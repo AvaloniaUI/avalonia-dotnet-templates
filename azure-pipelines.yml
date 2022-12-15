@@ -1,6 +1,10 @@
 pool:
     vmImage: 'macOS-12'
 steps:
+  - task: CmdLine@2
+    displayName: 'Select Xcode 14.1'
+    inputs:
+      script: 'sudo xcode-select -s /Applications/Xcode_14.1.app'
   - task: UseDotNet@2
     displayName: 'Use .NET 7.0.100 SDK'
     inputs:
