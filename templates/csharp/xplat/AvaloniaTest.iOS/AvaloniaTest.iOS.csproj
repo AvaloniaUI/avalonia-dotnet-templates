@@ -12,6 +12,10 @@
     <!--<CodesignKey></CodesignKey>-->
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <MtouchLink>None</MtouchLink>
+  </PropertyGroup>
+  
   <ItemGroup>
     <PackageReference Include="Avalonia.iOS" Version="$(AvaloniaVersion)" />
   </ItemGroup>
