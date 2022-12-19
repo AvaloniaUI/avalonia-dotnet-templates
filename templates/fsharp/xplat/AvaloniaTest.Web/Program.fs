@@ -1,31 +1,23 @@
-open Microsoft.AspNetCore.Components.WebAssembly.Hosting
-
+open System.Runtime.Versioning
+open Avalonia
 open Avalonia.ReactiveUI
-open Avalonia.Web.Blazor
-
-open Bolero
-open Bolero.Html
+open Avalonia.Web
 
 open AvaloniaTest
 
-type MainView() =
-  inherit Component()
+module Program =
+    [<assembly: SupportedOSPlatform("browser")>]
+    do ()
 
-  override _.OnInitialized() =
-    base.OnInitialized()
+    [<CompiledName "BuildAvaloniaApp">] 
+    let buildAvaloniaApp () = 
+        AppBuilder
+            .Configure<App>()
 
-    WebAppBuilder
-      .Configure<App>()
-      .UseReactiveUI()
-      .SetupWithSingleViewLifetime()
-    |> ignore
-
-
-  override _.Render() = comp<AvaloniaView> { attr.empty () }
-
-let builder = WebAssemblyHostBuilder.CreateDefault([||])
-builder.RootComponents.Add<MainView>("#app")
-
-builder.Build().RunAsync()
-|> Async.AwaitTask
-|> Async.Start
+    [<EntryPoint>]
+    let main argv =
+        buildAvaloniaApp()
+            .UseReactiveUI()
+            .SetupBrowserApp("out")
+            |> ignore
+        0
