@@ -32,4 +32,9 @@ steps:
     inputs:
       pathtoPublish: '$(Build.ArtifactStagingDirectory)/NuGet'
       artifactName: 'NuGet'
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Test Binlog Artifacts'
+    inputs:
+      pathtoPublish: 'binlog/test.binlog'
+      artifactName: 'TestBinlog'
     condition: succeeded()

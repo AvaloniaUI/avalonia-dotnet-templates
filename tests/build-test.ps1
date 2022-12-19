@@ -28,7 +28,8 @@ function Test-Template {
     param (
         [Parameter(Position=0,Mandatory=1)][string]$template,
         [Parameter(Position=1,Mandatory=1)][string]$name,
-        [Parameter(Position=2,Mandatory=1)][string]$lang
+        [Parameter(Position=2,Mandatory=1)][string]$lang,
+        [Parameter(Position=3,Mandatory=0)][string]$bl
     )
 
     $outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "output"))
@@ -56,31 +57,33 @@ function Test-Template {
     }
 
     # Build
-    Exec { dotnet build $outDir/$lang/$name }
+    Exec { dotnet build $outDir/$lang/$name -bl:$bl }
 }
 
 function Create-And-Build {
     param (
         [Parameter(Position=0,Mandatory=1)][string]$template,
         [Parameter(Position=1,Mandatory=1)][string]$name,
-        [Parameter(Position=2,Mandatory=1)][string]$lang
+        [Parameter(Position=2,Mandatory=1)][string]$lang,
+        [Parameter(Position=3,Mandatory=0)][string]$bl
     )
 
     # Create the project
     Exec { dotnet new $template -o output/$lang/$name -lang $lang }
 
     # Build
-    Exec { dotnet build output/$lang/$name }
+    Exec { dotnet build output/$lang/$name -bl:$bl }
 }
 
 if (Test-Path "output") {
     Remove-Item -Recurse output
 }
 
+$binlog = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "binlog", "test.binlog"))
 
-Test-Template "avalonia.app" "AvaloniaApp" "C#"
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#"
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#"
-Test-Template "avalonia.app" "AvaloniaApp" "F#"
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#"
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#"
+Test-Template "avalonia.app" "AvaloniaApp" "C#" $binlog
+Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" $binlog
+Test-Template "avalonia.app" "AvaloniaApp" "F#" $binlog
+Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" $binlog
