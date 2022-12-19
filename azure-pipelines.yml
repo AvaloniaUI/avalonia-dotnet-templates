@@ -20,7 +20,13 @@ steps:
   - task: CmdLine@2
     displayName: 'Install workload'
     inputs:
-      script: 'dotnet workload install --no-cache --disable-parallel ios android wasm-tools wasm-experimental' 
+      script: 'dotnet workload install ios android wasm-tools wasm-experimental  --from-rollback-file https://maui.blob.core.windows.net/metadata/rollbacks/7.0.1xx.json --source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet7/nuget/v3/index.json --source https://api.nuget.org/v3/index.json --no-cache --disable-parallel'
+# Workaround for https://github.com/microsoft/azure-pipelines-tasks/issues/17477
+  - task: CmdLine@2
+    displayName: 'Set Xamarin SDK'
+    inputs:
+      script: |
+        /bin/bash -c "sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 17_4_0_301"  
   - task: PowerShell@2
     displayName: 'Run Tests'
     inputs:
