@@ -41,6 +41,14 @@ dotnet new avalonia.app -o MyApp
 
 Available parameters:
 
+``-f, --framework``
+
+*Description*: The target framework for the project.
+
+*Options*: **net6.0**, **net7.0**
+
+*By default*: net6.0
+
 ``-A, --AvaloniaVersion``
 
 *Description*: The target version of Avalonia NuGet packages.
@@ -61,6 +69,14 @@ dotnet new avalonia.mvvm -o MyApp
 ```
 
 Available parameters:
+
+``-f, --framework``
+
+*Description*: The target framework for the project.
+
+*Options*: **net6.0**, **net7.0**
+
+*By default*: net6.0
 
 ``-A, --AvaloniaVersion``
 
