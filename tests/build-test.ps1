@@ -29,13 +29,15 @@ function Test-Template {
         [Parameter(Position=0,Mandatory=1)][string]$template,
         [Parameter(Position=1,Mandatory=1)][string]$name,
         [Parameter(Position=2,Mandatory=1)][string]$lang,
-        [Parameter(Position=3,Mandatory=0)][string]$bl
+        [Parameter(Position=3,Mandatory=1)][string]$parameterName,
+        [Parameter(Position=4,Mandatory=1)][string]$value,
+        [Parameter(Position=5,Mandatory=0)][string]$bl
     )
 
     $outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "output"))
 
     # Create the project
-    Exec { dotnet new $template -o $outDir/$lang/$name -lang $lang }
+    Exec { dotnet new $template -o $outDir/$lang/$name -$parameterName $value -lang $lang }
 
     # Instantiate each item template in the project
     Exec { dotnet new avalonia.resource -o $outDir/$lang/$name -n NewResourceDictionary }
@@ -65,11 +67,13 @@ function Create-And-Build {
         [Parameter(Position=0,Mandatory=1)][string]$template,
         [Parameter(Position=1,Mandatory=1)][string]$name,
         [Parameter(Position=2,Mandatory=1)][string]$lang,
-        [Parameter(Position=3,Mandatory=0)][string]$bl
+        [Parameter(Position=3,Mandatory=1)][string]$parameterName,
+        [Parameter(Position=4,Mandatory=1)][string]$value,
+        [Parameter(Position=5,Mandatory=0)][string]$bl
     )
 
     # Create the project
-    Exec { dotnet new $template -o output/$lang/$name -lang $lang }
+    Exec { dotnet new $template -o output/$lang/$name -$parameterName $value -lang $lang }
 
     # Build
     Exec { dotnet build output/$lang/$name -bl:$bl }
@@ -81,9 +85,28 @@ if (Test-Path "output") {
 
 $binlog = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "binlog", "test.binlog"))
 
-Test-Template "avalonia.app" "AvaloniaApp" "C#" $binlog
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" $binlog
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" $binlog
-Test-Template "avalonia.app" "AvaloniaApp" "F#" $binlog
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" $binlog
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" $binlog
+Test-Template "avalonia.app" "AvaloniaApp" "C#" "f" "net6.0" $binlog
+Test-Template "avalonia.app" "AvaloniaApp" "C#" "f" "net7.0" $binlog
+Test-Template "avalonia.app" "AvaloniaApp" "C#" "A" "0.10.18" $binlog
+Test-Template "avalonia.app" "AvaloniaApp" "C#" "A" "11.0.0-preview4" $binlog
+
+Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "f" "net6.0" $binlog
+Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "f" "net7.0" $binlog
+Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#" "A" "0.10.18" $binlog
+Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#" "A" "11.0.0-preview4" $binlog
+Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#" "M" "ReactiveUI" $binlog
+Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#" "M" "CommunityToolkit" $binlog
+
+Test-Template "avalonia.xplat" "AvaloniaXplat" "C#" "f" "net7.0" $binlog
+
+Test-Template "avalonia.app" "AvaloniaApp" "F#" "f" "net6.0" $binlog
+Test-Template "avalonia.app" "AvaloniaApp" "F#" "f" "net7.0" $binlog
+Test-Template "avalonia.app" "AvaloniaApp" "F#" "A" "0.10.18" $binlog
+Test-Template "avalonia.app" "AvaloniaApp" "F#" "A" "11.0.0-preview4" $binlog
+
+Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "f" "net6.0" $binlog
+Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "f" "net7.0" $binlog
+Test-Template "avalonia.mvvm" "AvaloniaMvvm" "F#" "A" "0.10.18" $binlog
+Test-Template "avalonia.mvvm" "AvaloniaMvvm" "F#" "A" "11.0.0-preview4" $binlog
+
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "f" "net7.0" $binlog
