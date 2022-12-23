@@ -5,10 +5,10 @@
   "defaultName": "TemplatedControl",
   "description": "An Avalonia UI TemplatedControl",
   "groupidentity": "Avalonia.TemplatedControl",
-  "identity": "Avalonia.TemplatedControl",
+  "identity": "Avalonia.TemplatedControl.FSharp",
   "name": "Avalonia TemplatedControl",
   "primaryOutputs": [
-    { "path": "NewTemplatedControl.axaml.cs" },
+    { "path": "NewTemplatedControl.axaml.fs" },
     { "path": "NewTemplatedControl.axaml" }
   ],
   "shortName": "avalonia.templatedcontrol",
@@ -21,7 +21,7 @@
     }
   },
   "tags": {
-    "language": "C#",
+    "language": "F#",
     "type": "item"
   }
 }
