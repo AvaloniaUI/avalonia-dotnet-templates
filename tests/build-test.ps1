@@ -35,18 +35,19 @@ function Test-Template {
     )
 
     $outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "output"))
-
+    $folderName = $name + $parameterName + $value
+    
     # Create the project
-    Exec { dotnet new $template -o $outDir/$lang/$name -$parameterName $value -lang $lang }
+    Exec { dotnet new $template -o $outDir/$lang/$folderName -$parameterName $value -lang $lang }
 
     # Instantiate each item template in the project
-    Exec { dotnet new avalonia.resource -o $outDir/$lang/$name -n NewResourceDictionary }
-    Exec { dotnet new avalonia.styles -o $outDir/$lang/$name -n NewStyles }
-    Exec { dotnet new avalonia.usercontrol -o $outDir/$lang/$name -n NewUserControl -lang $lang }
-    Exec { dotnet new avalonia.window -o $outDir/$lang/$name -n NewWindow -lang $lang }
+    Exec { dotnet new avalonia.resource -o $outDir/$lang/$folderName -n NewResourceDictionary }
+    Exec { dotnet new avalonia.styles -o $outDir/$lang/$folderName -n NewStyles }
+    Exec { dotnet new avalonia.usercontrol -o $outDir/$lang/$folderName -n NewUserControl -lang $lang }
+    Exec { dotnet new avalonia.window -o $outDir/$lang/$folderName -n NewWindow -lang $lang }
     If($lang -eq "F#")
     {
-        $fsprojPath = [IO.Path]::Combine($outDir, $lang, $name, $name + '.fsproj')
+        $fsprojPath = [IO.Path]::Combine($outDir, $lang, $folderName, $folderName + '.fsproj')
 
         [xml]$doc = Get-Content $fsprojPath
         $item = $doc.CreateElement('Compile')
@@ -59,7 +60,7 @@ function Test-Template {
     }
 
     # Build
-    Exec { dotnet build $outDir/$lang/$name -bl:$bl }
+    Exec { dotnet build $outDir/$lang/$folderName -bl:$bl }
 }
 
 function Create-And-Build {
@@ -71,12 +72,14 @@ function Create-And-Build {
         [Parameter(Position=4,Mandatory=1)][string]$value,
         [Parameter(Position=5,Mandatory=0)][string]$bl
     )
-
+    
+    $folderName = $name + $parameterName + $value
+    
     # Create the project
-    Exec { dotnet new $template -o output/$lang/$name -$parameterName $value -lang $lang }
+    Exec { dotnet new $template -o output/$lang/$folderName -$parameterName $value -lang $lang }
 
     # Build
-    Exec { dotnet build output/$lang/$name -bl:$bl }
+    Exec { dotnet build output/$lang/$folderName -bl:$bl }
 }
 
 if (Test-Path "output") {
