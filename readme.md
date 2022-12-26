@@ -49,7 +49,7 @@ Available parameters:
 
 *By default*: net6.0
 
-``-A, --AvaloniaVersion``
+``-av, --avalonia-version``
 
 *Description*: The target version of Avalonia NuGet packages.
 
@@ -78,7 +78,7 @@ Available parameters:
 
 *By default*: net6.0
 
-``-A, --AvaloniaVersion``
+``-av, --avalonia-version``
 
 *Description*: The target version of Avalonia NuGet packages.
 
@@ -86,7 +86,7 @@ Available parameters:
 
 *By default*: 0.10.18
 
-``-M, --MVVMToolkit``
+``-m, --mvvm``
 
 *Description*: MVVM toolkit to use in the template.
 

@@ -3,6 +3,9 @@
   "symbolInfo": {
     "Framework": {
       "longName": "framework"
+    },
+    "AvaloniaVersion": {
+      "longName": "avalonia-version"
     }
   },
   "usageExamples": [
