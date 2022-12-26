@@ -93,26 +93,26 @@ $binlog = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "binlog", "test.
 
 Test-Template "avalonia.app" "AvaloniaApp" "C#" "f" "net6.0" $binlog
 Test-Template "avalonia.app" "AvaloniaApp" "C#" "f" "net7.0" $binlog
-Test-Template "avalonia.app" "AvaloniaApp" "C#" "A" "0.10.18" $binlog
-Test-Template "avalonia.app" "AvaloniaApp" "C#" "A" "11.0.0-preview4" $binlog
+Test-Template "avalonia.app" "AvaloniaApp" "C#" "av" "0.10.18" $binlog
+Test-Template "avalonia.app" "AvaloniaApp" "C#" "av" "11.0.0-preview4" $binlog
 
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "f" "net6.0" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "f" "net7.0" $binlog
-Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#" "A" "0.10.18" $binlog
-Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#" "A" "11.0.0-preview4" $binlog
-Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#" "M" "ReactiveUI" $binlog
-Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#" "M" "CommunityToolkit" $binlog
+Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#" "av" "0.10.18" $binlog
+Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#" "av" "11.0.0-preview4" $binlog
+Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#" "m" "ReactiveUI" $binlog
+Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#" "m" "CommunityToolkit" $binlog
 
 Test-Template "avalonia.xplat" "AvaloniaXplat" "C#" "f" "net7.0" $binlog
 
 Test-Template "avalonia.app" "AvaloniaApp" "F#" "f" "net6.0" $binlog
 Test-Template "avalonia.app" "AvaloniaApp" "F#" "f" "net7.0" $binlog
-Test-Template "avalonia.app" "AvaloniaApp" "F#" "A" "0.10.18" $binlog
-Test-Template "avalonia.app" "AvaloniaApp" "F#" "A" "11.0.0-preview4" $binlog
+Test-Template "avalonia.app" "AvaloniaApp" "F#" "av" "0.10.18" $binlog
+Test-Template "avalonia.app" "AvaloniaApp" "F#" "av" "11.0.0-preview4" $binlog
 
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "f" "net6.0" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "f" "net7.0" $binlog
-Test-Template "avalonia.mvvm" "AvaloniaMvvm" "F#" "A" "0.10.18" $binlog
-Test-Template "avalonia.mvvm" "AvaloniaMvvm" "F#" "A" "11.0.0-preview4" $binlog
+Test-Template "avalonia.mvvm" "AvaloniaMvvm" "F#" "av" "0.10.18" $binlog
+Test-Template "avalonia.mvvm" "AvaloniaMvvm" "F#" "av" "11.0.0-preview4" $binlog
 
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "f" "net7.0" $binlog
