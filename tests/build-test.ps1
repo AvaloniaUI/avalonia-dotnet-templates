@@ -36,6 +36,7 @@ function Test-Template {
 
     $outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "output"))
     $folderName = $name + $parameterName + $value
+    $folderName = $folderName -replace "[.-]"
     
     # Create the project
     Exec { dotnet new $template -o $outDir/$lang/$folderName -$parameterName $value -lang $lang }
@@ -74,6 +75,8 @@ function Create-And-Build {
     )
     
     $folderName = $name + $parameterName + $value
+    
+    $folderName = $folderName -replace "[.-]"
     
     # Create the project
     Exec { dotnet new $template -o output/$lang/$folderName -$parameterName $value -lang $lang }
