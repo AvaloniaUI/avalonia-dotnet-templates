@@ -52,6 +52,10 @@
       "type": "computed",
       "value": "(MVVMToolkit == \"ReactiveUI\")"
     },
+    "CommunityToolkitChosen": {
+      "type": "computed",
+      "value": "(MVVMToolkit == \"CommunityToolkit\")"
+    },
     "AvaloniaVersion": {
       "type": "parameter",
       "description": "The target version of Avalonia NuGet packages.",
