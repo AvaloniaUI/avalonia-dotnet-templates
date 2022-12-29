@@ -32,6 +32,30 @@
       "replaces": "FrameworkParameter",
       "defaultValue": "net6.0"
     },
+    "MVVMToolkit": {
+      "type": "parameter",
+      "description": "MVVM toolkit to use in the template.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "ReactiveUI",
+          "description": "Choose ReactiveUI as MVVM toolkit in the template."
+        },
+        {
+          "choice": "CommunityToolkit",
+          "description": "Choose CommunityToolkit as MVVM toolkit in the template."
+        }
+      ],
+      "defaultValue": "ReactiveUI"
+    },
+    "ReactiveUIToolkitChosen": {
+      "type": "computed",
+      "value": "(MVVMToolkit == \"ReactiveUI\")"
+    },
+    "CommunityToolkitChosen": {
+      "type": "computed",
+      "value": "(MVVMToolkit == \"CommunityToolkit\")"
+    },
     "AvaloniaVersion": {
       "type": "parameter",
       "description": "The target version of Avalonia NuGet packages.",
@@ -53,5 +77,17 @@
       "type": "computed",
       "value": "(AvaloniaVersion == \"0.10.18\")"
     }
-  }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(!ReactiveUIToolkitChosen)",
+          "exclude": [
+            "ViewModels/ViewModelBase.fs"
+          ]
+        }
+      ]
+    }
+  ]
 }

@@ -6,9 +6,12 @@
     },
     "AvaloniaVersion": {
       "longName": "avalonia-version"
+    },
+    "MVVMToolkit": {
+      "longName": "mvvm"
     }
   },
   "usageExamples": [
-    ""
+    "--mvvm communitytoolkit"
   ]
 }

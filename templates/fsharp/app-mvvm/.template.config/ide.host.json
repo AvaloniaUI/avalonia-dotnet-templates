@@ -8,6 +8,13 @@
         "text": "Avalonia Version"
       },
       "isVisible": true
+    },
+    {
+      "id": "MVVMToolkit",
+      "name": {
+        "text": "MVVM Toolkit"
+      },
+      "isVisible": true
     }
   ]
 }

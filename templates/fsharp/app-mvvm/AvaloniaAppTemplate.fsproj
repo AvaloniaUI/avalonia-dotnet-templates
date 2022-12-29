@@ -13,7 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
+<!--#if (ReactiveUIToolkitChosen) -->
     <Compile Include="ViewModels\ViewModelBase.fs" />
+<!--#endif -->
     <Compile Include="ViewModels\MainWindowViewModel.fs" />
     <Compile Include="Views\MainWindow.axaml.fs" />
     <Compile Include="ViewLocator.fs" />
@@ -33,7 +35,11 @@
     <!--#endif -->
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="AvaloniaVersionTemplateParameter" />
+    <!--#if (ReactiveUIToolkitChosen) -->
     <PackageReference Include="Avalonia.ReactiveUI" Version="AvaloniaVersionTemplateParameter" />
-    <PackageReference Include="XamlNameReferenceGenerator" Version="1.3.4" />
+    <!--#elif (CommunityToolkitChosen)-->
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+    <!--#endif -->
+    <PackageReference Include="XamlNameReferenceGenerator" Version="1.5.1" />
   </ItemGroup>
 </Project>
