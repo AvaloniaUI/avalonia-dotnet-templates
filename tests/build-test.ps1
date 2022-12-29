@@ -118,5 +118,7 @@ Test-Template "avalonia.mvvm" "AvaloniaMvvm" "F#" "f" "net6.0" $binlog
 Test-Template "avalonia.mvvm" "AvaloniaMvvm" "F#" "f" "net7.0" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "av" "0.10.18" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "av" "11.0.0-preview4" $binlog
+Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "m" "ReactiveUI" $binlog
+Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "m" "CommunityToolkit" $binlog
 
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "f" "net7.0" $binlog
