@@ -72,6 +72,10 @@
     "AvaloniaStableChosen": {
       "type": "computed",
       "value": "(AvaloniaVersion == \"0.10.18\")"
+    },
+    "HostIdentifier": {
+      "type": "bind",
+      "binding": "HostIdentifier"
     }
   },
   "sources": [
@@ -84,6 +88,30 @@
           ]
         }
       ]
+    }
+  ],
+  "primaryOutputs": [
+    { "path": "AvaloniaAppTemplate.csproj" },
+    {
+      "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+      "path": "ViewModels/MainWindowViewModel.cs"
+    },
+    {
+      "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+      "path": "Views/MainWindow.axaml"
+    }
+  ],
+  "postActions": [
+    {
+      "id": "editor",
+      "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+      "description": "Opens MainWindow and MainWindowViewModel in the editor",
+      "manualInstructions": [ ],
+      "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+      "args": {
+        "files": "1;2"
+      },
+      "continueOnError": true
     }
   ]
 }
