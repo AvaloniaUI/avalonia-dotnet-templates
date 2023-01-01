@@ -32,6 +32,12 @@
       "replaces": "FrameworkParameter",
       "defaultValue": "net6.0"
     },
+    "skipRestore": {
+      "type": "parameter",
+      "datatype": "bool",
+      "description": "If specified, skips the automatic restore of the project on create.",
+      "defaultValue": "false"
+    },
     "AvaloniaVersion": {
       "type": "parameter",
       "description": "The target version of Avalonia NuGet packages.",
@@ -67,9 +73,19 @@
     {
       "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
       "path": "MainWindow.axaml"
-  }
+    }
   ],
   "postActions": [
+    {
+      "id": "restore",
+      "condition": "(!skipRestore)",
+      "description": "Restore NuGet packages required by this project.",
+      "manualInstructions": [
+        { "text": "Run 'dotnet restore'" }
+      ],
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "continueOnError": true
+    },
     {
       "id": "editor",
       "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
