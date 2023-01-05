@@ -1,14 +1,9 @@
 namespace AvaloniaAppTemplate
 
 open System
-#if (!ReactiveUIToolkitChosen)
-open System.ComponentModel
-#endif
 open Avalonia.Controls
 open Avalonia.Controls.Templates
-#if (ReactiveUIToolkitChosen)
 open AvaloniaAppTemplate.ViewModels
-#endif
 
 type ViewLocator() =
     interface IDataTemplate with
@@ -21,8 +16,4 @@ type ViewLocator() =
             else
                 downcast Activator.CreateInstance(typ)
                 
-#if (ReactiveUIToolkitChosen)
         member this.Match(data) = data :? ViewModelBase
-#else
-        member this.Match(data) = data :? INotifyPropertyChanged
-#endif

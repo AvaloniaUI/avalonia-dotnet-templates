@@ -77,27 +77,5 @@
       "type": "computed",
       "value": "(AvaloniaVersion == \"0.10.18\")"
     }
-  },
-  "sources": [
-    {
-      "modifiers": [
-        {
-          "condition": "(!ReactiveUIToolkitChosen)",
-          "exclude": [
-            "ViewModels/ViewModelBase.ReactiveUi.fs"
-          ]
-        },
-        {
-          "condition": "(!CommunityToolkitChosen)",
-          "exclude": [
-            "ViewModels/ViewModelBase.CommunityToolkit.fs"
-          ]
-        }
-      ],
-      "rename": {
-        "ViewModels/ViewModelBase.ReactiveUi.fs": "ViewModels/ViewModelBase.fs",
-        "ViewModels/ViewModelBase.CommunityToolkit.fs": "ViewModels/ViewModelBase.fs"
-      }
-    }
-  ]
+  }
 }
