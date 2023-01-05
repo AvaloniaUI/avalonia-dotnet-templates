@@ -1,10 +1,10 @@
-﻿#if (!ReactiveUIToolkitChosen)
+﻿#if (CommunityToolkitChosen)
 using CommunityToolkit.Mvvm.ComponentModel;
 #endif
 
 namespace AvaloniaAppTemplate.ViewModels;
 
-#if (!ReactiveUIToolkitChosen)
+#if (CommunityToolkitChosen)
 public class MainWindowViewModel : ObservableObject
 #else
 public class MainWindowViewModel : ViewModelBase
