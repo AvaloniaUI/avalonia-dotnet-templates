@@ -84,10 +84,20 @@
         {
           "condition": "(!ReactiveUIToolkitChosen)",
           "exclude": [
-            "ViewModels/ViewModelBase.fs"
+            "ViewModels/ViewModelBase.ReactiveUi.fs"
+          ]
+        },
+        {
+          "condition": "(!CommunityToolkitChosen)",
+          "exclude": [
+            "ViewModels/ViewModelBase.CommunityToolkit.fs"
           ]
         }
-      ]
+      ],
+      "rename": {
+        "ViewModels/ViewModelBase.ReactiveUi.fs": "ViewModels/ViewModelBase.fs",
+        "ViewModels/ViewModelBase.CommunityToolkit.fs": "ViewModels/ViewModelBase.fs"
+      }
     }
   ]
 }

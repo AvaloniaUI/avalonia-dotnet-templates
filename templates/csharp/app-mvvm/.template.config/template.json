@@ -77,17 +77,5 @@
       "type": "computed",
       "value": "(AvaloniaVersion == \"0.10.18\")"
     }
-  },
-  "sources": [
-    {
-      "modifiers": [
-        {
-          "condition": "(!ReactiveUIToolkitChosen)",
-          "exclude": [
-            "ViewModels/ViewModelBase.cs"
-          ]
-        }
-      ]
-    }
-  ]
+  }
 }
