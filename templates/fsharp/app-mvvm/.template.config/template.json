@@ -2,7 +2,7 @@
   "$schema": "http://json.schemastore.org/template",
   "author": "AvaloniaUI",
   "classifications": [ "Desktop", "Xaml", "Avalonia", "Windows", "Linux", "macOS" ],
-  "description": "A project for creating an MVVM UI application that can run on .NET Core on Windows, Linux and macOS, iOS and Android",
+  "description": "A cross-platform Avalonia UI Application using the MVVM pattern targeting Desktop",
   "groupidentity": "Avalonia.App.Mvvm",
   "identity": "Avalonia.App.Mvvm.FSharp",
   "name": "Avalonia .NET Core MVVM App",
