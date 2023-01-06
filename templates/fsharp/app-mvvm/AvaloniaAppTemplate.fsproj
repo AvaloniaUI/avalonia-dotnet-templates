@@ -13,9 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-<!--#if (ReactiveUIToolkitChosen) -->
     <Compile Include="ViewModels\ViewModelBase.fs" />
-<!--#endif -->
     <Compile Include="ViewModels\MainWindowViewModel.fs" />
     <Compile Include="Views\MainWindow.axaml.fs" />
     <Compile Include="ViewLocator.fs" />
