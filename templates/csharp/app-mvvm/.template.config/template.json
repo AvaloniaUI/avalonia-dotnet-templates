@@ -2,7 +2,7 @@
   "$schema": "http://json.schemastore.org/template",
   "author": "AvaloniaUI",
   "classifications": [ "Desktop", "Xaml", "Avalonia", "Windows", "Linux", "macOS" ],
-  "description": "A cross-platform Avalonia UI Application using the MVVM pattern",
+  "description": "A cross-platform Avalonia UI Application using the MVVM pattern targeting Desktop",
   "groupidentity": "Avalonia.App.Mvvm",
   "identity": "Avalonia.App.Mvvm",
   "name": "Avalonia .NET Core MVVM App",
@@ -52,6 +52,10 @@
       "type": "computed",
       "value": "(MVVMToolkit == \"ReactiveUI\")"
     },
+    "CommunityToolkitChosen": {
+      "type": "computed",
+      "value": "(MVVMToolkit == \"CommunityToolkit\")"
+    },
     "AvaloniaVersion": {
       "type": "parameter",
       "description": "The target version of Avalonia NuGet packages.",
@@ -78,18 +82,6 @@
       "binding": "HostIdentifier"
     }
   },
-  "sources": [
-    {
-      "modifiers": [
-        {
-          "condition": "(!ReactiveUIToolkitChosen)",
-          "exclude": [
-            "ViewModels/ViewModelBase.cs"
-          ]
-        }
-      ]
-    }
-  ],
   "primaryOutputs": [
     { "path": "AvaloniaAppTemplate.csproj" },
     {

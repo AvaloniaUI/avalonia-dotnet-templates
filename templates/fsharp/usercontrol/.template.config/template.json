@@ -3,6 +3,7 @@
   "author": "AvaloniaUI",
   "classifications": [ "Desktop", "Xaml", "Avalonia", "Windows", "Linux", "macOS" ],
   "defaultName": "UserControl",
+  "description": "An Avalonia UI UserControl",
   "groupidentity": "Avalonia.UserControl",
   "identity": "Avalonia.UserControl.FSharp",
   "name": "Avalonia UserControl",
