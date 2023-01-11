@@ -27,34 +27,6 @@
       ],
       "replaces": "FrameworkParameter",
       "defaultValue": "net7.0"
-    },
-    "HostIdentifier": {
-      "type": "bind",
-      "binding": "HostIdentifier"
     }
-  },
-  "primaryOutputs": [
-    { "path": "AvaloniaTest/AvaloniaTest.fsproj" },
-    {
-      "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
-      "path": "AvaloniaTest/ViewModels/MainViewModel.fs"
-    },
-    {
-      "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
-      "path": "AvaloniaTest/Views/MainView.axaml"
-    }
-  ],
-  "postActions": [
-    {
-      "id": "editor",
-      "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
-      "description": "Opens MainView and MainViewModel in the editor",
-      "manualInstructions": [ ],
-      "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
-      "args": {
-        "files": "1;2"
-      },
-      "continueOnError": true
-    }
-  ]
+  }
 }
