@@ -35,6 +35,10 @@
   },
   "primaryOutputs": [
     { "path": "AvaloniaTest/AvaloniaTest.csproj" },
+    { "path": "AvaloniaTest.Android/AvaloniaTest.Android.csproj" },
+    { "path": "AvaloniaTest.Desktop/AvaloniaTest.Desktop.csproj" },
+    { "path": "AvaloniaTest.iOS/AvaloniaTest.iOS.csproj" },
+    { "path": "AvaloniaTest.Web/AvaloniaTest.Web.csproj" },
     {
       "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
       "path": "AvaloniaTest/ViewModels/MainViewModel.cs"
@@ -52,7 +56,7 @@
       "manualInstructions": [ ],
       "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
       "args": {
-        "files": "1;2"
+        "files": "5;6"
       },
       "continueOnError": true
     }
