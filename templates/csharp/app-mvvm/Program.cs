@@ -19,10 +19,10 @@ class Program
     public static AppBuilder BuildAvaloniaApp()
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
-#if (!ReactiveUIToolkitChosen)
-            .LogToTrace();
-#else
+#if (ReactiveUIToolkitChosen)
             .LogToTrace()
             .UseReactiveUI();
+#else
+            .LogToTrace();
 #endif
 }

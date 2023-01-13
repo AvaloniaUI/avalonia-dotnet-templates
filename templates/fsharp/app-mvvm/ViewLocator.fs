@@ -15,5 +15,5 @@ type ViewLocator() =
                 upcast TextBlock(Text = sprintf "Not Found: %s" name)
             else
                 downcast Activator.CreateInstance(typ)
-
+                
         member this.Match(data) = data :? ViewModelBase

@@ -1,12 +1,7 @@
 using System;
-#if (!ReactiveUIToolkitChosen)
-using System.ComponentModel;
-#endif
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-#if (ReactiveUIToolkitChosen)
 using AvaloniaAppTemplate.ViewModels;
-#endif
 
 namespace AvaloniaAppTemplate;
 
@@ -27,11 +22,6 @@ public class ViewLocator : IDataTemplate
 
     public bool Match(object data)
     {
-
-#if (ReactiveUIToolkitChosen)
         return data is ViewModelBase;
-#else
-        return data is INotifyPropertyChanged;
-#endif
     }
 }

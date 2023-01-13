@@ -3,6 +3,7 @@
   "author": "AvaloniaUI",
   "classifications": [ "Desktop", "Xaml", "Avalonia", "Windows", "Linux", "macOS" ],
   "defaultName": "Window",
+  "description": "An Avalonia UI Window",
   "groupidentity": "Avalonia.Window",
   "identity": "Avalonia.Window.FSharp",
   "name": "Avalonia Window",

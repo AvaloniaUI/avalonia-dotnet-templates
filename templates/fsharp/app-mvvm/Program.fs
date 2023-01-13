@@ -2,7 +2,9 @@
 
 open System
 open Avalonia
+#if (ReactiveUIToolkitChosen)
 open Avalonia.ReactiveUI
+#endif
 open AvaloniaAppTemplate
 
 module Program =
@@ -13,7 +15,9 @@ module Program =
             .Configure<App>()
             .UsePlatformDetect()
             .LogToTrace(areas = Array.empty)
+#if (ReactiveUIToolkitChosen)
             .UseReactiveUI()
+#endif
 
     [<EntryPoint; STAThread>]
     let main argv =
