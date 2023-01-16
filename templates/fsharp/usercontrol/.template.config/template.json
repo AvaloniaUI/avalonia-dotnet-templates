@@ -16,8 +16,20 @@
   "symbols": {
     "namespace": {
       "description": "Namespace for the generated code",
-      "replaces": "AvaloniaAppTemplate.Namespace",
       "type": "parameter"
+    },
+    "DefaultNamespace": {
+      "type": "bind",
+      "binding": "msbuild:RootNamespace"
+    },
+    "NamespaceReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "namespace",
+        "fallbackVariableName": "DefaultNamespace"
+      },
+      "replaces": "AvaloniaAppTemplate.Namespace"
     }
   },
   "tags": {
