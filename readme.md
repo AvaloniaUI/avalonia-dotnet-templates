@@ -56,7 +56,11 @@ Available parameters:
 *Options*: **0.10.18**, **11.0.0-preview4**
 
 *By default*: 0.10.18
-                                   
+
+``-no-restore``
+
+*Description*: If specified, skips the automatic restore of the project on create.
+
 # Creating a new MVVM Application
 
 MVVM is the recommended pattern for creating Avalonia applications. The MVVM application template
@@ -93,6 +97,10 @@ Available parameters:
 *Options*: **ReactiveUI**, **CommunityToolkit**
 
 *By default*: ReactiveUI
+
+``-no-restore``
+
+*Description*: If specified, skips the automatic restore of the project on create.
 
 # Creating a new Cross-Platform application
 
