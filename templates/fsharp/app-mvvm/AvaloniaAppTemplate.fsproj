@@ -36,7 +36,7 @@
     <!--#if (ReactiveUIToolkitChosen) -->
     <PackageReference Include="Avalonia.ReactiveUI" Version="AvaloniaVersionTemplateParameter" />
     <!--#elif (CommunityToolkitChosen)-->
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
     <!--#endif -->
   </ItemGroup>
 </Project>
