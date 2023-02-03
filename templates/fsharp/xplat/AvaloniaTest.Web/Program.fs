@@ -1,7 +1,7 @@
 open System.Runtime.Versioning
 open Avalonia
+open Avalonia.Browser
 open Avalonia.ReactiveUI
-open Avalonia.Web
 
 open AvaloniaTest
 

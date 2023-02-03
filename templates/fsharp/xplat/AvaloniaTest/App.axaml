@@ -1,3 +1,4 @@
+//#if (AvaloniaStableChosen)
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="using:AvaloniaTest"
@@ -10,3 +11,20 @@
         <FluentTheme Mode="Light"/>
     </Application.Styles>
 </Application>
+//#else
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:AvaloniaTest"
+             x:Class="AvaloniaTest.App"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme for Themes that support it. -->             
+
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+
+    <Application.Styles>
+        <FluentTheme />
+    </Application.Styles>
+</Application>
+//#endif
