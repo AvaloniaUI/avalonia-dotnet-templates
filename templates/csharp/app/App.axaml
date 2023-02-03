@@ -1,7 +1,16 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             //#if (AvaloniaStableChosen)
              x:Class="AvaloniaAppTemplate.App">
+             //#else
+             x:Class="AvaloniaAppTemplate.App"
+             RequestedThemeVariant="Light">
+             //#endif
     <Application.Styles>
+        //#if (AvaloniaStableChosen)
         <FluentTheme Mode="Light"/>
+        //#else
+        <FluentTheme />
+        //#endif
     </Application.Styles>
 </Application>

@@ -7,7 +7,11 @@ namespace AvaloniaAppTemplate;
 
 public class ViewLocator : IDataTemplate
 {
+#if (AvaloniaStableChosen)
     public IControl Build(object data)
+#else
+    public Control Build(object data)
+#endif
     {
         var name = data.GetType().FullName!.Replace("ViewModel", "View");
         var type = Type.GetType(name);
