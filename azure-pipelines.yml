@@ -2,10 +2,10 @@ pool:
     vmImage: 'macOS-12'
 steps:
   - task: UseDotNet@2
-    displayName: 'Use .NET 7.0.100 SDK'
+    displayName: 'Use .NET 7.0.102 SDK'
     inputs:
       packageType: 'sdk'
-      version: 7.0.100
+      version: 7.0.102
   - task: DotNetCoreCLI@2
     displayName: 'Pack Templates'
     inputs:
