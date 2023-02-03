@@ -17,7 +17,7 @@
              xmlns:local="using:AvaloniaTest"
              x:Class="AvaloniaTest.App"
              RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme for Themes that support it. -->             
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->             
 
     <Application.DataTemplates>
         <local:ViewLocator/>
