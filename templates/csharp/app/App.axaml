@@ -4,7 +4,7 @@
              x:Class="AvaloniaAppTemplate.App">
              //#else
              x:Class="AvaloniaAppTemplate.App"
-             RequestedThemeVariant="Light">
+             RequestedThemeVariant="Default">
              //#endif
     <Application.Styles>
         //#if (AvaloniaStableChosen)
