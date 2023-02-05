@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 #if (CommunityToolkitChosen)
+using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 #endif
 using Avalonia.Markup.Xaml;
@@ -23,7 +24,11 @@ public partial class App : Application
 #if (CommunityToolkitChosen)
             // Line below is needed to remove Avalonia data validation.
             // Without this line you will get duplicate validations from both Avalonia and CT
+    #if (AvaloniaStableChosen)
+            ExpressionObserver.DataValidators.RemoveAll(x => x is DataAnnotationsValidationPlugin);
+    #else
             BindingPlugins.DataValidators.RemoveAt(0);
+    #endif
 #endif
             desktop.MainWindow = new MainWindow
             {
