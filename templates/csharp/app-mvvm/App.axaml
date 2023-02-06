@@ -1,30 +1,23 @@
-//#if (AvaloniaStableChosen)
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="using:AvaloniaAppTemplate"
+             //#if (AvaloniaStableChosen)
              x:Class="AvaloniaAppTemplate.App">
-    <Application.DataTemplates>
-        <local:ViewLocator/>
-    </Application.DataTemplates>
-
-    <Application.Styles>
-        <FluentTheme Mode="Light"/>
-    </Application.Styles>
-</Application>
-//#else
-<Application xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="using:AvaloniaAppTemplate"
+             //#else
              x:Class="AvaloniaAppTemplate.App"
              RequestedThemeVariant="Default">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+             //#endif
 
     <Application.DataTemplates>
         <local:ViewLocator/>
     </Application.DataTemplates>
 
     <Application.Styles>
+        //#if (AvaloniaStableChosen)
+        <FluentTheme Mode="Light"/>
+        //#else
         <FluentTheme />
+        //#endif
     </Application.Styles>
 </Application>
-//#endif
