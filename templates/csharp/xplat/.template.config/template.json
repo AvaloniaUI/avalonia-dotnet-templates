@@ -38,7 +38,7 @@
     { "path": "AvaloniaTest.Android/AvaloniaTest.Android.csproj" },
     { "path": "AvaloniaTest.Desktop/AvaloniaTest.Desktop.csproj" },
     { "path": "AvaloniaTest.iOS/AvaloniaTest.iOS.csproj" },
-    { "path": "AvaloniaTest.Web/AvaloniaTest.Web.csproj" },
+    { "path": "AvaloniaTest.Browser/AvaloniaTest.Browser.csproj" },
     {
       "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
       "path": "AvaloniaTest/ViewModels/MainViewModel.cs"

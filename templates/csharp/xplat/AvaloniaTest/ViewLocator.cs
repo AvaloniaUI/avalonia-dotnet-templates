@@ -7,7 +7,11 @@ namespace AvaloniaTest;
 
 public class ViewLocator : IDataTemplate
 {
-    public IControl? Build(object? data)
+#if (AvaloniaStableChosen)
+    public IControl Build(object data)
+#else
+    public Control Build(object data)
+#endif
     {
         if (data is null)
             return null;
