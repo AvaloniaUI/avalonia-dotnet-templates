@@ -57,7 +57,7 @@ Available parameters:
 
 *By default*: 0.10.18
 
-``-no-restore``
+``--no-restore``
 
 *Description*: If specified, skips the automatic restore of the project on create.
 
@@ -98,7 +98,7 @@ Available parameters:
 
 *By default*: ReactiveUI
 
-``-no-restore``
+``--no-restore``
 
 *Description*: If specified, skips the automatic restore of the project on create.
 
