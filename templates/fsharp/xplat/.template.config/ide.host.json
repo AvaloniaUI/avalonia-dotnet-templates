@@ -3,13 +3,6 @@
   "icon": "icon.png",
   "symbolInfo": [
     {
-      "id": "AvaloniaVersion",
-      "name": {
-        "text": "Avalonia Version"
-      },
-      "isVisible": true
-    },
-    {
       "id": "UseCompiledBindings",
       "name": {
         "text": "Use Compiled Bindings"

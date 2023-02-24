@@ -3,6 +3,9 @@
   "symbolInfo": {
     "Framework": {
       "longName": "framework"
+    },
+    "UseCompiledBindings": {
+      "longName": "compiled-bindings"
     }
   },
   "usageExamples": [
