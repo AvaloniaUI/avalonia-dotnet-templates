@@ -5,6 +5,12 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
+  <!--#if (AvaloniaStableChosen) -->
+  <ItemGroup>
+    <TrimmerRootAssembly Include="Avalonia.Themes.Fluent" />
+  </ItemGroup>
+  <!--#endif -->
+
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
@@ -16,10 +22,6 @@
     <Compile Include="Views\MainView.axaml.fs" />
     <Compile Include="ViewLocator.fs" />
     <Compile Include="App.axaml.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <TrimmerRootDescriptor Include="Roots.xml" />
   </ItemGroup>
 
   <ItemGroup>

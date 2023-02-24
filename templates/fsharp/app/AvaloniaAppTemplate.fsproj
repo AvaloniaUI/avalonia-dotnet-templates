@@ -6,6 +6,12 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
+  <!--#if (AvaloniaStableChosen) -->
+  <ItemGroup>
+    <TrimmerRootAssembly Include="Avalonia.Themes.Fluent" />
+  </ItemGroup>
+  <!--#endif -->
+
   <ItemGroup>
     <Compile Include="MainWindow.axaml.fs" />
     <Compile Include="App.axaml.fs"/>
@@ -14,10 +20,6 @@
 
   <ItemGroup>
     <None Remove=".gitignore" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <TrimmerRootDescriptor Include="Roots.xml" />
   </ItemGroup>
 
   <ItemGroup>

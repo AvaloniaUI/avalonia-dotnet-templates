@@ -13,9 +13,11 @@
     <None Remove=".gitignore" />
   </ItemGroup>
 
+  <!--#if (AvaloniaStableChosen) -->
   <ItemGroup>
-    <TrimmerRootDescriptor Include="Roots.xml" />
+    <TrimmerRootAssembly Include="Avalonia.Themes.Fluent" />
   </ItemGroup>
+  <!--#endif -->
 
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="AvaloniaVersionTemplateParameter" />

@@ -5,9 +5,14 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
+  <!--#if (AvaloniaStableChosen) -->
+  <ItemGroup>
+    <TrimmerRootAssembly Include="Avalonia.Themes.Fluent" />
+  </ItemGroup>
+  <!--#endif -->
+  
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />
-    <TrimmerRootDescriptor Include="Roots.xml" />
   </ItemGroup>
 
   <ItemGroup>
