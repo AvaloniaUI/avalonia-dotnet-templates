@@ -83,6 +83,18 @@
       "type": "computed",
       "value": "(AvaloniaVersion == \"0.10.18\")"
     },
+    "UseCompiledBindings": {
+      "type": "parameter",
+      "description": "Defines if CompiledBindings should be enabled by default in the project.",
+      "datatype": "bool",
+      "displayName": "Use compiled Bindings",
+      "replaces": "UseCompiledBindings",
+      "defaultValue": "true"
+    },
+    "CompiledBindingsChosen": {
+      "type": "computed",
+      "value": "(AvaloniaStableChosen == \"false\" && UseCompiledBindings == \"true\")"
+    },
     "HostIdentifier": {
       "type": "bind",
       "binding": "HostIdentifier"

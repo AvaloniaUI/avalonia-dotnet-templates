@@ -4,6 +4,9 @@
     <TargetFramework>FrameworkParameter</TargetFramework>
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <!--#if (CompiledBindingsChosen) -->
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <!--#endif -->
   </PropertyGroup>
 
   <!--#if (AvaloniaStableChosen) -->
