@@ -10,10 +10,6 @@
     <!--#endif -->
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove=".gitignore" />
-  </ItemGroup>
-
   <!--#if (AvaloniaStableChosen) -->
   <ItemGroup>
     <TrimmerRootAssembly Include="Avalonia.Themes.Fluent" />

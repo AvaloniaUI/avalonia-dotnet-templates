@@ -22,10 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove=".gitignore" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Avalonia" Version="AvaloniaVersionTemplateParameter" />
     <PackageReference Include="Avalonia.Desktop" Version="AvaloniaVersionTemplateParameter" />
     <!--#if (!AvaloniaStableChosen) -->
