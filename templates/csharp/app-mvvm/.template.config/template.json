@@ -88,7 +88,8 @@
       "description": "Defines if CompiledBindings should be enabled by default in the project (only supported in 11.0 version and newer).",
       "datatype": "bool",
       "displayName": "Use compiled Bindings",
-      "defaultValue": "true"
+      "defaultValue": "true",
+      "isEnabled": "(AvaloniaVersion != \"0.10.18\")"
     },
     "HostIdentifier": {
       "type": "bind",
