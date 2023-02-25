@@ -53,9 +53,17 @@ Available parameters:
 
 *Description*: The target version of Avalonia NuGet packages.
 
-*Options*: **0.10.18**, **11.0.0-preview4**
+*Options*: **0.10.18**, **11.0.0-preview5**
 
 *By default*: 0.10.18
+
+``-cp, --compiled-bindings``
+
+*Description*: Defines if CompiledBindings should be enabled by default in the project (only supported in 11.0 version and newer). See [documentation](https://docs.avaloniaui.net/docs/data-binding/compiledbindings) for more details.
+
+*Options*: **true**, **false**
+
+*By default*: true
 
 ``--no-restore``
 
@@ -90,6 +98,14 @@ Available parameters:
 
 *By default*: 0.10.18
 
+``-cp, --compiled-bindings``
+
+*Description*: Defines if CompiledBindings should be enabled by default in the project (only supported in 11.0 version and newer). See [documentation](https://docs.avaloniaui.net/docs/data-binding/compiledbindings) for more details.
+
+*Options*: **true**, **false**
+
+*By default*: true
+
 ``-m, --mvvm``
 
 *Description*: MVVM toolkit to use in the template.
@@ -110,7 +126,17 @@ To create a new Cross-Platform application in its own subdirectory, run:
 dotnet new avalonia.xplat 
 ```
 **Note:**
-This type of template allows you to create an application that will work on Desktop, Browser (preview) and Mobile (iOS & Android) (preview).
+This type of template allows you to create an application that will work on Desktop, Browser and Mobile (iOS & Android). Only available with 11.0 preview versions.
+
+Available parameters:
+
+``-cp, --compiled-bindings``
+
+*Description*: Defines if CompiledBindings should be enabled by default in the project. See [documentation](https://docs.avaloniaui.net/docs/data-binding/compiledbindings) for more details.
+
+*Options*: **true**, **false**
+
+*By default*: true
 
 # Creating a new Window
 
