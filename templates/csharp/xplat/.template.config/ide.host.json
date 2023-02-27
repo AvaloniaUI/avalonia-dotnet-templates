@@ -8,13 +8,6 @@
         "text": "Use Compiled Bindings"
       },
       "isVisible": true
-    },
-    {
-      "id": "UseCompiledBindings",
-      "name": {
-        "text": "Use Compiled Bindings"
-      },
-      "isVisible": true
     }
   ]
 }
