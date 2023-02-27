@@ -4,20 +4,21 @@
     <TargetFramework>FrameworkParameter</TargetFramework>
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <!--#if (UseCompiledBindings) -->
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <!--#endif -->
   </PropertyGroup>
+
+  <!--#if (AvaloniaStableChosen) -->
+  <ItemGroup>
+    <TrimmerRootAssembly Include="Avalonia.Themes.Fluent" />
+  </ItemGroup>
+  <!--#endif -->
 
   <ItemGroup>
     <Compile Include="MainWindow.axaml.fs" />
     <Compile Include="App.axaml.fs"/>
     <Compile Include="Program.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove=".gitignore" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <TrimmerRootDescriptor Include="Roots.xml" />
   </ItemGroup>
 
   <ItemGroup>

@@ -15,6 +15,13 @@
         "text": "MVVM Toolkit"
       },
       "isVisible": true
+    },
+    {
+      "id": "UseCompiledBindings",
+      "name": {
+        "text": "Use Compiled Bindings"
+      },
+      "isVisible": true
     }
   ]
 }
