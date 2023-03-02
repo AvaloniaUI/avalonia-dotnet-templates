@@ -7,8 +7,11 @@
     <!--#if (UseCompiledBindings) -->
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
     <!--#endif -->
-    <ProjectCapability Include="Avalonia"/>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectCapability Include="Avalonia"/>
+  </ItemGroup>
 
   <!--#if (AvaloniaStableChosen) -->
   <ItemGroup>

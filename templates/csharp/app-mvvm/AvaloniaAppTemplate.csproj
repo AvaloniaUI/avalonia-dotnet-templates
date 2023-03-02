@@ -8,10 +8,10 @@
     <!--#if (UseCompiledBindings) -->
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
     <!--#endif -->
-    <ProjectCapability Include="Avalonia"/>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectCapability Include="Avalonia"/>
     <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>

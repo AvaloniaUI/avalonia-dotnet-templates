@@ -6,7 +6,6 @@
     <!--#if (UseCompiledBindings) -->
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
     <!--#endif -->
-    <ProjectCapability Include="Avalonia"/>
   </PropertyGroup>
 
   <!--#if (AvaloniaStableChosen) -->
@@ -16,6 +15,7 @@
   <!--#endif -->
   
   <ItemGroup>
+    <ProjectCapability Include="Avalonia"/>
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
 
