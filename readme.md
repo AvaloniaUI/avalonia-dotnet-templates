@@ -9,7 +9,7 @@ For more information about `dotnet new` templates see [here](https://blogs.msdn.
 Run from a command line:
 
 ```powershell
-dotnet new install Avalonia.Templates
+dotnet new --install Avalonia.Templates
 ```
 
 The templates should now be available in `dotnet new list`:
