@@ -6,8 +6,13 @@ For more information about `dotnet new` templates see [here](https://blogs.msdn.
 
 ## Installing the templates
 
-Run from a command line:
+Run from a command line (`.NET 7`):
 
+```powershell
+dotnet new install Avalonia.Templates
+```
+
+For `.NET 6`, the argument is `--install`:
 ```powershell
 dotnet new --install Avalonia.Templates
 ```
