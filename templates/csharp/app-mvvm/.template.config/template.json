@@ -72,8 +72,8 @@
           "description": "Target 0.10.18 (Latest stable)."
         },
         {
-          "choice": "11.0.0-preview5",
-          "description": "Target 11.0.0-preview5"
+          "choice": "11.0.0-preview6",
+          "description": "Target 11.0.0-preview6"
         }
       ],
       "replaces": "AvaloniaVersionTemplateParameter",

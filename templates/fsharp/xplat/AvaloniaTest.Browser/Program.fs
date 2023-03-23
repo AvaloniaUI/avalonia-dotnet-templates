@@ -1,4 +1,5 @@
 open System.Runtime.Versioning
+open System.Threading.Tasks
 open Avalonia
 open Avalonia.Browser
 open Avalonia.ReactiveUI
@@ -18,6 +19,6 @@ module Program =
     let main argv =
         buildAvaloniaApp()
             .UseReactiveUI()
-            .SetupBrowserApp("out")
-            |> ignore
+            .StartBrowserAppAsync("out")
+            .Result
         0
