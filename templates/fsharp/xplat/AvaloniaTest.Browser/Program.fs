@@ -20,5 +20,3 @@ module Program =
         buildAvaloniaApp()
             .UseReactiveUI()
             .StartBrowserAppAsync("out")
-            .Result
-        0
