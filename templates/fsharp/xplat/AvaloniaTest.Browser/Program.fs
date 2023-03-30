@@ -12,11 +12,15 @@ module Program =
 
     [<CompiledName "BuildAvaloniaApp">] 
     let buildAvaloniaApp () = 
-        AppBuilder
-            .Configure<App>()
+        AppBuilder.Configure<App>()
 
     [<EntryPoint>]
     let main argv =
-        buildAvaloniaApp()
+        async {
+            do! (buildAvaloniaApp()
             .UseReactiveUI()
-            .StartBrowserAppAsync("out")
+            .StartBrowserAppAsync("out") |> Async.AwaitTask)
+        }
+        |> Async.RunSynchronously
+        |> ignore
+        0
