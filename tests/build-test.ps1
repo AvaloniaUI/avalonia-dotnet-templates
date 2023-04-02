@@ -97,7 +97,7 @@ $binlog = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "binlog", "test.
 Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "f" "net6.0" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "f" "net7.0" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "av" "0.10.19" $binlog
-Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "av" "11.0.0-preview5" $binlog
+Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "av" "11.0.0-preview6" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "cb" "true" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "cb" "false" $binlog
 
@@ -105,7 +105,7 @@ Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "cb" "false" $binlog
 Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#" "f" "net6.0" $binlog
 Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#" "f" "net7.0" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "av" "0.10.19" $binlog
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "av" "11.0.0-preview5" $binlog
+Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "av" "11.0.0-preview6" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "m" "ReactiveUI" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "m" "CommunityToolkit" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "cb" "true" $binlog
