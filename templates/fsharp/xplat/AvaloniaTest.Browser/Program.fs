@@ -15,11 +15,10 @@ module Program =
 
     [<EntryPoint>]
     let main argv =
-        async {
+        task {
             do! (buildAvaloniaApp()
             .UseReactiveUI()
-            .StartBrowserAppAsync("out") |> Async.AwaitTask)
+            .StartBrowserAppAsync("out"))
         }
-        |> Async.RunSynchronously
         |> ignore
         0
