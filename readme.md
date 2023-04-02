@@ -58,9 +58,9 @@ Available parameters:
 
 *Description*: The target version of Avalonia NuGet packages.
 
-*Options*: **0.10.18**, **11.0.0-preview6**
+*Options*: **0.10.19**, **11.0.0-preview6**
 
-*By default*: 0.10.18
+*By default*: 0.10.19
 
 ``-cp, --compiled-bindings``
 
@@ -99,9 +99,9 @@ Available parameters:
 
 *Description*: The target version of Avalonia NuGet packages.
 
-*Options*: **0.10.18**, **11.0.0-preview4**
+*Options*: **0.10.19**, **11.0.0-preview4**
 
-*By default*: 0.10.18
+*By default*: 0.10.19
 
 ``-cp, --compiled-bindings``
 

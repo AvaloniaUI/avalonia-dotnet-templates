@@ -96,7 +96,7 @@ $binlog = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "binlog", "test.
 
 Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "f" "net6.0" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "f" "net7.0" $binlog
-Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "av" "0.10.18" $binlog
+Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "av" "0.10.19" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "av" "11.0.0-preview6" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "cb" "true" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "cb" "false" $binlog
@@ -104,7 +104,7 @@ Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "cb" "false" $binlog
 # Build the project only twice with all item templates,once with .net6.0 tfm and once with .net7.0 tfm for C# and F#
 Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#" "f" "net6.0" $binlog
 Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#" "f" "net7.0" $binlog
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "av" "0.10.18" $binlog
+Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "av" "0.10.19" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "av" "11.0.0-preview6" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "m" "ReactiveUI" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "m" "CommunityToolkit" $binlog
@@ -117,14 +117,14 @@ Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "cb" "false" $binlog
 
 Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "f" "net6.0" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "f" "net7.0" $binlog
-Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "av" "0.10.18" $binlog
+Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "av" "0.10.19" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "av" "11.0.0-preview6" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "cb" "true" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "cb" "false" $binlog
 
 Test-Template "avalonia.mvvm" "AvaloniaMvvm" "F#" "f" "net6.0" $binlog
 Test-Template "avalonia.mvvm" "AvaloniaMvvm" "F#" "f" "net7.0" $binlog
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "av" "0.10.18" $binlog
+Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "av" "0.10.19" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "av" "11.0.0-preview6" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "m" "ReactiveUI" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "m" "CommunityToolkit" $binlog
