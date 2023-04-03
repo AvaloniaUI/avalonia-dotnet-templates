@@ -16,8 +16,10 @@ module Program =
 
     [<EntryPoint>]
     let main argv =
-        buildAvaloniaApp()
+        task {
+            do! (buildAvaloniaApp()
             .UseReactiveUI()
-            .SetupBrowserApp("out")
-            |> ignore
+            .StartBrowserAppAsync("out"))
+        }
+        |> ignore
         0
