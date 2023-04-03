@@ -11,13 +11,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectCapability Include="Avalonia"/>
     <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
 
   <!--#if (AvaloniaStableChosen) -->
   <ItemGroup>
+    <ProjectCapability Include="Avalonia"/>
     <TrimmerRootAssembly Include="Avalonia.Themes.Fluent" />
   </ItemGroup>
   <!--#endif -->

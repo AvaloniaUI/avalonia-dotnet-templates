@@ -10,12 +10,9 @@
     <!--#endif -->
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectCapability Include="Avalonia"/>
-  </ItemGroup>
-
   <!--#if (AvaloniaStableChosen) -->
   <ItemGroup>
+    <ProjectCapability Include="Avalonia"/>
     <TrimmerRootAssembly Include="Avalonia.Themes.Fluent" />
   </ItemGroup>
   <!--#endif -->
