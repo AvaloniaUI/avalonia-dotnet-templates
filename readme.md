@@ -62,7 +62,7 @@ Available parameters:
 
 *By default*: 0.10.19
 
-``-cp, --compiled-bindings``
+``-cb, --compiled-bindings``
 
 *Description*: Defines if CompiledBindings should be enabled by default in the project (only supported in 11.0 version and newer). See [documentation](https://docs.avaloniaui.net/docs/data-binding/compiledbindings) for more details.
 
@@ -103,7 +103,7 @@ Available parameters:
 
 *By default*: 0.10.19
 
-``-cp, --compiled-bindings``
+``-cb, --compiled-bindings``
 
 *Description*: Defines if CompiledBindings should be enabled by default in the project (only supported in 11.0 version and newer). See [documentation](https://docs.avaloniaui.net/docs/data-binding/compiledbindings) for more details.
 
@@ -135,7 +135,7 @@ This type of template allows you to create an application that will work on Desk
 
 Available parameters:
 
-``-cp, --compiled-bindings``
+``-cb, --compiled-bindings``
 
 *Description*: Defines if CompiledBindings should be enabled by default in the project. See [documentation](https://docs.avaloniaui.net/docs/data-binding/compiledbindings) for more details.
 
