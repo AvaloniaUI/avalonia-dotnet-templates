@@ -1,6 +1,7 @@
 open System.Runtime.Versioning
 open Avalonia
 open Avalonia.Browser
+open Avalonia.Fonts.Inter
 open Avalonia.ReactiveUI
 
 open AvaloniaTest
@@ -18,6 +19,7 @@ module Program =
     let main argv =
         task {
             do! (buildAvaloniaApp()
+            .WithInterFont()
             .UseReactiveUI()
             .StartBrowserAppAsync("out"))
         }

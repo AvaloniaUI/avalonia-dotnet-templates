@@ -1,4 +1,7 @@
 ﻿using Avalonia;
+#if (!AvaloniaStableChosen)
+using Avalonia.Fonts.Inter;
+#endif
 #if (ReactiveUIToolkitChosen)
 using Avalonia.ReactiveUI;
 #endif
@@ -19,6 +22,9 @@ class Program
     public static AppBuilder BuildAvaloniaApp()
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
+#if (!AvaloniaStableChosen)
+            .WithInterFont()
+#endif
 #if (ReactiveUIToolkitChosen)
             .LogToTrace()
             .UseReactiveUI();

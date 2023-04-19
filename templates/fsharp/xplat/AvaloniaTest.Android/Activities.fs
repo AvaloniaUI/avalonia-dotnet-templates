@@ -2,6 +2,8 @@ namespace AvaloniaTest.Android
 open Android.App
 open Android.Content
 open Android.Content.PM
+open Avalonia.Fonts.Inter
+open Avalonia.ReactiveUI
 open Android.OS
 type Application = Android.App.Application
 
@@ -23,7 +25,9 @@ type SplashActivity() =
     inherit  AvaloniaSplashActivity<App>()
 
     override _.CustomizeAppBuilder(builder) =
-        base.CustomizeAppBuilder(builder);
+        base.CustomizeAppBuilder(builder)
+            .WithInterFont()
+            .UseReactiveUI()
 
     override x.OnResume() =
         base.OnResume()

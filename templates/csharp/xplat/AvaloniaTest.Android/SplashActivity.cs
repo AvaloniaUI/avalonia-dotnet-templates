@@ -4,6 +4,7 @@ using Android.OS;
 using Application = Android.App.Application;
 using Avalonia;
 using Avalonia.Android;
+using Avalonia.Fonts.Inter;
 using Avalonia.ReactiveUI;
 
 namespace AvaloniaTest.Android;
@@ -14,6 +15,7 @@ public class SplashActivity : AvaloniaSplashActivity<App>
     protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
     {
         return base.CustomizeAppBuilder(builder)
+            .WithInterFont()
             .UseReactiveUI();
     }
 
