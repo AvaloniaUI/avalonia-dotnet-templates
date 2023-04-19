@@ -1,4 +1,7 @@
 ﻿using Avalonia;
+#if (!AvaloniaStableChosen)
+using Avalonia.Fonts.Inter;
+#endif
 using System;
 
 namespace AvaloniaAppTemplate;
@@ -16,5 +19,8 @@ class Program
     public static AppBuilder BuildAvaloniaApp()
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
+#if (!AvaloniaStableChosen)
+            .WithInterFont()
+#endif
             .LogToTrace();
 }

@@ -2,7 +2,9 @@
 
 open System
 open Avalonia
-open AvaloniaAppTemplate
+#if (!AvaloniaStableChosen)
+open Avalonia.Fonts.Inter
+#endif
 
 module Program =
 
@@ -11,6 +13,9 @@ module Program =
         AppBuilder
             .Configure<App>()
             .UsePlatformDetect()
+#if (!AvaloniaStableChosen)
+            .WithInterFont()
+#endif
             .LogToTrace(areas = Array.empty)
 
     [<EntryPoint; STAThread>]

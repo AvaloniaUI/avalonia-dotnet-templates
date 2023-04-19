@@ -4,6 +4,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.iOS;
 using Avalonia.Media;
+using Avalonia.Fonts.Inter;
 using Avalonia.ReactiveUI;
 
 namespace AvaloniaTest.iOS;
@@ -16,6 +17,8 @@ public partial class AppDelegate : AvaloniaAppDelegate<App>
 {
     protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
     {
-        return builder.UseReactiveUI();
+        return base.CustomizeAppBuilder(builder)
+            .WithInterFont()
+            .UseReactiveUI();
     }
 }

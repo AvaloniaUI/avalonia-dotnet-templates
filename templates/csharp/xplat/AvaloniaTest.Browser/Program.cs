@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Browser;
+using Avalonia.Fonts.Inter;
 using Avalonia.ReactiveUI;
 using AvaloniaTest;
 
@@ -10,6 +11,7 @@ using AvaloniaTest;
 internal partial class Program
 {
     private static async Task Main(string[] args) => await BuildAvaloniaApp()
+            .WithInterFont()
             .UseReactiveUI()
             .StartBrowserAppAsync("out");
 

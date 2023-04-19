@@ -2,10 +2,12 @@
 
 open System
 open Avalonia
+#if (!AvaloniaStableChosen)
+open Avalonia.Fonts.Inter
+#endif
 #if (ReactiveUIToolkitChosen)
 open Avalonia.ReactiveUI
 #endif
-open AvaloniaAppTemplate
 
 module Program =
 
@@ -14,6 +16,9 @@ module Program =
         AppBuilder
             .Configure<App>()
             .UsePlatformDetect()
+#if (!AvaloniaStableChosen)
+            .WithInterFont()
+#endif
             .LogToTrace(areas = Array.empty)
 #if (ReactiveUIToolkitChosen)
             .UseReactiveUI()
