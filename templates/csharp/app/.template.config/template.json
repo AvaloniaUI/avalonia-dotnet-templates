@@ -72,6 +72,27 @@
       "binding": "HostIdentifier"
     }
   },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(AvaloniaStableChosen)",
+          "exclude": [
+            "App.v11.axaml"
+          ]
+        },
+        {
+          "condition": "(!AvaloniaStableChosen)",
+          "exclude": [
+            "App.axaml"
+          ]
+        }
+      ],
+      "rename": {
+        "App.v11.axaml": "App.axaml"
+      }
+    }
+  ],
   "primaryOutputs": [
     { "path": "AvaloniaAppTemplate.csproj" },
     {
