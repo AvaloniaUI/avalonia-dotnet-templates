@@ -1,5 +1,6 @@
 namespace AvaloniaTest.iOS
 open Foundation
+open Avalonia
 open Avalonia.iOS
 open Avalonia.ReactiveUI
 
