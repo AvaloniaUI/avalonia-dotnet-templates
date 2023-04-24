@@ -4,7 +4,6 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.iOS;
 using Avalonia.Media;
-using Avalonia.Fonts.Inter;
 using Avalonia.ReactiveUI;
 
 namespace AvaloniaTest.iOS;

@@ -4,7 +4,6 @@ using Android.OS;
 using Application = Android.App.Application;
 using Avalonia;
 using Avalonia.Android;
-using Avalonia.Fonts.Inter;
 using Avalonia.ReactiveUI;
 
 namespace AvaloniaTest.Android;

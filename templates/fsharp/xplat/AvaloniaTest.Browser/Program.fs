@@ -1,7 +1,6 @@
 open System.Runtime.Versioning
 open Avalonia
 open Avalonia.Browser
-open Avalonia.Fonts.Inter
 open Avalonia.ReactiveUI
 
 open AvaloniaTest

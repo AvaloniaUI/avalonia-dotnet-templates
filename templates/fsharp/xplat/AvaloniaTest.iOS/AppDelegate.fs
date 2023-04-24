@@ -1,7 +1,6 @@
 namespace AvaloniaTest.iOS
 open Foundation
 open Avalonia.iOS
-open Avalonia.Fonts.Inter
 open Avalonia.ReactiveUI
 
 // The UIApplicationDelegate for the application. This class is responsible for launching the 

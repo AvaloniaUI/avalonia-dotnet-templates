@@ -1,7 +1,4 @@
 ﻿using Avalonia;
-#if (!AvaloniaStableChosen)
-using Avalonia.Fonts.Inter;
-#endif
 using System;
 
 namespace AvaloniaAppTemplate;
