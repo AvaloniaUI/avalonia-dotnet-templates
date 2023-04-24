@@ -2,9 +2,6 @@
 
 open System
 open Avalonia
-#if (!AvaloniaStableChosen)
-open Avalonia.Fonts.Inter
-#endif
 #if (ReactiveUIToolkitChosen)
 open Avalonia.ReactiveUI
 #endif

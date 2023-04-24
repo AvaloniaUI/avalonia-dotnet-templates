@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Browser;
-using Avalonia.Fonts.Inter;
 using Avalonia.ReactiveUI;
 using AvaloniaTest;
 

@@ -1,7 +1,6 @@
 namespace AvaloniaTest.Desktop
 open System
 open Avalonia
-open Avalonia.Fonts.Inter
 open Avalonia.ReactiveUI
 open AvaloniaTest
 
