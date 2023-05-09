@@ -2,10 +2,10 @@ pool:
     vmImage: 'macOS-12'
 steps:
   - task: UseDotNet@2
-    displayName: 'Use .NET 7.0.102 SDK'
+    displayName: 'Use .NET SDK'
     inputs:
       packageType: 'sdk'
-      version: 7.0.102
+      version: 7.0.203
   - task: DotNetCoreCLI@2
     displayName: 'Pack Templates'
     inputs:
@@ -20,13 +20,7 @@ steps:
   - task: CmdLine@2
     displayName: 'Install workload'
     inputs:
-      script: 'dotnet workload install ios android wasm-tools wasm-experimental'
-# Workaround for https://github.com/microsoft/azure-pipelines-tasks/issues/17477
-  - task: CmdLine@2
-    displayName: 'Set Xamarin SDK'
-    inputs:
-      script: |
-        /bin/bash -c "sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 17_4_0_301"  
+      script: 'dotnet workload install ios android wasm-tools wasm-experimental' 
   - task: PowerShell@2
     displayName: 'Run Tests'
     inputs:
