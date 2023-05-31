@@ -1,11 +1,11 @@
 pool:
-    vmImage: 'macOS-13'
+    vmImage: 'ubuntu-latest'
 steps:
   - task: UseDotNet@2
     displayName: 'Use .NET SDK'
     inputs:
       packageType: 'sdk'
-      version: 7.0.101
+      version: 7.0.302
   - task: DotNetCoreCLI@2
     displayName: 'Pack Templates'
     inputs:
