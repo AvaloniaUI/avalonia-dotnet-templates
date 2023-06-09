@@ -26,6 +26,10 @@
     <PackageReference Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
+    <ProjectReference Include="..\AvaloniaTest.Generators\AvaloniaTest.Generators.csproj" 
+                      OutputItemType="Analyzer" 
+                      ReferenceOutputAssembly="false" 
+                      AdditionalProperties="IsRidAgnostic=true" />
     <!--#if (AvaloniaStableChosen) -->
     <PackageReference Include="XamlNameReferenceGenerator" Version="1.6.1" />
     <!--#endif -->
