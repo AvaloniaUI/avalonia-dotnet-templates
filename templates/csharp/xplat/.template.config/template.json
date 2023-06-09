@@ -42,7 +42,6 @@
   },
   "primaryOutputs": [
     { "path": "AvaloniaTest/AvaloniaTest.csproj" },
-    { "path": "AvaloniaTest.Generator/AvaloniaTest.Generator.csproj" },
     { "path": "AvaloniaTest.Android/AvaloniaTest.Android.csproj" },
     { "path": "AvaloniaTest.Desktop/AvaloniaTest.Desktop.csproj" },
     { "path": "AvaloniaTest.iOS/AvaloniaTest.iOS.csproj" },
