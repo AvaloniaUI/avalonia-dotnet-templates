@@ -91,6 +91,13 @@
       "defaultValue": "true",
       "isEnabled": "(AvaloniaVersion != \"0.10.21\")"
     },
+    "RemoveViewLocator": {
+      "type": "parameter",
+      "description": "Defines if your app will use default ViewLocator made by Avalonia Team or you are planning to use custom one. Removing ViewLocator may be useful in AOT scenarios. Default ViewLocator is not AOT-friendly.",
+      "datatype": "bool",
+      "displayName": "Remove Avalonia ViewLocator",
+      "defaultValue": "false"
+    },
     "HostIdentifier": {
       "type": "bind",
       "binding": "HostIdentifier"
@@ -100,21 +107,49 @@
     {
       "modifiers": [
         {
-          "condition": "(AvaloniaStableChosen)",
+          "condition": "(RemoveViewLocator && AvaloniaStableChosen)",
           "exclude": [
-            "App.v11.axaml"
+            "App.axaml",
+            "App.v11.axaml",
+            "App.v11.RemoveViewLocator.axaml",
+            "ViewLocator.fs"
+          ],
+          "rename": {
+            "App.RemoveViewLocator.axaml": "App.axaml"
+          }
+        },
+        {
+          "condition": "(!RemoveViewLocator && AvaloniaStableChosen)",
+          "exclude": [
+            "App.v11.axaml",
+            "App.RemoveViewLocator.axaml",
+            "App.v11.RemoveViewLocator.axaml"
           ]
         },
         {
-          "condition": "(!AvaloniaStableChosen)",
+          "condition": "(RemoveViewLocator && !AvaloniaStableChosen)",
           "exclude": [
-            "App.axaml"
-          ]
+            "App.axaml",
+            "App.v11.axaml",
+            "App.RemoveViewLocator.axaml",
+            "ViewLocator.fs"
+          ],
+          "rename": {
+            "App.v11.RemoveViewLocator.axaml": "App.axaml"
+          }
+        },
+        {
+          "condition": "(!RemoveViewLocator && !AvaloniaStableChosen)",
+          "exclude": [
+            "App.axaml",
+            "App.RemoveViewLocator.axaml",
+            "App.v11.RemoveViewLocator.axaml"
+          ],
+          "rename": {
+            "App.v11.axaml": "App.axaml"
+          }
         }
-      ],
-      "rename": {
-        "App.v11.axaml": "App.axaml"
-      }
+      ]
     }
   ],
   "primaryOutputs": [
@@ -143,7 +178,7 @@
       "id": "editor",
       "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
       "description": "Opens MainWindow and MainWindowViewModel in the editor",
-      "manualInstructions": [ ],
+      "manualInstructions": [],
       "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
       "args": {
         "files": "1;2"
