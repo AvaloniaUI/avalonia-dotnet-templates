@@ -37,7 +37,7 @@
     },
     "RemoveViewLocator": {
       "type": "parameter",
-      "description": "Defines if your app will use default ViewLocator made by Avalonia Team or you are planning to use custom one. Removing ViewLocator may be useful in AOT scenarios. Default ViewLocator is not AOT-friendly.",
+      "description": "Defines if your app will use default ViewLocator made by Avalonia Team or you are planning to use a custom one. Removing ViewLocator may be useful in code trimming scenarios. Default ViewLocator is not trimming-friendly.",
       "datatype": "bool",
       "displayName": "Remove Avalonia ViewLocator",
       "defaultValue": "false"
