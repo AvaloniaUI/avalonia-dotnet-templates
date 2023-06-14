@@ -119,6 +119,14 @@ Available parameters:
 
 *By default*: ReactiveUI
 
+``-rvl, --remove-view-locator``
+
+*Description*: Defines if your app will use default ViewLocator made by Avalonia Team or you are planning to use a custom one. Removing ViewLocator may be useful in code trimming scenarios. Default ViewLocator is not trimming-friendly.
+
+*Options*: **true**, **false**
+
+*By default*: false
+
 ``--no-restore``
 
 *Description*: If specified, skips the automatic restore of the project on create.
@@ -142,6 +150,14 @@ Available parameters:
 *Options*: **true**, **false**
 
 *By default*: true
+
+``-rvl, --remove-view-locator``
+
+*Description*: Defines if your app will use default ViewLocator made by Avalonia Team or you are planning to use a custom one. Removing ViewLocator may be useful in code trimming scenarios. Default ViewLocator is not trimming-friendly.
+
+*Options*: **true**, **false**
+
+*By default*: false
 
 # Creating a new Window
 

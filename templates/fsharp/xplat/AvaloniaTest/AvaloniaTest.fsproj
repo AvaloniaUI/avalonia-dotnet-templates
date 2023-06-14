@@ -24,6 +24,9 @@
     <Compile Include="ViewModels\MainViewModel.fs" />
     <Compile Include="Views\MainWindow.axaml.fs" />
     <Compile Include="Views\MainView.axaml.fs" />
+    <!--#if (!RemoveViewLocator) -->
+    <Compile Include="ViewLocator.fs" />
+    <!--#endif -->
     <Compile Include="App.axaml.fs" />
   </ItemGroup>
 

@@ -110,10 +110,14 @@ Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "m" "ReactiveUI" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "m" "CommunityToolkit" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "cb" "true" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "cb" "false" $binlog
+Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "rvl" "true" $binlog
+Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "rvl" "false" $binlog
 
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "f" "net7.0" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "cb" "true" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "cb" "false" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "rvl" "true" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "rvl" "false" $binlog
 
 Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "f" "net6.0" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "f" "net7.0" $binlog
@@ -130,7 +134,11 @@ Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "m" "ReactiveUI" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "m" "CommunityToolkit" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "cb" "true" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "cb" "false" $binlog
+Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "rvl" "true" $binlog
+Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "rvl" "false" $binlog
 
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "f" "net7.0" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "cb" "true" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "cb" "false" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "rvl" "true" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "rvl" "false" $binlog

@@ -6,6 +6,9 @@
     },
     "UseCompiledBindings": {
       "longName": "compiled-bindings"
+    },
+    "RemoveViewLocator": {
+      "longName": "remove-view-locator"
     }
   },
   "usageExamples": [

@@ -11,6 +11,9 @@
     "AvaloniaVersion": {
       "longName": "avalonia-version"
     },
+    "RemoveViewLocator": {
+      "longName": "remove-view-locator"
+    },
     "MVVMToolkit": {
       "longName": "mvvm"
     },

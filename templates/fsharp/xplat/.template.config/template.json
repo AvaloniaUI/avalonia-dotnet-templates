@@ -35,11 +35,40 @@
       "displayName": "Use compiled Bindings",
       "defaultValue": "true"
     },
+    "RemoveViewLocator": {
+      "type": "parameter",
+      "description": "Defines if your app will use default ViewLocator made by Avalonia Team or you are planning to use a custom one. Removing ViewLocator may be useful in code trimming scenarios. Default ViewLocator is not trimming-friendly.",
+      "datatype": "bool",
+      "displayName": "Remove Avalonia ViewLocator",
+      "defaultValue": "false"
+    },
     "HostIdentifier": {
       "type": "bind",
       "binding": "HostIdentifier"
     }
   },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(RemoveViewLocator)",
+          "exclude": [
+            "AvaloniaTest/App.axaml",
+            "AvaloniaTest/ViewLocator.fs"
+          ],
+          "rename": {
+            "App.RemoveViewLocator.axaml": "App.axaml"
+          }
+        },
+        {
+          "condition": "(!RemoveViewLocator)",
+          "exclude": [
+            "AvaloniaTest/App.RemoveViewLocator.axaml"
+          ]
+        }
+      ]
+    }
+  ],
   "primaryOutputs": [
     { "path": "AvaloniaTest/AvaloniaTest.fsproj" },
     { "path": "AvaloniaTest.Android/AvaloniaTest.Android.fsproj" },
@@ -60,7 +89,7 @@
       "id": "editor",
       "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
       "description": "Opens MainView and MainViewModel in the editor",
-      "manualInstructions": [ ],
+      "manualInstructions": [],
       "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
       "args": {
         "files": "5;6"
