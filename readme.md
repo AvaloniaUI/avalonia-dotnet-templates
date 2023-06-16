@@ -22,8 +22,8 @@ The templates should now be available in `dotnet new list`:
 ```
 Template Name                        Short Name                 Language  Tags
 -----------------------------------  -------------------------  --------  -----------------------------------------
-Avalonia .NET App               avalonia.app               [C#],F#   Desktop/Xaml/Avalonia/Windows/Linux/macOS
-Avalonia .NET MVVM App          avalonia.mvvm              [C#],F#   Desktop/Xaml/Avalonia/Windows/Linux/macOS
+Avalonia .NET App                    avalonia.app               [C#],F#   Desktop/Xaml/Avalonia/Windows/Linux/macOS
+Avalonia .NET MVVM App               avalonia.mvvm              [C#],F#   Desktop/Xaml/Avalonia/Windows/Linux/macOS
 Avalonia Cross Platform Application  avalonia.xplat             [C#],F#   Desktop/Xaml/Avalonia/Web/Mobile
 Avalonia Resource Dictionary         avalonia.resource                    Desktop/Xaml/Avalonia/Windows/Linux/macOS
 Avalonia Styles                      avalonia.styles                      Desktop/Xaml/Avalonia/Windows/Linux/macOS
