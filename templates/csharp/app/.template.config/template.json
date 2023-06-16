@@ -5,7 +5,7 @@
   "description": "A cross-platform Avalonia UI Application targeting Desktop",
   "groupidentity": "Avalonia.App",
   "identity": "Avalonia.App",
-  "name": "Avalonia .NET Core App",
+  "name": "Avalonia .NET App",
   "preferNameDirectory": true,
   "shortName": "avalonia.app",
   "sourceName": "AvaloniaAppTemplate",
