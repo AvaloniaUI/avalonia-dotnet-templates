@@ -9,9 +9,4 @@
     <item name="android:windowNoTitle">true</item>
   </style>
 
-  <style name="MyTheme.Splash" parent ="MyTheme.NoActionBar">
-    <item name="android:windowBackground">@drawable/splash_screen</item>
-    <item name="android:windowContentOverlay">@null</item>
-  </style>
-
 </resources>
