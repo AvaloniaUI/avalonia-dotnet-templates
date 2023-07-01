@@ -5,7 +5,7 @@ open Android.Content.PM
 open Avalonia
 open Avalonia.ReactiveUI
 open Avalonia.Android
-open AvaloniaApplication1
+open AvaloniaTest
 
 [<Activity(
     Label = "AvaloniaTest.Android",
