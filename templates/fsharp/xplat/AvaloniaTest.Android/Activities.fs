@@ -1,34 +1,22 @@
 namespace AvaloniaTest.Android
+
 open Android.App
-open Android.Content
 open Android.Content.PM
 open Avalonia
 open Avalonia.ReactiveUI
-open Android.OS
-type Application = Android.App.Application
-
 open Avalonia.Android
-open AvaloniaTest
+open AvaloniaApplication1
 
 [<Activity(
     Label = "AvaloniaTest.Android",
     Theme = "@style/MyTheme.NoActionBar",
     Icon = "@drawable/icon",
-    LaunchMode = LaunchMode.SingleTop,
-    ConfigurationChanges = (ConfigChanges.Orientation ||| ConfigChanges.ScreenSize))>]
+    MainLauncher = true,
+    ConfigurationChanges = (ConfigChanges.Orientation ||| ConfigChanges.ScreenSize ||| ConfigChanges.UiMode))>]
 type MainActivity() =
-    inherit AvaloniaMainActivity()
-
-
-[<Activity(Theme = "@style/MyTheme.Splash", MainLauncher = true, NoHistory = true)>]
-type SplashActivity() =
-    inherit  AvaloniaSplashActivity<App>()
+    inherit AvaloniaMainActivity<App>()
 
     override _.CustomizeAppBuilder(builder) =
         base.CustomizeAppBuilder(builder)
             .WithInterFont()
             .UseReactiveUI()
-
-    override x.OnResume() =
-        base.OnResume()
-        x.StartActivity(new Intent(Application.Context, typeof<MainActivity>))
