@@ -72,12 +72,12 @@
           "description": "Target 0.10.21 (Latest stable)."
         },
         {
-          "choice": "11.0.0-rc2.2",
-          "description": "Target 11.0.0-rc2.2"
+          "choice": "11.0.0",
+          "description": "Target 11.0.0"
         }
       ],
       "replaces": "AvaloniaVersionTemplateParameter",
-      "defaultValue": "0.10.21"
+      "defaultValue": "11.0.0"
     },
     "AvaloniaStableChosen": {
       "type": "computed",
