@@ -2,7 +2,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>FrameworkParameter-ios</TargetFramework>
-    <SupportedOSPlatformVersion>10.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
     <ProvisioningType>manual</ProvisioningType>
     <Nullable>enable</Nullable>
     <RuntimeIdentifier>iossimulator-x64</RuntimeIdentifier>
