@@ -13,7 +13,7 @@ module Program =
         AppBuilder
             .Configure<App>()
             .UsePlatformDetect()
-#if (!AvaloniaStableChosen)
+#if (AvaloniaStableChosen)
             .WithInterFont()
 #endif
             .LogToTrace(areas = Array.empty)
