@@ -22,9 +22,9 @@ type App() =
         // Line below is needed to remove Avalonia data validation.
         // Without this line you will get duplicate validations from both Avalonia and CT
         #if (AvaloniaStableChosen)
-        ExpressionObserver.DataValidators.RemoveAll(fun x -> x :? DataAnnotationsValidationPlugin) |> ignore
-        #else
         BindingPlugins.DataValidators.RemoveAt(0)
+        #else
+        ExpressionObserver.DataValidators.RemoveAll(fun x -> x :? DataAnnotationsValidationPlugin) |> ignore
         #endif
 #endif
 

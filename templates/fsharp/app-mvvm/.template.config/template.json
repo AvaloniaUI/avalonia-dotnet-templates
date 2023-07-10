@@ -69,11 +69,11 @@
       "choices": [
         {
           "choice": "0.10.21",
-          "description": "Target 0.10.21 (Latest stable)."
+          "description": "Target 0.10.21"
         },
         {
           "choice": "11.0.0",
-          "description": "Target 11.0.0"
+          "description": "Target 11.0.0 (Latest stable)"
         }
       ],
       "replaces": "AvaloniaVersionTemplateParameter",
@@ -81,7 +81,7 @@
     },
     "AvaloniaStableChosen": {
       "type": "computed",
-      "value": "(AvaloniaVersion == \"0.10.21\")"
+      "value": "(AvaloniaVersion == \"11.0.0\")"
     },
     "UseCompiledBindings": {
       "type": "parameter",
@@ -89,7 +89,7 @@
       "datatype": "bool",
       "displayName": "Use compiled Bindings",
       "defaultValue": "true",
-      "isEnabled": "(AvaloniaVersion != \"0.10.21\")"
+      "isEnabled": "(AvaloniaVersion == \"11.0.0\")"
     },
     "RemoveViewLocator": {
       "type": "parameter",
@@ -110,8 +110,8 @@
           "condition": "(RemoveViewLocator && AvaloniaStableChosen)",
           "exclude": [
             "App.axaml",
-            "App.v11.axaml",
-            "App.v11.RemoveViewLocator.axaml",
+            "App.v0.10.axaml",
+            "App.v0.10.RemoveViewLocator.axaml",
             "ViewLocator.fs"
           ],
           "rename": {
@@ -121,21 +121,21 @@
         {
           "condition": "(!RemoveViewLocator && AvaloniaStableChosen)",
           "exclude": [
-            "App.v11.axaml",
+            "App.v0.10.axaml",
             "App.RemoveViewLocator.axaml",
-            "App.v11.RemoveViewLocator.axaml"
+            "App.v0.10.RemoveViewLocator.axaml"
           ]
         },
         {
           "condition": "(RemoveViewLocator && !AvaloniaStableChosen)",
           "exclude": [
             "App.axaml",
-            "App.v11.axaml",
+            "App.v0.10.axaml",
             "App.RemoveViewLocator.axaml",
             "ViewLocator.fs"
           ],
           "rename": {
-            "App.v11.RemoveViewLocator.axaml": "App.axaml"
+            "App.v0.10.RemoveViewLocator.axaml": "App.axaml"
           }
         },
         {
@@ -143,10 +143,10 @@
           "exclude": [
             "App.axaml",
             "App.RemoveViewLocator.axaml",
-            "App.v11.RemoveViewLocator.axaml"
+            "App.v0.10.RemoveViewLocator.axaml"
           ],
           "rename": {
-            "App.v11.axaml": "App.axaml"
+            "App.v0.10.axaml": "App.axaml"
           }
         }
       ]

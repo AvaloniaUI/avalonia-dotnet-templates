@@ -45,11 +45,11 @@
       "choices": [
         {
           "choice": "0.10.21",
-          "description": "Target 0.10.21 (Latest stable)."
+          "description": "Target 0.10.21"
         },
         {
           "choice": "11.0.0",
-          "description": "Target 11.0.0"
+          "description": "Target 11.0.0 (Latest stable)"
         }
       ],
       "replaces": "AvaloniaVersionTemplateParameter",
@@ -57,7 +57,7 @@
     },
     "AvaloniaStableChosen": {
       "type": "computed",
-      "value": "(AvaloniaVersion == \"0.10.21\")"
+      "value": "(AvaloniaVersion == \"11.0.0\")"
     },
     "UseCompiledBindings": {
       "type": "parameter",
@@ -65,7 +65,7 @@
       "datatype": "bool",
       "displayName": "Use compiled Bindings",
       "defaultValue": "true",
-      "isEnabled": "(AvaloniaVersion != \"0.10.21\")"
+      "isEnabled": "(AvaloniaVersion == \"11.0.0\")"
     },
     "HostIdentifier": {
       "type": "bind",
@@ -78,7 +78,7 @@
         {
           "condition": "(AvaloniaStableChosen)",
           "exclude": [
-            "App.v11.axaml"
+            "App.v0.10.axaml"
           ]
         },
         {
@@ -89,7 +89,7 @@
         }
       ],
       "rename": {
-        "App.v11.axaml": "App.axaml"
+        "App.v0.10.axaml": "App.axaml"
       }
     }
   ],

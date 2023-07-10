@@ -9,9 +9,8 @@
     <!--#endif -->
   </PropertyGroup>
 
-  <!--#if (AvaloniaStableChosen) -->
+  <!--#if (!AvaloniaStableChosen) -->
   <ItemGroup>
-    <ProjectCapability Include="Avalonia"/>
     <TrimmerRootAssembly Include="Avalonia.Themes.Fluent" />
   </ItemGroup>
   <!--#endif -->
@@ -35,7 +34,7 @@
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="AvaloniaVersionTemplateParameter" />
     <PackageReference Include="Avalonia.Desktop" Version="AvaloniaVersionTemplateParameter" />
-    <!--#if (!AvaloniaStableChosen) -->
+    <!--#if (AvaloniaStableChosen) -->
     <PackageReference Include="Avalonia.Themes.Fluent" Version="AvaloniaVersionTemplateParameter" />
     <PackageReference Include="Avalonia.Fonts.Inter" Version="AvaloniaVersionTemplateParameter" />
     <!--#endif -->
