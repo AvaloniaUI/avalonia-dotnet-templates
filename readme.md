@@ -60,7 +60,7 @@ Available parameters:
 
 *Options*: **0.10.21**, **11.0.0**
 
-*By default*: 0.10.21
+*By default*: 11.0.0
 
 ``-cb, --compiled-bindings``
 
@@ -101,7 +101,7 @@ Available parameters:
 
 *Options*: **0.10.21**, **11.0.0**
 
-*By default*: 0.10.21
+*By default*: 11.0.0
 
 ``-cb, --compiled-bindings``
 
