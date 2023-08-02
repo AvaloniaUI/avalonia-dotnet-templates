@@ -9,7 +9,7 @@ using AvaloniaTest;
 
 internal sealed partial class Program
 {
-    private static async Task Main(string[] args) => await BuildAvaloniaApp()
+    private static Task Main(string[] args) => BuildAvaloniaApp()
             .WithInterFont()
             .UseReactiveUI()
             .StartBrowserAppAsync("out");
