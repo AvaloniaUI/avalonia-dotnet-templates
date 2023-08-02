@@ -8,24 +8,24 @@ namespace AvaloniaTest;
 public class ViewLocator : IDataTemplate
 {
 #if (AvaloniaStableChosen)
-    public IControl Build(object data)
+    public IControl Build(object param)
 #else
-    public Control Build(object data)
+    public Control? Build(object param)
 #endif
     {
-        if (data is null)
-            return null;
+		if (param is null)
+			return null;
 
-        var name = data.GetType().FullName!.Replace("ViewModel", "View");
-        var type = Type.GetType(name);
+		var name = param.GetType().FullName!.Replace("ViewModel", "View", StringComparison.Ordinal);
+		var type = Type.GetType(name);
 
-        if (type != null)
-        {
-            return (Control)Activator.CreateInstance(type)!;
-        }
-        
-        return new TextBlock { Text = name };
-    }
+		if (type != null)
+		{
+			return (Control)Activator.CreateInstance(type)!;
+		}
+
+		return new TextBlock { Text = name };
+	}
 
     public bool Match(object? data)
     {
