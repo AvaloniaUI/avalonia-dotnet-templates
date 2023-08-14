@@ -72,16 +72,16 @@
           "description": "Target 0.10.21"
         },
         {
-          "choice": "11.0.1",
-          "description": "Target 11.0.1 (Latest stable)"
+          "choice": "11.0.3",
+          "description": "Target 11.0.3 (Latest stable)"
         }
       ],
       "replaces": "AvaloniaVersionTemplateParameter",
-      "defaultValue": "11.0.1"
+      "defaultValue": "11.0.3"
     },
     "AvaloniaStableChosen": {
       "type": "computed",
-      "value": "(AvaloniaVersion == \"11.0.1\")"
+      "value": "(AvaloniaVersion == \"11.0.3\")"
     },
     "UseCompiledBindings": {
       "type": "parameter",
@@ -89,7 +89,7 @@
       "datatype": "bool",
       "displayName": "Use compiled Bindings",
       "defaultValue": "true",
-      "isEnabled": "(AvaloniaVersion == \"11.0.1\")"
+      "isEnabled": "(AvaloniaVersion == \"11.0.3\")"
     },
     "RemoveViewLocator": {
       "type": "parameter",
