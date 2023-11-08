@@ -17,7 +17,7 @@ type ViewLocator() =
                 if isNull typ then
                     upcast TextBlock(Text = sprintf "Not Found: %s" name)
                 else
-                    let view = Activator.CreateInstance(typ) :?> IControl
+                    let view = Activator.CreateInstance(typ) :?> Control
                     view.DataContext <- data
                     view
                 
