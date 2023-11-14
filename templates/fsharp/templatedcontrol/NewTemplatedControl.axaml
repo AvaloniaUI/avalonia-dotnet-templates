@@ -1,16 +1,37 @@
-<Styles xmlns="https://github.com/avaloniaui"
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="using:AvaloniaAppTemplate.Namespace">
-  <Design.PreviewWith>
-    <controls:NewTemplatedControl />
+  <Design.PreviewWith>    
+    <StackPanel Width="400" MinHeight="400">
+       <ThemeVariantScope RequestedThemeVariant="Default">
+          <controls:NewTemplatedControl />      
+       </ThemeVariantScope>
+       <ThemeVariantScope RequestedThemeVariant="Light">
+          <controls:NewTemplatedControl />      
+       </ThemeVariantScope>
+       <ThemeVariantScope RequestedThemeVariant="Dark">
+          <controls:NewTemplatedControl />      
+       </ThemeVariantScope>
+    </StackPanel>
   </Design.PreviewWith>
 
-  <Style Selector="controls|NewTemplatedControl">
-    <!-- Set Defaults -->
+  <ResourceDictionary.ThemeDictionaries>
+      <ResourceDictionary x:Key="Default">
+        <SolidColorBrush x:Key="MyForegroud" Color="Black"/>
+      </ResourceDictionary>
+      <ResourceDictionary x:Key="Light">
+        <SolidColorBrush x:Key="MyForegroud" Color="Black"/>
+      </ResourceDictionary>
+      <ResourceDictionary x:Key="Dark">
+        <SolidColorBrush x:Key="MyForegroud" Color="White"/>
+      </ResourceDictionary>
+  </ResourceDictionary.ThemeDictionaries>
+
+  <ControlTheme x:Key="{x:Type controls:NewTemplatedControl}" TargetType="controls:NewTemplatedControl">
     <Setter Property="Template">
       <ControlTemplate>
-        <TextBlock Text="Templated Control" />
+        <TextBlock Text="Templated Control" Foreground="{DynamicResourceKey MyForegroud}" />
       </ControlTemplate>
     </Setter>
-  </Style>
-</Styles>
+  </ControlTheme>
+</ResourceDictionary>
