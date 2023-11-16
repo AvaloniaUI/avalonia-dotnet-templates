@@ -2,31 +2,30 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="using:AvaloniaAppTemplate.Namespace">
   <Design.PreviewWith>    
-    <StackPanel Width="400" MinHeight="400">
+    <StackPanel Width="400" Spacing="10">      
        <ThemeVariantScope RequestedThemeVariant="Default">
-          <controls:NewTemplatedControl />      
+          <StackPanel Background="{DynamicResource SystemRegionBrush}">
+            <controls:NewTemplatedControl />
+          </StackPanel>
        </ThemeVariantScope>
        <ThemeVariantScope RequestedThemeVariant="Light">
-          <controls:NewTemplatedControl />      
+          <StackPanel Background="{DynamicResource SystemRegionBrush}">
+            <controls:NewTemplatedControl />
+          </StackPanel>
        </ThemeVariantScope>
        <ThemeVariantScope RequestedThemeVariant="Dark">
-          <controls:NewTemplatedControl />      
+          <StackPanel Background="{DynamicResource SystemRegionBrush}">
+            <controls:NewTemplatedControl />
+          </StackPanel>
        </ThemeVariantScope>
     </StackPanel>
   </Design.PreviewWith>
 
-  <ResourceDictionary.ThemeDictionaries>
-      <ResourceDictionary x:Key="Default">
-        <SolidColorBrush x:Key="MyForegroud" Color="Black"/>
-      </ResourceDictionary>
-      <ResourceDictionary x:Key="Light">
-        <SolidColorBrush x:Key="MyForegroud" Color="Black"/>
-      </ResourceDictionary>
-      <ResourceDictionary x:Key="Dark">
-        <SolidColorBrush x:Key="MyForegroud" Color="White"/>
-      </ResourceDictionary>
-  </ResourceDictionary.ThemeDictionaries>
-
+ <!--
+   If you want support Theme variant see 
+   https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/CustomControls/RatingControlSample#step-9-theme-variant
+ -->
+  
   <ControlTheme x:Key="{x:Type controls:NewTemplatedControl}" TargetType="controls:NewTemplatedControl">
     <Setter Property="Template">
       <ControlTemplate>
