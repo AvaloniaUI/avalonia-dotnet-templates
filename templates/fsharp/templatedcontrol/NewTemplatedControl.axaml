@@ -3,11 +3,13 @@
         xmlns:controls="using:AvaloniaAppTemplate.Namespace">
 
   <!--
-    If you want support Theme variant see 
-    Docs:   https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes
-           https://docs.avaloniaui.net/docs/guides/styles-and-resources/how-to-use-theme-variants
-    Sample: https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/CustomControls/RatingControlSample#step-9-theme-variant
+    Additional resources 
+    Using Control Themes:
+         https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes
+    Using Theme Variants:
+         https://docs.avaloniaui.net/docs/guides/styles-and-resources/how-to-use-theme-variants
   -->
+  
   <Design.PreviewWith>
     <StackPanel Width="400" Spacing="10">      
         <StackPanel Background="{DynamicResource SystemRegionBrush}">
