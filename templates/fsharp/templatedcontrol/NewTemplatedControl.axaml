@@ -1,35 +1,25 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="using:AvaloniaAppTemplate.Namespace">
-  <Design.PreviewWith>    
+
+  <!--
+    If you want support Theme variant see 
+    Docs:   https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes
+           https://docs.avaloniaui.net/docs/guides/styles-and-resources/how-to-use-theme-variants
+    Sample: https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/CustomControls/RatingControlSample#step-9-theme-variant
+  -->
+  <Design.PreviewWith>
     <StackPanel Width="400" Spacing="10">      
-       <ThemeVariantScope RequestedThemeVariant="Default">
-          <StackPanel Background="{DynamicResource SystemRegionBrush}">
-            <controls:NewTemplatedControl />
-          </StackPanel>
-       </ThemeVariantScope>
-       <ThemeVariantScope RequestedThemeVariant="Light">
-          <StackPanel Background="{DynamicResource SystemRegionBrush}">
-            <controls:NewTemplatedControl />
-          </StackPanel>
-       </ThemeVariantScope>
-       <ThemeVariantScope RequestedThemeVariant="Dark">
-          <StackPanel Background="{DynamicResource SystemRegionBrush}">
-            <controls:NewTemplatedControl />
-          </StackPanel>
-       </ThemeVariantScope>
+        <StackPanel Background="{DynamicResource SystemRegionBrush}">
+          <controls:NewTemplatedControl />
+        </StackPanel>
     </StackPanel>
   </Design.PreviewWith>
-
- <!--
-   If you want support Theme variant see 
-   https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/CustomControls/RatingControlSample#step-9-theme-variant
- -->
-  
+ 
   <ControlTheme x:Key="{x:Type controls:NewTemplatedControl}" TargetType="controls:NewTemplatedControl">
     <Setter Property="Template">
       <ControlTemplate>
-        <TextBlock Text="Templated Control" Foreground="{DynamicResourceKey MyForegroud}" />
+        <TextBlock Text="Templated Control" Foreground="{TemplateBinding Foreground}" />
       </ControlTemplate>
     </Setter>
   </ControlTheme>
