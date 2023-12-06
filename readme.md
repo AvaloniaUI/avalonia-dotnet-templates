@@ -6,7 +6,7 @@ For more information about `dotnet new` templates see [here](https://blogs.msdn.
 
 ## Installing the templates
 
-Run from a command line (`.NET 7`):
+Run from a command line (`.NET 7+`):
 
 ```powershell
 dotnet new install Avalonia.Templates
@@ -50,17 +50,17 @@ Available parameters:
 
 *Description*: The target framework for the project.
 
-*Options*: **net6.0**, **net7.0**
+*Options*: **net6.0**, **net7.0**, **net8.0**
 
-*By default*: net6.0
+*By default*: net8.0
 
 ``-av, --avalonia-version``
 
 *Description*: The target version of Avalonia NuGet packages.
 
-*Options*: **0.10.21**, **11.0.5**
+*Options*: **0.10.21**, **11.0.6**
 
-*By default*: 11.0.5
+*By default*: 11.0.6
 
 ``-cb, --compiled-bindings``
 
@@ -91,17 +91,17 @@ Available parameters:
 
 *Description*: The target framework for the project.
 
-*Options*: **net6.0**, **net7.0**
+*Options*: **net6.0**, **net7.0**, **net8.0**
 
-*By default*: net6.0
+*By default*: net8.0
 
 ``-av, --avalonia-version``
 
 *Description*: The target version of Avalonia NuGet packages.
 
-*Options*: **0.10.21**, **11.0.5**
+*Options*: **0.10.21**, **11.0.6**
 
-*By default*: 11.0.5
+*By default*: 11.0.6
 
 ``-cb, --compiled-bindings``
 
