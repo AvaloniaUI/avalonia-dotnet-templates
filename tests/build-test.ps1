@@ -64,7 +64,6 @@ function Test-Template {
 
     # Build
     Exec { dotnet build $outDir/$lang/$folderName -bl:$bl }
-    Remove-Item -Recurse $outDir/$lang/$folderName
 }
 
 function Create-And-Build {
@@ -87,7 +86,6 @@ function Create-And-Build {
 
     # Build
     Exec { dotnet build output/$lang/$folderName -bl:$bl }
-    Remove-Item -Recurse output/$lang/$folderName
 }
 
 if (Test-Path "output") {
@@ -130,6 +128,8 @@ Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "av" "0.10.21" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "av" "11.0.6" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "cb" "true" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "cb" "false" $binlog
+
+Remove-Item -Recurse "output/C#"
 
 Test-Template "avalonia.mvvm" "AvaloniaMvvm" "F#" "f" "net6.0" $binlog
 Test-Template "avalonia.mvvm" "AvaloniaMvvm" "F#" "f" "net7.0" $binlog
