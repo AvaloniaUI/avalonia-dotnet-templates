@@ -87,7 +87,7 @@ function Create-And-Build {
 
     # Build
     Exec { dotnet build output/$lang/$folderName -bl:$bl }
-    Remove-Item -Recurse $outDir/$lang/$folderName
+    Remove-Item -Recurse output/$lang/$folderName
 }
 
 if (Test-Path "output") {
