@@ -64,6 +64,7 @@ function Test-Template {
 
     # Build
     Exec { dotnet build $outDir/$lang/$folderName -bl:$bl }
+    Remove-Item -Recurse $outDir/$lang/$folderName
 }
 
 function Create-And-Build {
@@ -86,6 +87,7 @@ function Create-And-Build {
 
     # Build
     Exec { dotnet build output/$lang/$folderName -bl:$bl }
+    Remove-Item -Recurse $outDir/$lang/$folderName
 }
 
 if (Test-Path "output") {
