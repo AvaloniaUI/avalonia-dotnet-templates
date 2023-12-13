@@ -27,10 +27,14 @@
         {
           "choice": "net7.0",
           "description": "Target net7.0"
+        },
+        {
+          "choice": "net8.0",
+          "description": "Target net8.0"
         }
       ],
       "replaces": "FrameworkParameter",
-      "defaultValue": "net6.0"
+      "defaultValue": "net8.0"
     },
     "skipRestore": {
       "type": "parameter",
@@ -72,16 +76,16 @@
           "description": "Target 0.10.21"
         },
         {
-          "choice": "11.0.5",
-          "description": "Target 11.0.5 (Latest stable)"
+          "choice": "11.0.6",
+          "description": "Target 11.0.6 (Latest stable)"
         }
       ],
       "replaces": "AvaloniaVersionTemplateParameter",
-      "defaultValue": "11.0.5"
+      "defaultValue": "11.0.6"
     },
     "AvaloniaStableChosen": {
       "type": "computed",
-      "value": "(AvaloniaVersion == \"11.0.5\")"
+      "value": "(AvaloniaVersion == \"11.0.6\")"
     },
     "UseCompiledBindings": {
       "type": "parameter",
@@ -89,7 +93,7 @@
       "datatype": "bool",
       "displayName": "Use compiled Bindings",
       "defaultValue": "true",
-      "isEnabled": "(AvaloniaVersion == \"11.0.5\")"
+      "isEnabled": "(AvaloniaVersion == \"11.0.6\")"
     },
     "RemoveViewLocator": {
       "type": "parameter",
