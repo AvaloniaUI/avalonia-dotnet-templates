@@ -52,16 +52,16 @@
           "description": "Target 0.10.21"
         },
         {
-          "choice": "11.0.6",
-          "description": "Target 11.0.6 (Latest stable)"
+          "choice": "11.0.9",
+          "description": "Target 11.0.9 (Latest stable)"
         }
       ],
       "replaces": "AvaloniaVersionTemplateParameter",
-      "defaultValue": "11.0.6"
+      "defaultValue": "11.0.9"
     },
     "AvaloniaStableChosen": {
       "type": "computed",
-      "value": "(AvaloniaVersion == \"11.0.6\")"
+      "value": "(AvaloniaVersion == \"11.0.9\")"
     },
     "UseCompiledBindings": {
       "type": "parameter",
@@ -69,7 +69,7 @@
       "datatype": "bool",
       "displayName": "Use compiled Bindings",
       "defaultValue": "true",
-      "isEnabled": "(AvaloniaVersion == \"11.0.6\")"
+      "isEnabled": "(AvaloniaVersion == \"11.0.9\")"
     },
     "HostIdentifier": {
       "type": "bind",
