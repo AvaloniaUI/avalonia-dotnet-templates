@@ -1,15 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <OutputType>Exe</OutputType>
     <TargetFramework>FrameworkParameter</TargetFramework>
     <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
-    <WasmMainJSPath>AppBundle\main.js</WasmMainJSPath>
-    <OutputType>Exe</OutputType>
+    <WasmMainJSPath>wwwroot\main.js</WasmMainJSPath>
+    <WasmRuntimeAssetsLocation>./_framework</WasmRuntimeAssetsLocation>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="Properties\**" />
-    <None Include="AppBundle\**" />
-    <WasmExtraFilesToDeploy Include="AppBundle\**" />
+    <None Include="wwwroot\**" />
+    <WasmExtraFilesToDeploy Include="wwwroot\**" />
   </ItemGroup>
 
   <ItemGroup>
