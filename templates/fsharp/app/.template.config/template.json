@@ -48,8 +48,8 @@
       "datatype": "choice",
       "choices": [
         {
-          "choice": "0.10.21",
-          "description": "Target 0.10.21"
+          "choice": "0.10.22",
+          "description": "Target 0.10.22"
         },
         {
           "choice": "11.0.9",

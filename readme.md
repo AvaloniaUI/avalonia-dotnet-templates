@@ -58,7 +58,7 @@ Available parameters:
 
 *Description*: The target version of Avalonia NuGet packages.
 
-*Options*: **0.10.21**, **11.0.9**
+*Options*: **0.10.22**, **11.0.9**
 
 *By default*: 11.0.9
 
@@ -99,7 +99,7 @@ Available parameters:
 
 *Description*: The target version of Avalonia NuGet packages.
 
-*Options*: **0.10.21**, **11.0.9**
+*Options*: **0.10.22**, **11.0.9**
 
 *By default*: 11.0.9
 
