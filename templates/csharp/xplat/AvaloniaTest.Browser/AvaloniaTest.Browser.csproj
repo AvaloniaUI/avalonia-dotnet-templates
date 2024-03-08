@@ -4,10 +4,11 @@
     <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
     <WasmMainJSPath>AppBundle\main.js</WasmMainJSPath>
     <OutputType>Exe</OutputType>
+    <WasmRuntimeAssetsLocation>./_framework</WasmRuntimeAssetsLocation>
   </PropertyGroup>
 
   <ItemGroup>
-    <WasmExtraFilesToDeploy Include="AppBundle\**" />
+    <WasmExtraFilesToDeploy Include="wwwroot\**" />
   </ItemGroup>
 
   <ItemGroup>
