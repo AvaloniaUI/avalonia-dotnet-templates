@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WebAssembly">
   <PropertyGroup>
-    <TargetFramework>FrameworkParameter-browser</TargetFramework>
     <OutputType>Exe</OutputType>
+    <TargetFramework>FrameworkParameter-browser</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
