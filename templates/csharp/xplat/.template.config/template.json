@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "AvaloniaUI",
-  "classifications": [ "Desktop", "Xaml", "Avalonia", "Web", "Mobile" ],
+  "classifications": [ "Desktop", "Xaml", "Avalonia", "Browser", "Mobile" ],
   "description": "A cross-platform Avalonia UI Application using the MVVM pattern targeting Desktop, Mobile and Browser with WebAssembly",
   "groupidentity": "Avalonia.App.CrossPlatform",
   "identity": "Avalonia.App.CrossPlatform",
