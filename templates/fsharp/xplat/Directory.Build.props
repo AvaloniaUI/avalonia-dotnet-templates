@@ -1,5 +1,5 @@
 <Project>
   <PropertyGroup>
-    <AvaloniaVersion>$(AvaloniaVersion)</AvaloniaVersion>
+    <AvaloniaVersion>AvaloniaVersionTemplateParameter</AvaloniaVersion>
   </PropertyGroup>
 </Project>
