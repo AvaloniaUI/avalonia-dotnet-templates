@@ -76,8 +76,7 @@
       "description": "Defines if CompiledBindings should be enabled by default in the project (only supported in 11.0 version and newer).",
       "datatype": "bool",
       "displayName": "Use compiled Bindings",
-      "defaultValue": "true",
-      "isEnabled": "(AvaloniaVersion == \"11.0.10\")"
+      "defaultValue": "true"
     },
     "RemoveViewLocator": {
       "type": "parameter",
