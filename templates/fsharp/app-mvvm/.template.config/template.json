@@ -66,22 +66,21 @@
         {
           "choice": "11.0.10",
           "description": "Target 11.0.10 (Latest stable)"
+        },
+        {
+          "choice": "11.1.0-beta1",
+          "description": "Target 11.1.0-beta1 (Next version)"
         }
       ],
       "replaces": "AvaloniaVersionTemplateParameter",
       "defaultValue": "11.0.10"
-    },
-    "AvaloniaStableChosen": {
-      "type": "computed",
-      "value": "(AvaloniaVersion == \"11.0.10\")"
     },
     "UseCompiledBindings": {
       "type": "parameter",
       "description": "Defines if CompiledBindings should be enabled by default in the project (only supported in 11.0 version and newer).",
       "datatype": "bool",
       "displayName": "Use compiled Bindings",
-      "defaultValue": "true",
-      "isEnabled": "(AvaloniaVersion == \"11.0.10\")"
+      "defaultValue": "true"
     },
     "RemoveViewLocator": {
       "type": "parameter",
@@ -99,7 +98,7 @@
     {
       "modifiers": [
         {
-          "condition": "(RemoveViewLocator && AvaloniaStableChosen)",
+          "condition": "RemoveViewLocator",
           "exclude": [
             "App.axaml",
             "ViewLocator.fs"
@@ -109,7 +108,7 @@
           }
         },
         {
-          "condition": "(!RemoveViewLocator && AvaloniaStableChosen)",
+          "condition": "!RemoveViewLocator",
           "exclude": [
             "App.RemoveViewLocator.axaml"
           ]
