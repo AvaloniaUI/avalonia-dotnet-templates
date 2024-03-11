@@ -10,23 +10,12 @@
     <!--#endif -->
   </PropertyGroup>
 
-  <!--#if (!AvaloniaStableChosen) -->
-  <ItemGroup>
-    <TrimmerRootAssembly Include="Avalonia.Themes.Fluent" />
-  </ItemGroup>
-  <!--#endif -->
-
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="AvaloniaVersionTemplateParameter" />
     <PackageReference Include="Avalonia.Desktop" Version="AvaloniaVersionTemplateParameter" />
-    <!--#if (AvaloniaStableChosen) -->
     <PackageReference Include="Avalonia.Themes.Fluent" Version="AvaloniaVersionTemplateParameter" />
     <PackageReference Include="Avalonia.Fonts.Inter" Version="AvaloniaVersionTemplateParameter" />
-    <!--#endif -->
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="AvaloniaVersionTemplateParameter" />
-    <!--#if (!AvaloniaStableChosen) -->
-    <PackageReference Include="XamlNameReferenceGenerator" Version="1.6.1" />
-    <!--#endif -->
   </ItemGroup>
 </Project>

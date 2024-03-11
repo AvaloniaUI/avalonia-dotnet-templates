@@ -21,14 +21,6 @@
       "datatype": "choice",
       "choices": [
         {
-          "choice": "net6.0",
-          "description": "Target net6.0"
-        },
-        {
-          "choice": "net7.0",
-          "description": "Target net7.0"
-        },
-        {
           "choice": "net8.0",
           "description": "Target net8.0"
         }
@@ -48,20 +40,12 @@
       "datatype": "choice",
       "choices": [
         {
-          "choice": "0.10.22",
-          "description": "Target 0.10.22"
-        },
-        {
           "choice": "11.0.10",
           "description": "Target 11.0.10 (Latest stable)"
         }
       ],
       "replaces": "AvaloniaVersionTemplateParameter",
       "defaultValue": "11.0.10"
-    },
-    "AvaloniaStableChosen": {
-      "type": "computed",
-      "value": "(AvaloniaVersion == \"11.0.10\")"
     },
     "UseCompiledBindings": {
       "type": "parameter",
@@ -76,27 +60,6 @@
       "binding": "HostIdentifier"
     }
   },
-  "sources": [
-    {
-      "modifiers": [
-        {
-          "condition": "(AvaloniaStableChosen)",
-          "exclude": [
-            "App.v0.10.axaml"
-          ]
-        },
-        {
-          "condition": "(!AvaloniaStableChosen)",
-          "exclude": [
-            "App.axaml"
-          ]
-        }
-      ],
-      "rename": {
-        "App.v0.10.axaml": "App.axaml"
-      }
-    }
-  ],
   "primaryOutputs": [
     { "path": "AvaloniaAppTemplate.csproj" },
     {

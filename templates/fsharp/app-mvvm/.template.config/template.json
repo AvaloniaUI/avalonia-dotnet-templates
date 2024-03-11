@@ -21,14 +21,6 @@
       "datatype": "choice",
       "choices": [
         {
-          "choice": "net6.0",
-          "description": "Target net6.0"
-        },
-        {
-          "choice": "net7.0",
-          "description": "Target net7.0"
-        },
-        {
           "choice": "net8.0",
           "description": "Target net8.0"
         }
@@ -72,10 +64,6 @@
       "datatype": "choice",
       "choices": [
         {
-          "choice": "0.10.22",
-          "description": "Target 0.10.22"
-        },
-        {
           "choice": "11.0.10",
           "description": "Target 11.0.10 (Latest stable)"
         }
@@ -114,8 +102,6 @@
           "condition": "(RemoveViewLocator && AvaloniaStableChosen)",
           "exclude": [
             "App.axaml",
-            "App.v0.10.axaml",
-            "App.v0.10.RemoveViewLocator.axaml",
             "ViewLocator.fs"
           ],
           "rename": {
@@ -125,33 +111,8 @@
         {
           "condition": "(!RemoveViewLocator && AvaloniaStableChosen)",
           "exclude": [
-            "App.v0.10.axaml",
-            "App.RemoveViewLocator.axaml",
-            "App.v0.10.RemoveViewLocator.axaml"
+            "App.RemoveViewLocator.axaml"
           ]
-        },
-        {
-          "condition": "(RemoveViewLocator && !AvaloniaStableChosen)",
-          "exclude": [
-            "App.axaml",
-            "App.v0.10.axaml",
-            "App.RemoveViewLocator.axaml",
-            "ViewLocator.fs"
-          ],
-          "rename": {
-            "App.v0.10.RemoveViewLocator.axaml": "App.axaml"
-          }
-        },
-        {
-          "condition": "(!RemoveViewLocator && !AvaloniaStableChosen)",
-          "exclude": [
-            "App.axaml",
-            "App.RemoveViewLocator.axaml",
-            "App.v0.10.RemoveViewLocator.axaml"
-          ],
-          "rename": {
-            "App.v0.10.axaml": "App.axaml"
-          }
         }
       ]
     }
