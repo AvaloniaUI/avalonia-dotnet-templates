@@ -13,9 +13,7 @@ module Program =
         AppBuilder
             .Configure<App>()
             .UsePlatformDetect()
-#if (AvaloniaStableChosen)
             .WithInterFont()
-#endif
             .LogToTrace(areas = Array.empty)
 #if (ReactiveUIToolkitChosen)
             .UseReactiveUI()
