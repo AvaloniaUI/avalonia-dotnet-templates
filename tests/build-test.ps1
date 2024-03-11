@@ -103,7 +103,7 @@ Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "cb" "false" $binlog
 # Build the project only twice with all item templates,once with .net6.0 tfm and once with .net7.0 tfm for C# and F#
 Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#" "f" "net8.0" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "av" "11.0.10" $binlog
-Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "av" "11.0.10" $binlog
+Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "av" "11.1.0-beta1" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "m" "ReactiveUI" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "m" "CommunityToolkit" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "cb" "true" $binlog
