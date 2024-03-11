@@ -7,11 +7,8 @@ namespace AvaloniaAppTemplate;
 
 public class ViewLocator : IDataTemplate
 {
-#if (AvaloniaStableChosen)
+
     public Control? Build(object? data)
-#else
-    public IControl Build(object data)
-#endif
     {
         if (data is null)
             return null;
