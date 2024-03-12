@@ -1,19 +1,12 @@
-﻿<!--#if (Avalonia11_1Chosen) -->
-<Project Sdk="Microsoft.NET.Sdk.WebAssembly">
-<!--#else -->
-<Project Sdk="Microsoft.NET.Sdk">
-<!--#endif -->
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>FrameworkParameter-browser</TargetFramework>
-    <!--#if (!Avalonia11_1Chosen) -->
     <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
     <WasmMainJSPath>wwwroot\main.js</WasmMainJSPath>
     <WasmRuntimeAssetsLocation>./_framework</WasmRuntimeAssetsLocation>
-    <!--#endif -->
   </PropertyGroup>
 
-  <!--#if (!Avalonia11_1Chosen) -->
   <ItemGroup>
     <Compile Include="Program.fs" />
   </ItemGroup>
@@ -25,7 +18,6 @@
   <ItemGroup>
     <Content Include="runtimeconfig.template.json" />
   </ItemGroup>
-  <!--#endif -->
 
   <ItemGroup>
     <PackageReference Include="Avalonia.Browser" Version="$(AvaloniaVersion)" />
