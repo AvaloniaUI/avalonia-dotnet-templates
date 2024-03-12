@@ -24,11 +24,7 @@ public partial class App : Application
 #if (CommunityToolkitChosen)
             // Line below is needed to remove Avalonia data validation.
             // Without this line you will get duplicate validations from both Avalonia and CT
-    #if (AvaloniaStableChosen)
             BindingPlugins.DataValidators.RemoveAt(0);
-    #else
-            ExpressionObserver.DataValidators.RemoveAll(x => x is DataAnnotationsValidationPlugin);
-    #endif
 #endif
             desktop.MainWindow = new MainWindow
             {
