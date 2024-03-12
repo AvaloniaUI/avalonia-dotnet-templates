@@ -20,14 +20,14 @@ body:
     id: plugin-version
     attributes:
       label: Avalonia Templates version
-      placeholder: e.g. 0.10.22
+      placeholder: e.g. 11.0.10
     validations:
       required: true
   - type: input
     id: avalonia-version
     attributes:
       label: Avalonia version
-      placeholder: e.g. 0.10.22, 11.0
+      placeholder: e.g. 11.0.10, 11.1
   - type: textarea
     id: additional-info
     attributes:
