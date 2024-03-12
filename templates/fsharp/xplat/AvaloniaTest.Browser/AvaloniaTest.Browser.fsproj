@@ -13,19 +13,19 @@
     <!--#endif -->
   </PropertyGroup>
 
+  <!--#if (!Avalonia11_1Chosen) -->
   <ItemGroup>
     <Compile Include="Program.fs" />
   </ItemGroup>
 
-  <!--#if (!Avalonia11_1Chosen) -->
   <ItemGroup>
     <WasmExtraFilesToDeploy Include="wwwroot\**" />
   </ItemGroup>
-  <!--#endif -->
 
   <ItemGroup>
     <Content Include="runtimeconfig.template.json" />
   </ItemGroup>
+  <!--#endif -->
 
   <ItemGroup>
     <PackageReference Include="Avalonia.Browser" Version="$(AvaloniaVersion)" />
