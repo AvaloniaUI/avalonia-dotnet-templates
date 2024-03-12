@@ -4,6 +4,9 @@
     "Framework": {
       "longName": "framework"
     },
+    "AvaloniaVersion": {
+      "longName": "avalonia-version"
+    },
     "UseCompiledBindings": {
       "longName": "compiled-bindings"
     },
