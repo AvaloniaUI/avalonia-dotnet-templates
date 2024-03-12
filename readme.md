@@ -50,7 +50,7 @@ Available parameters:
 
 *Description*: The target framework for the project.
 
-*Options*: **net6.0**, **net7.0**, **net8.0**
+*Options*: **net8.0**
 
 *By default*: net8.0
 
@@ -58,7 +58,7 @@ Available parameters:
 
 *Description*: The target version of Avalonia NuGet packages.
 
-*Options*: **0.10.22**, **11.0.10**
+*Options*: **11.0.10**, **11.1.0-beta1**
 
 *By default*: 11.0.10
 
@@ -91,7 +91,7 @@ Available parameters:
 
 *Description*: The target framework for the project.
 
-*Options*: **net6.0**, **net7.0**, **net8.0**
+*Options*: **net8.0**
 
 *By default*: net8.0
 
@@ -99,7 +99,7 @@ Available parameters:
 
 *Description*: The target version of Avalonia NuGet packages.
 
-*Options*: **0.10.22**, **11.0.10**
+*Options*: **11.0.10**, **11.1.0-beta1**
 
 *By default*: 11.0.10
 
@@ -150,6 +150,14 @@ Available parameters:
 *Options*: **true**, **false**
 
 *By default*: true
+
+``-av, --avalonia-version``
+
+*Description*: The target version of Avalonia NuGet packages.
+
+*Options*: **11.0.10**, **11.1.0-beta1**
+
+*By default*: 11.0.10
 
 ``-rvl, --remove-view-locator``
 
