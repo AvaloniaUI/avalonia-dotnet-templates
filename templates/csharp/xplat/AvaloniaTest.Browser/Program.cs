@@ -2,7 +2,9 @@
 using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Browser;
+#if (ReactiveUIToolkitChosen)
 using Avalonia.ReactiveUI;
+#endif
 using AvaloniaTest;
 
 [assembly: SupportedOSPlatform("browser")]

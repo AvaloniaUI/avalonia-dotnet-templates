@@ -4,7 +4,9 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.iOS;
 using Avalonia.Media;
+#if (ReactiveUIToolkitChosen)
 using Avalonia.ReactiveUI;
+#endif
 
 namespace AvaloniaTest.iOS;
 
