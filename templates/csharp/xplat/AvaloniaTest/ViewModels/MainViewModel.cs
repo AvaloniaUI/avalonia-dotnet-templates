@@ -5,9 +5,9 @@ using CommunityToolkit.Mvvm.ComponentModel;
 namespace AvaloniaTest.ViewModels;
 
 #if (CommunityToolkitChosen)
-public partial class MainWindowViewModel : ViewModelBase
+public partial class MainViewModel : ViewModelBase
 #else
-public class MainWindowViewModel : ViewModelBase
+public class MainViewModel : ViewModelBase
 #endif
 {
 #if (CommunityToolkitChosen)
