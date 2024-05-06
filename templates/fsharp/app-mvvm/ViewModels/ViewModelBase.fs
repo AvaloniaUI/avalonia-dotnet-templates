@@ -6,6 +6,7 @@ open CommunityToolkit.Mvvm.ComponentModel
 open ReactiveUI
 #endif
 
+[<AbstractClass>]
 type ViewModelBase() =
 #if (CommunityToolkitChosen)
     inherit ObservableObject()
