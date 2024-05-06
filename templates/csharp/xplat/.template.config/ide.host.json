@@ -10,6 +10,13 @@
       "isVisible": true
     },
     {
+      "id": "MVVMToolkit",
+      "name": {
+        "text": "MVVM Toolkit"
+      },
+      "isVisible": true
+    },
+    {
       "id": "UseCompiledBindings",
       "name": {
         "text": "Use Compiled Bindings"
