@@ -113,18 +113,20 @@ Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "rvl" "false" $binlog
 
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "f" "net8.0" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "av" "11.1.0-beta1" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "m" "ReactiveUI" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "m" "CommunityToolkit" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "cb" "true" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "cb" "false" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "rvl" "true" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "rvl" "false" $binlog
+
+Remove-Item -Recurse "output/C#"
 
 Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "f" "net8.0" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "av" "11.0.10" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "av" "11.1.0-beta1" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "cb" "true" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "cb" "false" $binlog
-
-Remove-Item -Recurse "output/C#"
 
 Test-Template "avalonia.mvvm" "AvaloniaMvvm" "F#" "f" "net8.0" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "av" "11.0.10" $binlog
@@ -138,7 +140,11 @@ Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "rvl" "false" $binlog
 
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "f" "net8.0" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "av" "11.1.0-beta1" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "m" "ReactiveUI" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "m" "CommunityToolkit" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "cb" "true" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "cb" "false" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "rvl" "true" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "rvl" "false" $binlog
+
+Remove-Item -Recurse "output/F#"
