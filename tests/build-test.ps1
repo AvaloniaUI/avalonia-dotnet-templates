@@ -102,6 +102,7 @@ if (Test-Path "output") {
     Remove-Item -Recurse output
 }
 
+# Use same log file for all executions
 $binlog = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "binlog", "test.binlog"))
 
 Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "f" "net8.0" $binlog
@@ -130,7 +131,8 @@ Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "cb" "false" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "rvl" "true" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "rvl" "false" $binlog
 
-Remove-Item -Recurse "output/C#"
+# Ignore errors when files are still used by another process
+Remove-Item -Recurse -Force -ErrorAction SilentlyContinue "output/C#"
 
 Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "f" "net8.0" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "av" "11.0.10" $binlog
@@ -157,4 +159,5 @@ Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "cb" "false" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "rvl" "true" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "rvl" "false" $binlog
 
-Remove-Item -Recurse "output/F#"
+# Ignore errors when files are still used by another process
+Remove-Item -Recurse -Force -ErrorAction SilentlyContinue "output/F#"
