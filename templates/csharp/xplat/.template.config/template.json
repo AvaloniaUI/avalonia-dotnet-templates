@@ -8,7 +8,7 @@
   "name": "Avalonia Cross Platform Application",
   "preferNameDirectory": true,
   "shortName": "avalonia.xplat",
-  "sourceName": "AvaloniaTest",
+  "sourceName": "AvaloniaTest.1", //based on: https://github.com/dotnet/templating/issues/1920#issuecomment-901954876
   "defaultName": "AvaloniaApplication",
   "tags": {
     "language": "C#",
@@ -74,8 +74,8 @@
         {
           "condition": "(RemoveViewLocator)",
           "exclude": [
-            "AvaloniaTest/App.axaml",
-            "AvaloniaTest/ViewLocator.cs"
+            "AvaloniaTest.1/App.axaml",
+            "AvaloniaTest.1/ViewLocator.cs"
           ],
           "rename": {
             "App.RemoveViewLocator.axaml": "App.axaml"
@@ -84,25 +84,25 @@
         {
           "condition": "(!RemoveViewLocator)",
           "exclude": [
-            "AvaloniaTest/App.RemoveViewLocator.axaml"
+            "AvaloniaTest.1/App.RemoveViewLocator.axaml"
           ]
         }
       ]
     }
   ],
   "primaryOutputs": [
-    { "path": "AvaloniaTest/AvaloniaTest.csproj" },
-    { "path": "AvaloniaTest.Android/AvaloniaTest.Android.csproj" },
-    { "path": "AvaloniaTest.Desktop/AvaloniaTest.Desktop.csproj" },
-    { "path": "AvaloniaTest.iOS/AvaloniaTest.iOS.csproj" },
-    { "path": "AvaloniaTest.Browser/AvaloniaTest.Browser.csproj" },
+    { "path": "AvaloniaTest.1/AvaloniaTest.1.csproj" },
+    { "path": "AvaloniaTest.1.Android/AvaloniaTest.1.Android.csproj" },
+    { "path": "AvaloniaTest.1.Desktop/AvaloniaTest.1.Desktop.csproj" },
+    { "path": "AvaloniaTest.1.iOS/AvaloniaTest.1.iOS.csproj" },
+    { "path": "AvaloniaTest.1.Browser/AvaloniaTest.1.Browser.csproj" },
     {
       "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
-      "path": "AvaloniaTest/ViewModels/MainViewModel.cs"
+      "path": "AvaloniaTest.1/ViewModels/MainViewModel.cs"
     },
     {
       "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
-      "path": "AvaloniaTest/Views/MainView.axaml"
+      "path": "AvaloniaTest.1/Views/MainView.axaml"
     }
   ],
   "postActions": [
