@@ -21,7 +21,7 @@ function Exec
     param(
         [Parameter(Position=0,Mandatory=1)][scriptblock]$cmd,
         [Parameter(Position=1,Mandatory=0)][string]$errorMessage = ("Error executing command {0}" -f $cmd)
-    )
+    )    
 
     # Convert the ScriptBlock to a string and expand the variables
     $expandedCmdString = $ExecutionContext.InvokeCommand.ExpandString($cmd.ToString())    
@@ -90,7 +90,7 @@ function Create-And-Build {
     
     # Remove dots and - from folderName because in sln it will cause errors when building project
     $folderName = $folderName -replace "[.-]"
-    
+
     # Create the project
     Exec { dotnet new $template -o output/$lang/$folderName -$parameterName $value -lang $lang }
 
@@ -98,8 +98,18 @@ function Create-And-Build {
     Exec { dotnet build output/$lang/$folderName -bl:$bl }
 }
 
-if (Test-Path "output") {
-    Remove-Item -Recurse output
+# Clear file system from possible previous runs
+Write-Output "Clearing outputs from possible previous runs"
+if (Test-Path "output" -ErrorAction SilentlyContinue) {
+    Remove-Item -Recurse -Force "output"
+}
+$outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "output"))
+if (Test-Path $outDir -ErrorAction SilentlyContinue) {
+    Remove-Item -Recurse -Force $outDir
+}
+$binLogDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "binlog"))
+if (Test-Path $binLogDir -ErrorAction SilentlyContinue) {
+    Remove-Item -Recurse -Force $binLogDir
 }
 
 # Use same log file for all executions
