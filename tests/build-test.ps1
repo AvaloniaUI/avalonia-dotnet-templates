@@ -1,3 +1,7 @@
+# Enable common parameters e.g. -Verbose
+[CmdletBinding()]
+param()
+
 Set-StrictMode -Version latest
 $ErrorActionPreference = "Stop"
 
@@ -18,7 +22,13 @@ function Exec
         [Parameter(Position=0,Mandatory=1)][scriptblock]$cmd,
         [Parameter(Position=1,Mandatory=0)][string]$errorMessage = ("Error executing command {0}" -f $cmd)
     )
-    & $cmd
+
+    # Convert the ScriptBlock to a string and expand the variables
+    $expandedCmdString = $ExecutionContext.InvokeCommand.ExpandString($cmd.ToString())    
+    Write-Verbose "Executing command: $expandedCmdString"
+
+    Invoke-Command -ScriptBlock $cmd
+    
     if ($lastexitcode -ne 0) {
         throw ("Exec: " + $errorMessage)
     }
