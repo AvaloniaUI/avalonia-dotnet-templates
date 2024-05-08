@@ -2,9 +2,7 @@
 using Android.Content.PM;
 using Avalonia;
 using Avalonia.Android;
-#if (ReactiveUIToolkitChosen)
 using Avalonia.ReactiveUI;
-#endif
 
 namespace AvaloniaTest._1.Android;
 
@@ -19,11 +17,7 @@ public class MainActivity : AvaloniaMainActivity<App>
     protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
     {
         return base.CustomizeAppBuilder(builder)
-#if (CommunityToolkitChosen)
-            .WithInterFont();
-#else
             .WithInterFont()
             .UseReactiveUI();
-#endif
     }
 }

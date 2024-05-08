@@ -1,8 +1,6 @@
 ﻿using System;
 using Avalonia;
-#if (ReactiveUIToolkitChosen)
 using Avalonia.ReactiveUI;
-#endif
 
 namespace AvaloniaTest._1.Desktop;
 
@@ -20,8 +18,6 @@ sealed class Program
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
             .WithInterFont()
-#if (ReactiveUIToolkitChosen)
-            .UseReactiveUI()
-#endif
-            .LogToTrace();
+            .LogToTrace()
+            .UseReactiveUI();
 }

@@ -1,9 +1,5 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
-#if (CommunityToolkitChosen)
-using Avalonia.Data.Core;
-using Avalonia.Data.Core.Plugins;
-#endif
 using Avalonia.Markup.Xaml;
 using AvaloniaTest._1.ViewModels;
 using AvaloniaTest._1.Views;
@@ -21,11 +17,6 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-#if (CommunityToolkitChosen)
-            // Line below is needed to remove Avalonia data validation.
-            // Without this line you will get duplicate validations from both Avalonia and CT
-            BindingPlugins.DataValidators.RemoveAt(0);
-#endif
             desktop.MainWindow = new MainWindow
             {
                 DataContext = new MainViewModel()
