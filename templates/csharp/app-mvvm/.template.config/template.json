@@ -52,7 +52,7 @@
           "description": "Choose CommunityToolkit as MVVM toolkit in the template."
         }
       ],
-      "defaultValue": "ReactiveUI"
+      "defaultValue": "CommunityToolkit"
     },
     "ReactiveUIToolkitChosen": {
       "type": "computed",
