@@ -38,16 +38,12 @@
       "datatype": "choice",
       "choices": [
         {
-          "choice": "11.0.10",
-          "description": "Target 11.0.10 (Latest stable)"
-        },
-        {
           "choice": "11.1.0",
           "description": "Target 11.1.0 (Next version)"
         }
       ],
       "replaces": "AvaloniaVersionTemplateParameter",
-      "defaultValue": "11.0.10"
+      "defaultValue": "11.1.0"
     },
     "Avalonia11_1Chosen": {
       "type": "computed",
