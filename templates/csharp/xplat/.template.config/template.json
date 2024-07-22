@@ -23,6 +23,10 @@
         {
           "choice": "net8.0",
           "description": "Target net8.0"
+        },
+        {
+          "choice": "net9.0",
+          "description": "Target net9.0 previews"
         }
       ],
       "replaces": "FrameworkParameter",
