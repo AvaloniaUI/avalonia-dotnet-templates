@@ -147,6 +147,14 @@ Available parameters:
 
 *By default*: true
 
+``-m, --mvvm``
+
+*Description*: MVVM toolkit to use in the template.
+
+*Options*: **ReactiveUI**, **CommunityToolkit**
+
+*By default*: ReactiveUI
+
 ``-av, --avalonia-version``
 
 *Description*: The target version of Avalonia NuGet packages.

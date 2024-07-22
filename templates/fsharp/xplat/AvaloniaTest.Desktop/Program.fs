@@ -1,7 +1,9 @@
 namespace AvaloniaTest.Desktop
 open System
 open Avalonia
+#if (ReactiveUIToolkitChosen)
 open Avalonia.ReactiveUI
+#endif
 open AvaloniaTest
 
 module Program =
@@ -13,7 +15,9 @@ module Program =
             .UsePlatformDetect()
             .WithInterFont()
             .LogToTrace(areas = Array.empty)
+#if (ReactiveUIToolkitChosen)
             .UseReactiveUI()
+#endif
 
     [<EntryPoint; STAThread>]
     let main argv =
