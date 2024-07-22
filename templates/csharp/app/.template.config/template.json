@@ -41,13 +41,7 @@
     "AvaloniaVersion": {
       "type": "parameter",
       "description": "The target version of Avalonia NuGet packages.",
-      "datatype": "choice",
-      "choices": [
-        {
-          "choice": "11.1.0",
-          "description": "Target 11.1.0 (Next version)"
-        }
-      ],
+      "datatype": "text",
       "replaces": "AvaloniaVersionTemplateParameter",
       "defaultValue": "11.1.0"
     },
