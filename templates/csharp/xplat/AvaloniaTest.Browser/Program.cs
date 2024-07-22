@@ -7,8 +7,6 @@ using Avalonia.ReactiveUI;
 #endif
 using AvaloniaTest;
 
-[assembly: SupportedOSPlatform("browser")]
-
 internal sealed partial class Program
 {
     private static Task Main(string[] args) => BuildAvaloniaApp()
