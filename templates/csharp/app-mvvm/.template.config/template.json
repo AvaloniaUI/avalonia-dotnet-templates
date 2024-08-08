@@ -67,7 +67,7 @@
       "description": "The target version of Avalonia NuGet packages.",
       "datatype": "text",
       "replaces": "AvaloniaVersionTemplateParameter",
-      "defaultValue": "11.1.0"
+      "defaultValue": "11.1.2"
     },
     "UseCompiledBindings": {
       "type": "parameter",
@@ -106,8 +106,7 @@
           "exclude": [
             "App.RemoveViewLocator.axaml"
           ]
-        },
-      
+        }
       ]
     }
   ],
