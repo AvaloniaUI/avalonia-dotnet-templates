@@ -14,8 +14,6 @@ public class MainViewModel : ViewModelBase
     [ObservableProperty]
     private string _greeting = "Welcome to Avalonia!";
 #else
-#pragma warning disable CA1822 // Mark members as static
-    public string Greeting => "Welcome to Avalonia!";
-#pragma warning restore CA1822 // Mark members as static
+    public string Greeting { get; } = "Welcome to Avalonia!";
 #endif
 }
