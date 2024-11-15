@@ -80,7 +80,7 @@
     },
     "UseCentralPackageManagement": {
       "type": "parameter",
-      "description": "Defines if your app will Central Package Management (CPM). If disabled, Directory.Build.props will be created with shared Avalonia version.",
+      "description": "Defines if your app will use Central Package Management (CPM). If disabled, Directory.Build.props will be created with shared Avalonia version.",
       "datatype": "bool",
       "displayName": "Use Central Package Management (CPM)",
       "defaultValue": "true"

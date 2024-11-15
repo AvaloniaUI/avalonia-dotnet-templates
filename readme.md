@@ -171,7 +171,7 @@ Available parameters:
 
 ``-cpm``
 
-*Description*: Defines if your app will Central Package Management (CPM). If disabled, Directory.Build.props will be created with shared Avalonia version.
+*Description*: Defines if your app will use Central Package Management (CPM). If disabled, Directory.Build.props will be created with shared Avalonia version.
 
 *Options*: **true**, **false**
 
