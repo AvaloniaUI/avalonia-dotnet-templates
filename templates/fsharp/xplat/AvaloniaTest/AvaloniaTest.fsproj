@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>FrameworkParameter</TargetFramework>
-    <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <!--#if (UseCompiledBindings) -->
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>

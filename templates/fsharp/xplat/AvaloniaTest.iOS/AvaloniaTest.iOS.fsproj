@@ -4,7 +4,6 @@
     <TargetFramework>FrameworkParameter-ios</TargetFramework>
     <SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
     <ProvisioningType>manual</ProvisioningType>
-    <Nullable>enable</Nullable>
     <RuntimeIdentifier>iossimulator-x64</RuntimeIdentifier>
     
     <!-- These properties need to be set in order to run on a real iDevice -->
