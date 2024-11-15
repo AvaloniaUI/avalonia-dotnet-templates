@@ -1,0 +1,27 @@
+<Project>
+    <!-- https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management -->
+    <PropertyGroup>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+        <AvaloniaVersion>11.1.0</AvaloniaVersion>
+    </PropertyGroup>
+    <ItemGroup>
+        <!-- Avalonia packages -->
+        <!-- Important: keep version in sync! -->
+        <PackageVersion Include="Avalonia" Version="$(AvaloniaVersion)" />
+        <PackageVersion Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
+        <PackageVersion Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersion)" />
+        <PackageVersion Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
+        <PackageVersion Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
+        <PackageVersion Include="Avalonia.iOS" Version="$(AvaloniaVersion)" />
+        <PackageVersion Include="Avalonia.Browser" Version="$(AvaloniaVersion)" />
+        <PackageVersion Include="Avalonia.Android" Version="$(AvaloniaVersion)" />
+        <!--#if (ReactiveUIToolkitChosen) -->
+        <PackageVersion Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />
+        <!--#elif (CommunityToolkitChosen)-->
+
+        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+        <!--#endif -->
+
+        <PackageVersion Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.1" />
+    </ItemGroup>
+</Project>

@@ -29,6 +29,13 @@
         "text": "Remove View Locator"
       },
       "isVisible": true
+    },
+    {
+      "id": "UseCentralPackageManagement",
+      "name": {
+        "text": "Use Central Package Management (CPM)"
+      },
+      "isVisible": true
     }
   ]
 }
