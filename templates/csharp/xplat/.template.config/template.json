@@ -12,7 +12,8 @@
   "defaultName": "AvaloniaApplication",
   "tags": {
     "language": "C#",
-    "type": "project"
+    "type": "solution",
+    "editorTreatAs": "solution"
   },
   "symbols": {
     "Framework": {

@@ -10,7 +10,8 @@
   "defaultName": "AvaloniaApplication",
   "tags": {
     "language": "F#",
-    "type": "project"
+    "type": "solution",
+    "editorTreatAs": "solution"
   },
   "sourceName": "AvaloniaTest",
   "preferNameDirectory": true,
