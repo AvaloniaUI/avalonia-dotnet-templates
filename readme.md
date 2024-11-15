@@ -169,6 +169,14 @@ Available parameters:
 
 *By default*: false
 
+``-cpm``
+
+*Description*: Defines if your app will Central Package Management (CPM). If disabled, Directory.Build.props will be created with shared Avalonia version.
+
+*Options*: **true**, **false**
+
+*By default*: true
+
 # Creating a new Window
 
 To create a new `Window` called `MyNewWindow`, in the namespace `MyApp` run:
