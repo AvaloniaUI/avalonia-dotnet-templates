@@ -26,11 +26,11 @@
         },
         {
           "choice": "net9.0",
-          "description": "Target net9.0 previews"
+          "description": "Target net9.0"
         }
       ],
       "replaces": "FrameworkParameter",
-      "defaultValue": "net8.0"
+      "defaultValue": "net9.0"
     },
     "skipRestore": {
       "type": "parameter",

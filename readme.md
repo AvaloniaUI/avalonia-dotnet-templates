@@ -50,15 +50,15 @@ Available parameters:
 
 *Description*: The target framework for the project.
 
-*Options*: **net8.0**
+*Options*: **net9.0**, **net8.0**
 
-*By default*: net8.0
+*By default*: net9.0
 
 ``-av, --avalonia-version``
 
 *Description*: The target version of Avalonia NuGet packages.
 
-*By default*: 11.1.0
+*By default*: 11.2.1
 
 ``-cb, --compiled-bindings``
 
@@ -89,15 +89,15 @@ Available parameters:
 
 *Description*: The target framework for the project.
 
-*Options*: **net8.0**
+*Options*: **net9.0**, **net8.0**
 
-*By default*: net8.0
+*By default*: net9.0
 
 ``-av, --avalonia-version``
 
 *Description*: The target version of Avalonia NuGet packages.
 
-*By default*: 11.1.0
+*By default*: 11.2.1
 
 ``-cb, --compiled-bindings``
 
@@ -159,7 +159,7 @@ Available parameters:
 
 *Description*: The target version of Avalonia NuGet packages.
 
-*By default*: 11.1.0
+*By default*: 11.2.1
 
 ``-rvl, --remove-view-locator``
 
