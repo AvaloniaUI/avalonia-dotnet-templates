@@ -15,6 +15,10 @@
     },
     "RemoveViewLocator": {
       "longName": "remove-view-locator"
+    },
+    "UseCentralPackageManagement": {
+      "longName": "cpm",
+      "shortName": "cpm"
     }
   },
   "usageExamples": [

@@ -77,6 +77,13 @@
       "displayName": "Remove Avalonia ViewLocator",
       "defaultValue": "false"
     },
+    "UseCentralPackageManagement": {
+      "type": "parameter",
+      "description": "Defines if your app will Central Package Management (CPM). If disabled, Directory.Build.props will be created with shared Avalonia version.",
+      "datatype": "bool",
+      "displayName": "Use Central Package Management (CPM)",
+      "defaultValue": "true"
+    },
     "HostIdentifier": {
       "type": "bind",
       "binding": "HostIdentifier"
@@ -99,6 +106,18 @@
           "condition": "(!RemoveViewLocator)",
           "exclude": [
             "AvaloniaTest/App.RemoveViewLocator.axaml"
+          ]
+        },
+        {
+          "condition": "(UseCentralPackageManagement)",
+          "exclude": [
+            "Directory.Build.props"
+          ]
+        },
+        {
+          "condition": "(!UseCentralPackageManagement)",
+          "exclude": [
+            "Directory.Packages.props"
           ]
         }
       ]
