@@ -13,6 +13,9 @@
     "type": "solution",
     "editorTreatAs": "solution"
   },
+  "guids": [
+    "FA975F72-10BF-449E-AF8E-03F927A4CBCB" // Solution file (SolutionGuid)
+  ],
   "sourceName": "AvaloniaTest",
   "preferNameDirectory": true,
   "symbols": {
