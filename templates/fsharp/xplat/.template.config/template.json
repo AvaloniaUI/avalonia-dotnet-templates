@@ -26,11 +26,11 @@
         },
         {
           "choice": "net9.0",
-          "description": "Target net9.0 previews"
+          "description": "Target net9.0"
         }
       ],
       "replaces": "FrameworkParameter",
-      "defaultValue": "net8.0"
+      "defaultValue": "net9.0"
     },
     "MVVMToolkit": {
       "type": "parameter",
@@ -61,7 +61,7 @@
       "description": "The target version of Avalonia NuGet packages.",
       "datatype": "text",
       "replaces": "AvaloniaVersionTemplateParameter",
-      "defaultValue": "11.1.0"
+      "defaultValue": "11.2.1"
     },
     "UseCompiledBindings": {
       "type": "parameter",
