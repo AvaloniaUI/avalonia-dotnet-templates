@@ -2,21 +2,20 @@
     <!-- https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management -->
     <PropertyGroup>
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-        <AvaloniaVersion>11.1.0</AvaloniaVersion>
     </PropertyGroup>
     <ItemGroup>
         <!-- Avalonia packages -->
         <!-- Important: keep version in sync! -->
-        <PackageVersion Include="Avalonia" Version="$(AvaloniaVersion)" />
-        <PackageVersion Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
-        <PackageVersion Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersion)" />
-        <PackageVersion Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
-        <PackageVersion Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
-        <PackageVersion Include="Avalonia.iOS" Version="$(AvaloniaVersion)" />
-        <PackageVersion Include="Avalonia.Browser" Version="$(AvaloniaVersion)" />
-        <PackageVersion Include="Avalonia.Android" Version="$(AvaloniaVersion)" />
+        <PackageVersion Include="Avalonia" Version="AvaloniaVersionTemplateParameter" />
+        <PackageVersion Include="Avalonia.Themes.Fluent" Version="AvaloniaVersionTemplateParameter" />
+        <PackageVersion Include="Avalonia.Fonts.Inter" Version="AvaloniaVersionTemplateParameter" />
+        <PackageVersion Include="Avalonia.Diagnostics" Version="AvaloniaVersionTemplateParameter" />
+        <PackageVersion Include="Avalonia.Desktop" Version="AvaloniaVersionTemplateParameter" />
+        <PackageVersion Include="Avalonia.iOS" Version="AvaloniaVersionTemplateParameter" />
+        <PackageVersion Include="Avalonia.Browser" Version="AvaloniaVersionTemplateParameter" />
+        <PackageVersion Include="Avalonia.Android" Version="AvaloniaVersionTemplateParameter" />
         <!--#if (ReactiveUIToolkitChosen) -->
-        <PackageVersion Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />
+        <PackageVersion Include="Avalonia.ReactiveUI" Version="AvaloniaVersionTemplateParameter" />
         <!--#elif (CommunityToolkitChosen)-->
 
         <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.3.2" />
