@@ -5,7 +5,7 @@ steps:
     displayName: 'Use .NET SDK'
     inputs:
       packageType: 'sdk'
-      version: 8.0.100
+      version: 9.0.100
   - task: DotNetCoreCLI@2
     displayName: 'Pack Templates'
     inputs:
