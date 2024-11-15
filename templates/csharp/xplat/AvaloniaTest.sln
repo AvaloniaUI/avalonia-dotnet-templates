@@ -15,7 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaTest.Android", "Ava
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3DA99C4E-89E3-4049-9C22-0A7EC60D83D8}"
 	ProjectSection(SolutionItems) = preProject
+#if (UseCentralPackageManagement)
 		Directory.Build.props = Directory.Build.props
+#else
+		Directory.Build.props = Directory.Build.props
+#endif
 	EndProjectSection
 EndProject
 Global
