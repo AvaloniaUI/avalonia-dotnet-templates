@@ -13,7 +13,7 @@
     "type": "solution",
     "editorTreatAs": "solution"
   },
-  "sourceName": "AvaloniaTest",
+  "sourceName": "AvaloniaTest.1",
   "preferNameDirectory": true,
   "symbols": {
     "Framework": {
@@ -89,8 +89,8 @@
         {
           "condition": "(RemoveViewLocator)",
           "exclude": [
-            "AvaloniaTest/App.axaml",
-            "AvaloniaTest/ViewLocator.fs"
+            "AvaloniaTest.1/App.axaml",
+            "AvaloniaTest.1/ViewLocator.fs"
           ],
           "rename": {
             "App.RemoveViewLocator.axaml": "App.axaml"
@@ -99,25 +99,25 @@
         {
           "condition": "(!RemoveViewLocator)",
           "exclude": [
-            "AvaloniaTest/App.RemoveViewLocator.axaml"
+            "AvaloniaTest.1/App.RemoveViewLocator.axaml"
           ]
         }
       ]
     }
   ],
   "primaryOutputs": [
-    { "path": "AvaloniaTest/AvaloniaTest.fsproj" },
-    { "path": "AvaloniaTest.Android/AvaloniaTest.Android.fsproj" },
-    { "path": "AvaloniaTest.Desktop/AvaloniaTest.Desktop.fsproj" },
-    { "path": "AvaloniaTest.iOS/AvaloniaTest.iOS.fsproj" },
-    { "path": "AvaloniaTest.Browser/AvaloniaTest.Browser.fsproj" },
+    { "path": "AvaloniaTest.1/AvaloniaTest.1.fsproj" },
+    { "path": "AvaloniaTest.1.Android/AvaloniaTest.1.Android.fsproj" },
+    { "path": "AvaloniaTest.1.Desktop/AvaloniaTest.1.Desktop.fsproj" },
+    { "path": "AvaloniaTest.1.iOS/AvaloniaTest.1.iOS.fsproj" },
+    { "path": "AvaloniaTest.1.Browser/AvaloniaTest.1.Browser.fsproj" },
     {
       "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
-      "path": "AvaloniaTest/ViewModels/MainViewModel.fs"
+      "path": "AvaloniaTest.1/ViewModels/MainViewModel.fs"
     },
     {
       "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
-      "path": "AvaloniaTest/Views/MainView.axaml"
+      "path": "AvaloniaTest.1/Views/MainView.axaml"
     }
   ],
   "postActions": [

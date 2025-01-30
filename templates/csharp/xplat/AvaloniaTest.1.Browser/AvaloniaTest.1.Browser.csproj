@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WebAssembly">
+  <PropertyGroup>
+    <TargetFramework>FrameworkParameter-browser</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--#if (UseCentralPackageManagement) -->
+    <PackageReference Include="Avalonia.Browser" />
+    <!--#else -->
+    <PackageReference Include="Avalonia.Browser" Version="$(AvaloniaVersion)" />
+    <!--#endif -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AvaloniaTest.1\AvaloniaTest.1.csproj" />
+  </ItemGroup>
+</Project>

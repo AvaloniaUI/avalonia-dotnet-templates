@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>FrameworkParameter-ios</TargetFramework>
+    <SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--#if (UseCentralPackageManagement) -->
+    <PackageReference Include="Avalonia.iOS" />
+    <!--#else -->
+    <PackageReference Include="Avalonia.iOS" Version="$(AvaloniaVersion)" />
+    <!--#endif -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AvaloniaTest.1\AvaloniaTest.1.csproj" />
+  </ItemGroup>
+</Project>
