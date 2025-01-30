@@ -1,8 +1,9 @@
 open System.Runtime.Versioning
 open Avalonia
 open Avalonia.Browser
+#if (ReactiveUIToolkitChosen)
 open Avalonia.ReactiveUI
-
+#endif
 open AvaloniaTest._1
 
 module Program =
@@ -19,7 +20,9 @@ module Program =
         task {
             do! (buildAvaloniaApp()
             .WithInterFont()
+#if (ReactiveUIToolkitChosen)
             .UseReactiveUI()
+#endif
             .StartBrowserAppAsync("out"))
         }
         |> ignore

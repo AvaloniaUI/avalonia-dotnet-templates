@@ -23,10 +23,14 @@
         {
           "choice": "net8.0",
           "description": "Target net8.0"
+        },
+        {
+          "choice": "net9.0",
+          "description": "Target net9.0"
         }
       ],
       "replaces": "FrameworkParameter",
-      "defaultValue": "net8.0"
+      "defaultValue": "net9.0"
     },
     "skipRestore": {
       "type": "parameter",
@@ -37,19 +41,9 @@
     "AvaloniaVersion": {
       "type": "parameter",
       "description": "The target version of Avalonia NuGet packages.",
-      "datatype": "choice",
-      "choices": [
-        {
-          "choice": "11.0.10",
-          "description": "Target 11.0.10 (Latest stable)"
-        },
-        {
-          "choice": "11.1.0-beta1",
-          "description": "Target 11.1.0-beta1 (Next version)"
-        }
-      ],
+      "datatype": "text",
       "replaces": "AvaloniaVersionTemplateParameter",
-      "defaultValue": "11.0.10"
+      "defaultValue": "11.2.1"
     },
     "UseCompiledBindings": {
       "type": "parameter",

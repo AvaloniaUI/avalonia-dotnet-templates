@@ -1,3 +1,7 @@
+# Enable common parameters e.g. -Verbose
+[CmdletBinding()]
+param()
+
 Set-StrictMode -Version latest
 $ErrorActionPreference = "Stop"
 
@@ -17,8 +21,14 @@ function Exec
     param(
         [Parameter(Position=0,Mandatory=1)][scriptblock]$cmd,
         [Parameter(Position=1,Mandatory=0)][string]$errorMessage = ("Error executing command {0}" -f $cmd)
-    )
-    & $cmd
+    )    
+
+    # Convert the ScriptBlock to a string and expand the variables
+    $expandedCmdString = $ExecutionContext.InvokeCommand.ExpandString($cmd.ToString())    
+    Write-Verbose "Executing command: $expandedCmdString"
+
+    Invoke-Command -ScriptBlock $cmd
+    
     if ($lastexitcode -ne 0) {
         throw ("Exec: " + $errorMessage)
     }
@@ -80,7 +90,7 @@ function Create-And-Build {
     
     # Remove dots and - from folderName because in sln it will cause errors when building project
     $folderName = $folderName -replace "[.-]"
-    
+
     # Create the project
     Exec { dotnet new $template -o output/$lang/$folderName -$parameterName $value -lang $lang }
 
@@ -88,22 +98,31 @@ function Create-And-Build {
     Exec { dotnet build output/$lang/$folderName -bl:$bl }
 }
 
-if (Test-Path "output") {
-    Remove-Item -Recurse output
+# Clear file system from possible previous runs
+Write-Output "Clearing outputs from possible previous runs"
+if (Test-Path "output" -ErrorAction SilentlyContinue) {
+    Remove-Item -Recurse -Force "output"
+}
+$outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "output"))
+if (Test-Path $outDir -ErrorAction SilentlyContinue) {
+    Remove-Item -Recurse -Force $outDir
+}
+$binLogDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "binlog"))
+if (Test-Path $binLogDir -ErrorAction SilentlyContinue) {
+    Remove-Item -Recurse -Force $binLogDir
 }
 
+# Use same log file for all executions
 $binlog = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "binlog", "test.binlog"))
 
-Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "f" "net8.0" $binlog
-Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "av" "11.0.10" $binlog
-Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "av" "11.1.0-beta1" $binlog
+Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "f" "net9.0" $binlog
+Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "av" "11.2.1" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "cb" "true" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "cb" "false" $binlog
 
 # Build the project only twice with all item templates,once with .net6.0 tfm and once with .net7.0 tfm for C# and F#
-Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#" "f" "net8.0" $binlog
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "av" "11.0.10" $binlog
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "av" "11.1.0-beta1" $binlog
+Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#" "f" "net9.0" $binlog
+Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "av" "11.2.1" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "m" "ReactiveUI" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "m" "CommunityToolkit" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "cb" "true" $binlog
@@ -112,23 +131,27 @@ Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "rvl" "true" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "rvl" "false" $binlog
 
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "f" "net8.0" $binlog
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "av" "11.1.0-beta1" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "f" "net9.0" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "cpm" "true" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "cpm" "false" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "av" "11.2.1" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "m" "ReactiveUI" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "m" "CommunityToolkit" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "cb" "true" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "cb" "false" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "rvl" "true" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "rvl" "false" $binlog
 
-Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "f" "net8.0" $binlog
-Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "av" "11.0.10" $binlog
-Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "av" "11.1.0-beta1" $binlog
+# Ignore errors when files are still used by another process
+Remove-Item -Recurse -Force -ErrorAction SilentlyContinue "output/C#"
+
+Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "f" "net9.0" $binlog
+Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "av" "11.2.1" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "cb" "true" $binlog
 Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "cb" "false" $binlog
 
-Remove-Item -Recurse "output/C#"
-
-Test-Template "avalonia.mvvm" "AvaloniaMvvm" "F#" "f" "net8.0" $binlog
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "av" "11.0.10" $binlog
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "av" "11.1.0-beta1" $binlog
+Test-Template "avalonia.mvvm" "AvaloniaMvvm" "F#" "f" "net9.0" $binlog
+Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "av" "11.2.1" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "m" "ReactiveUI" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "m" "CommunityToolkit" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "cb" "true" $binlog
@@ -136,9 +159,14 @@ Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "cb" "false" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "rvl" "true" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "rvl" "false" $binlog
 
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "f" "net8.0" $binlog
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "av" "11.1.0-beta1" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "f" "net9.0" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "av" "11.2.1" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "m" "ReactiveUI" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "m" "CommunityToolkit" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "cb" "true" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "cb" "false" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "rvl" "true" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "rvl" "false" $binlog
+
+# Ignore errors when files are still used by another process
+Remove-Item -Recurse -Force -ErrorAction SilentlyContinue "output/F#"

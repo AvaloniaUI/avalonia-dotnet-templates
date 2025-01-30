@@ -12,7 +12,8 @@
   "defaultName": "AvaloniaApplication",
   "tags": {
     "language": "C#",
-    "type": "project"
+    "type": "solution",
+    "editorTreatAs": "solution"
   },
   "symbols": {
     "Framework": {
@@ -23,31 +24,45 @@
         {
           "choice": "net8.0",
           "description": "Target net8.0"
+        },
+        {
+          "choice": "net9.0",
+          "description": "Target net9.0"
         }
       ],
       "replaces": "FrameworkParameter",
-      "defaultValue": "net8.0"
+      "defaultValue": "net9.0"
+    },
+    "MVVMToolkit": {
+      "type": "parameter",
+      "description": "MVVM toolkit to use in the template.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "ReactiveUI",
+          "description": "Choose ReactiveUI as MVVM toolkit in the template."
+        },
+        {
+          "choice": "CommunityToolkit",
+          "description": "Choose CommunityToolkit as MVVM toolkit in the template."
+        }
+      ],
+      "defaultValue": "CommunityToolkit"
+    },
+    "ReactiveUIToolkitChosen": {
+      "type": "computed",
+      "value": "(MVVMToolkit == \"ReactiveUI\")"
+    },
+    "CommunityToolkitChosen": {
+      "type": "computed",
+      "value": "(MVVMToolkit == \"CommunityToolkit\")"
     },
     "AvaloniaVersion": {
       "type": "parameter",
       "description": "The target version of Avalonia NuGet packages.",
-      "datatype": "choice",
-      "choices": [
-        {
-          "choice": "11.0.10",
-          "description": "Target 11.0.10 (Latest stable)"
-        },
-        {
-          "choice": "11.1.0-beta1",
-          "description": "Target 11.1.0-beta1 (Next version)"
-        }
-      ],
+      "datatype": "text",
       "replaces": "AvaloniaVersionTemplateParameter",
-      "defaultValue": "11.0.10"
-    },
-    "Avalonia11_1Chosen": {
-      "type": "computed",
-      "value": "(AvaloniaVersion == \"11.1.0-beta1\")"
+      "defaultValue": "11.2.1"
     },
     "UseCompiledBindings": {
       "type": "parameter",
@@ -62,6 +77,13 @@
       "datatype": "bool",
       "displayName": "Remove Avalonia ViewLocator",
       "defaultValue": "false"
+    },
+    "UseCentralPackageManagement": {
+      "type": "parameter",
+      "description": "Defines if your app will use Central Package Management (CPM). If disabled, Directory.Build.props will be created with shared Avalonia version.",
+      "datatype": "bool",
+      "displayName": "Use Central Package Management (CPM)",
+      "defaultValue": "true"
     },
     "HostIdentifier": {
       "type": "bind",
@@ -85,6 +107,18 @@
           "condition": "(!RemoveViewLocator)",
           "exclude": [
             "AvaloniaTest.1/App.RemoveViewLocator.axaml"
+          ]
+        },
+        {
+          "condition": "(UseCentralPackageManagement)",
+          "exclude": [
+            "Directory.Build.props"
+          ]
+        },
+        {
+          "condition": "(!UseCentralPackageManagement)",
+          "exclude": [
+            "Directory.Packages.props"
           ]
         }
       ]

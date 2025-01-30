@@ -10,11 +10,18 @@
     "UseCompiledBindings": {
       "longName": "compiled-bindings"
     },
+    "MVVMToolkit": {
+      "longName": "mvvm"
+    },
     "RemoveViewLocator": {
       "longName": "remove-view-locator"
+    },
+    "UseCentralPackageManagement": {
+      "longName": "cpm",
+      "shortName": "cpm"
     }
   },
   "usageExamples": [
-    ""
+    "--mvvm communitytoolkit"
   ]
 }

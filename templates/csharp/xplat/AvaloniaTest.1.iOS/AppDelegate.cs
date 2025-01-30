@@ -4,7 +4,9 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.iOS;
 using Avalonia.Media;
+#if (ReactiveUIToolkitChosen)
 using Avalonia.ReactiveUI;
+#endif
 
 namespace AvaloniaTest._1.iOS;
 
@@ -19,7 +21,11 @@ public partial class AppDelegate : AvaloniaAppDelegate<App>
     protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
     {
         return base.CustomizeAppBuilder(builder)
+#if (CommunityToolkitChosen)
+            .WithInterFont();
+#else
             .WithInterFont()
             .UseReactiveUI();
+#endif
     }
 }

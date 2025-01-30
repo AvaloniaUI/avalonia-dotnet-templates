@@ -50,17 +50,15 @@ Available parameters:
 
 *Description*: The target framework for the project.
 
-*Options*: **net8.0**
+*Options*: **net9.0**, **net8.0**
 
-*By default*: net8.0
+*By default*: net9.0
 
 ``-av, --avalonia-version``
 
 *Description*: The target version of Avalonia NuGet packages.
 
-*Options*: **11.0.10**, **11.1.0-beta1**
-
-*By default*: 11.0.10
+*By default*: 11.2.1
 
 ``-cb, --compiled-bindings``
 
@@ -91,17 +89,15 @@ Available parameters:
 
 *Description*: The target framework for the project.
 
-*Options*: **net8.0**
+*Options*: **net9.0**, **net8.0**
 
-*By default*: net8.0
+*By default*: net9.0
 
 ``-av, --avalonia-version``
 
 *Description*: The target version of Avalonia NuGet packages.
 
-*Options*: **11.0.10**, **11.1.0-beta1**
-
-*By default*: 11.0.10
+*By default*: 11.2.1
 
 ``-cb, --compiled-bindings``
 
@@ -151,13 +147,19 @@ Available parameters:
 
 *By default*: true
 
+``-m, --mvvm``
+
+*Description*: MVVM toolkit to use in the template.
+
+*Options*: **ReactiveUI**, **CommunityToolkit**
+
+*By default*: ReactiveUI
+
 ``-av, --avalonia-version``
 
 *Description*: The target version of Avalonia NuGet packages.
 
-*Options*: **11.0.10**, **11.1.0-beta1**
-
-*By default*: 11.0.10
+*By default*: 11.2.1
 
 ``-rvl, --remove-view-locator``
 
@@ -166,6 +168,14 @@ Available parameters:
 *Options*: **true**, **false**
 
 *By default*: false
+
+``-cpm``
+
+*Description*: Defines if your app will use Central Package Management (CPM). If disabled, Directory.Build.props will be created with shared Avalonia version.
+
+*Options*: **true**, **false**
+
+*By default*: true
 
 # Creating a new Window
 

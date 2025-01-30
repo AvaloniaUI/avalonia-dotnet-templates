@@ -1,5 +1,16 @@
 dotnet new uninstall Avalonia.Templates
 Remove-Item bin/**/*.nupkg
-$result = dotnet pack | select-string "Successfully created package '(.*)'" -AllMatches
-$package = $result.Matches.Groups[1]
-dotnet new install $package
+
+dotnet pack
+# Search Directory
+$directoryPath = ".\bin\Release"
+
+$latestNupkgFile = Get-ChildItem -Path $directoryPath -Recurse -Filter "*.nupkg" |
+                   Where-Object { -not $_.PSIsContainer } |
+                   Sort-Object LastWriteTime -Descending |
+                   Select-Object -First 1
+
+if ($latestNupkgFile) {
+  $latestNupkgPath = $latestNupkgFile.FullName
+  dotnet new install $latestNupkgPath
+}

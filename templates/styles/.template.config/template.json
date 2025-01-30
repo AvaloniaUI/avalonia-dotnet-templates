@@ -26,5 +26,11 @@
         },
         "continueOnError": true
     }
-  ]
+  ],
+  "constraints": {
+    "Avalonia": {
+      "type": "project-capability",
+      "args": "Avalonia"
+    }
+  }
 }

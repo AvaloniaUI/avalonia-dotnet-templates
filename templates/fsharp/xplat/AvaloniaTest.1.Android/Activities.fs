@@ -3,7 +3,9 @@ namespace AvaloniaTest.Android
 open Android.App
 open Android.Content.PM
 open Avalonia
+#if (ReactiveUIToolkitChosen)
 open Avalonia.ReactiveUI
+#endif
 open Avalonia.Android
 open AvaloniaTest._1
 
@@ -19,4 +21,6 @@ type MainActivity() =
     override _.CustomizeAppBuilder(builder) =
         base.CustomizeAppBuilder(builder)
             .WithInterFont()
+#if (ReactiveUIToolkitChosen)
             .UseReactiveUI()
+#endif

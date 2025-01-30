@@ -10,11 +10,14 @@
     "UseCompiledBindings": {
       "longName": "compiled-bindings"
     },
+    "MVVMToolkit": {
+      "longName": "mvvm"
+    },
     "RemoveViewLocator": {
       "longName": "remove-view-locator"
     }
   },
   "usageExamples": [
-    ""
+    "--mvvm communitytoolkit"
   ]
 }
