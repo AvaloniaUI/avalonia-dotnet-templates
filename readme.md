@@ -58,7 +58,7 @@ Available parameters:
 
 *Description*: The target version of Avalonia NuGet packages.
 
-*By default*: 11.3.0
+*By default*: 11.3.2
 
 ``-cb, --compiled-bindings``
 
@@ -97,7 +97,7 @@ Available parameters:
 
 *Description*: The target version of Avalonia NuGet packages.
 
-*By default*: 11.3.0
+*By default*: 11.3.2
 
 ``-cb, --compiled-bindings``
 
@@ -159,7 +159,7 @@ Available parameters:
 
 *Description*: The target version of Avalonia NuGet packages.
 
-*By default*: 11.3.0
+*By default*: 11.3.2
 
 ``-rvl, --remove-view-locator``
 
