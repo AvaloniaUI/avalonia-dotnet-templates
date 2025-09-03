@@ -43,7 +43,7 @@
       "description": "The target version of Avalonia NuGet packages.",
       "datatype": "text",
       "replaces": "AvaloniaVersionTemplateParameter",
-      "defaultValue": "11.3.4"
+      "defaultValue": "11.3.5"
     },
     "UseCompiledBindings": {
       "type": "parameter",
