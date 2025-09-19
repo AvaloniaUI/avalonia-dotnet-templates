@@ -9,7 +9,7 @@
         <PackageVersion Include="Avalonia" Version="AvaloniaVersionTemplateParameter" />
         <PackageVersion Include="Avalonia.Themes.Fluent" Version="AvaloniaVersionTemplateParameter" />
         <PackageVersion Include="Avalonia.Fonts.Inter" Version="AvaloniaVersionTemplateParameter" />
-        <PackageVersion Include="Avalonia.Diagnostics" Version="AvaloniaVersionTemplateParameter" />
+        <PackageVersion Include="AvaloniaUI.DiagnosticsSupport" Version="AvaloniaVersionTemplateParameter" />
         <PackageVersion Include="Avalonia.Desktop" Version="AvaloniaVersionTemplateParameter" />
         <PackageVersion Include="Avalonia.iOS" Version="AvaloniaVersionTemplateParameter" />
         <PackageVersion Include="Avalonia.Browser" Version="AvaloniaVersionTemplateParameter" />
