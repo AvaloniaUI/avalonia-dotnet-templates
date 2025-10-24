@@ -95,7 +95,7 @@ function Create-And-Build {
     Exec { dotnet new $template -o output/$lang/$folderName -$parameterName $value -lang $lang }
 
     # Build
-    Exec { dotnet build output/$lang/$folderName -bl:$bl }
+    Exec { dotnet build output/$lang/$folderName -bl:$bl -p:CheckEolWorkloads=false }
 }
 
 # Clear file system from possible previous runs
