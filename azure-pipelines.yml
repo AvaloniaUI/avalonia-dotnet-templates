@@ -5,7 +5,7 @@ steps:
     displayName: 'Use .NET SDK'
     inputs:
       packageType: 'sdk'
-      version: 9.0.100
+      version: 9.0.305
   - task: DotNetCoreCLI@2
     displayName: 'Pack Templates'
     inputs:
@@ -20,7 +20,7 @@ steps:
   - task: CmdLine@2
     displayName: 'Install workload'
     inputs:
-      script: 'dotnet workload install android ios wasm-tools' 
+      script: 'dotnet workload install android ios wasm-tools --skip-manifest-update --version 9.0.305' 
   - task: PowerShell@2
     displayName: 'Run Tests'
     inputs:
