@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <!--If you are willing to use Windows/MacOS native APIs you will need to create 3 projects.
-    One for Windows with FrameworkParameter-windows TFM, one for MacOS with FrameworkParameter-macos and one with FrameworkParameter TFM for Linux.-->
+    <!--If you are willing to use platform-specific APIs, use conditional compilation.
+    See https://docs.avaloniaui.net/docs/guides/platforms/platform-specific-code/dotnet for more details.-->
     <TargetFramework>FrameworkParameter</TargetFramework>
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
   </PropertyGroup>
