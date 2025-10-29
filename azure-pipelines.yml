@@ -20,7 +20,7 @@ steps:
   - task: CmdLine@2
     displayName: 'Install workload'
     inputs:
-      script: 'dotnet workload install android ios wasm-tools --skip-manifest-update --version 9.0.305' 
+      script: 'dotnet workload install android ios wasm-tools --version 9.0.305' 
   - task: PowerShell@2
     displayName: 'Run Tests'
     inputs:
