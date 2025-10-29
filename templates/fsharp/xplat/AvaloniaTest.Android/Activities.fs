@@ -4,7 +4,7 @@ open Android.App
 open Android.Content.PM
 open Avalonia
 #if (ReactiveUIToolkitChosen)
-open Avalonia.ReactiveUI
+open ReactiveUI.Avalonia
 #endif
 open Avalonia.Android
 open AvaloniaTest
