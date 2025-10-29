@@ -5,3 +5,6 @@
 *.nupkg
 *.DS_store
 .idea
+
+output/
+binlog/

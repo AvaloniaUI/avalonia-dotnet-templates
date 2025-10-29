@@ -2,7 +2,7 @@ namespace AvaloniaTest.Desktop
 open System
 open Avalonia
 #if (ReactiveUIToolkitChosen)
-open Avalonia.ReactiveUI
+open ReactiveUI.Avalonia
 #endif
 open AvaloniaTest
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using Avalonia;
 #if (ReactiveUIToolkitChosen)
-using Avalonia.ReactiveUI;
+using ReactiveUI.Avalonia;
 #endif
 
 namespace AvaloniaTest.Desktop;
