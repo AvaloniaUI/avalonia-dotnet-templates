@@ -7,9 +7,9 @@ using ReactiveUI;
 namespace AvaloniaAppTemplate.ViewModels;
 
 #if (CommunityToolkitChosen)
-public class ViewModelBase : ObservableObject
+public abstract class ViewModelBase : ObservableObject
 #elif (ReactiveUIToolkitChosen)
-public class ViewModelBase : ReactiveObject
+public abstract class ViewModelBase : ReactiveObject
 #endif
 {
 }
