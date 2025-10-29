@@ -36,7 +36,7 @@
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
     <!--#if (ReactiveUIToolkitChosen) -->
-    <PackageReference Include="Avalonia.ReactiveUI" Version="AvaloniaVersionTemplateParameter" />
+    <PackageReference Include="ReactiveUI.Avalonia" Version="11.3.8" />
     <!--#elif (CommunityToolkitChosen)-->
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
     <!--#endif -->
