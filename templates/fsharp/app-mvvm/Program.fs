@@ -3,7 +3,7 @@
 open System
 open Avalonia
 #if (ReactiveUIToolkitChosen)
-open Avalonia.ReactiveUI
+open ReactiveUI.Avalonia
 #endif
 
 module Program =

@@ -3,7 +3,7 @@ using Android.Content.PM;
 using Avalonia;
 using Avalonia.Android;
 #if (ReactiveUIToolkitChosen)
-using Avalonia.ReactiveUI;
+using ReactiveUI.Avalonia;
 #endif
 
 namespace AvaloniaTest.Android;

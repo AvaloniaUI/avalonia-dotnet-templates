@@ -1,6 +1,6 @@
 ﻿using Avalonia;
 #if (ReactiveUIToolkitChosen)
-using Avalonia.ReactiveUI;
+using ReactiveUI.Avalonia;
 #endif
 using System;
 

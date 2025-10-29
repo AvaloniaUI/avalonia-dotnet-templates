@@ -15,7 +15,7 @@
         <PackageVersion Include="Avalonia.Browser" Version="AvaloniaVersionTemplateParameter" />
         <PackageVersion Include="Avalonia.Android" Version="AvaloniaVersionTemplateParameter" />
         <!--#if (ReactiveUIToolkitChosen) -->
-        <PackageVersion Include="Avalonia.ReactiveUI" Version="AvaloniaVersionTemplateParameter" />
+        <PackageVersion Include="ReactiveUI.Avalonia" Version="14.7.1" />
         <!--#elif (CommunityToolkitChosen)-->
 
         <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />

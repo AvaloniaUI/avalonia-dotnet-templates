@@ -23,7 +23,7 @@
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
     <!--#if (ReactiveUIToolkitChosen) -->
-    <PackageReference Include="Avalonia.ReactiveUI" />
+    <PackageReference Include="ReactiveUI.Avalonia" />
     <!--#elif (CommunityToolkitChosen)-->
     <PackageReference Include="CommunityToolkit.Mvvm" />
     <!--#endif -->
@@ -37,7 +37,7 @@
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
     <!--#if (ReactiveUIToolkitChosen) -->
-    <PackageReference Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="ReactiveUI.Avalonia" Version="14.7.1" />
     <!--#elif (CommunityToolkitChosen)-->
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
     <!--#endif -->

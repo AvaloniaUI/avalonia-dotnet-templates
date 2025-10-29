@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Browser;
 #if (ReactiveUIToolkitChosen)
-using Avalonia.ReactiveUI;
+using ReactiveUI.Avalonia;
 #endif
 using AvaloniaTest;
 

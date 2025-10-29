@@ -2,7 +2,7 @@ open System.Runtime.Versioning
 open Avalonia
 open Avalonia.Browser
 #if (ReactiveUIToolkitChosen)
-open Avalonia.ReactiveUI
+open ReactiveUI.Avalonia
 #endif
 open AvaloniaTest
 

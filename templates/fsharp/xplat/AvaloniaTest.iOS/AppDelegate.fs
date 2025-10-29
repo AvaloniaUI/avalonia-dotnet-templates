@@ -3,7 +3,7 @@ open Foundation
 open Avalonia
 open Avalonia.iOS
 #if (ReactiveUIToolkitChosen)
-open Avalonia.ReactiveUI
+open ReactiveUI.Avalonia
 #endif
 
 // The UIApplicationDelegate for the application. This class is responsible for launching the 
