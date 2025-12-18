@@ -135,7 +135,7 @@ Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "f" "net9.0" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "f" "net10.0" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "cpm" "true" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "cpm" "false" $binlog
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "av" "11.3.9" $binlog
+Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "av" "11.3.10" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "m" "ReactiveUI" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "m" "CommunityToolkit" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "cb" "true" $binlog
