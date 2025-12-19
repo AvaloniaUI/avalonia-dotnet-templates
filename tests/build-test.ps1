@@ -130,8 +130,6 @@ Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "cb" "false" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "rvl" "true" $binlog
 Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "rvl" "false" $binlog
 
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "f" "net8.0" $binlog
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "f" "net9.0" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "f" "net10.0" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "cpm" "true" $binlog
 Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "cpm" "false" $binlog
