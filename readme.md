@@ -45,9 +45,9 @@ Available parameters:
 
 *Description*: The target framework for the project.
 
-*Options*: **net9.0**, **net8.0**
+*Options*: **net10.0**, **net9.0**, **net8.0**
 
-*By default*: net9.0
+*By default*: net10.0
 
 ``-av, --avalonia-version``
 
