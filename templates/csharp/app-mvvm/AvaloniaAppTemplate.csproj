@@ -19,8 +19,8 @@
     <PackageReference Include="Avalonia.Desktop" Version="AvaloniaVersionTemplateParameter" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="AvaloniaVersionTemplateParameter" />
     <PackageReference Include="Avalonia.Fonts.Inter" Version="AvaloniaVersionTemplateParameter" />
-    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-    <PackageReference Include="Avalonia.Diagnostics" Version="AvaloniaVersionTemplateParameter">
+    <!--Condition below is needed to remove AvaloniaUI.DiagnosticsSupport package from build output in Release configuration.-->
+    <PackageReference Include="AvaloniaUI.DiagnosticsSupport" Version="AvaloniaVersionTemplateParameter">
       <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
