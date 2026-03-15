@@ -39,35 +39,14 @@ To create a new barebones application called `MyApp` in its own subdirectory, ru
 dotnet new avalonia.app -o MyApp
 ```
 
-Available parameters:
+| Parameter | Description | Options | Default |
+|-----------|-------------|---------|---------|
+| `-f`, `--framework` | The target framework for the project. | `net10.0`, `net9.0`, `net8.0` | `net10.0` |
+| `-av`, `--avalonia-version` | The target version of Avalonia NuGet packages. | | `11.3.12` |
+| `-cb`, `--compiled-bindings` | Enable CompiledBindings by default (11.0+). See [documentation](https://docs.avaloniaui.net/docs/data-binding/compiledbindings). | `true`, `false` | `true` |
+| `--no-restore` | If specified, skips the automatic restore of the project on create. | | |
 
-``-f, --framework``
-
-*Description*: The target framework for the project.
-
-*Options*: **net10.0**, **net9.0**, **net8.0**
-
-*By default*: net10.0
-
-``-av, --avalonia-version``
-
-*Description*: The target version of Avalonia NuGet packages.
-
-*By default*: 11.3.12
-
-``-cb, --compiled-bindings``
-
-*Description*: Defines if CompiledBindings should be enabled by default in the project (only supported in 11.0 version and newer). See [documentation](https://docs.avaloniaui.net/docs/data-binding/compiledbindings) for more details.
-
-*Options*: **true**, **false**
-
-*By default*: true
-
-``--no-restore``
-
-*Description*: If specified, skips the automatic restore of the project on create.
-
-# Creating a new MVVM Application
+## Creating a new MVVM Application
 
 MVVM is the recommended pattern for creating Avalonia applications. The MVVM application template
 uses [ReactiveUI](https://reactiveui.net/) to ease building applications with complex interactions.
@@ -78,101 +57,34 @@ To create a new MVVM application called `MyApp` in its own subdirectory, run:
 dotnet new avalonia.mvvm -o MyApp
 ```
 
-Available parameters:
+| Parameter | Description | Options | Default |
+|-----------|-------------|---------|---------|
+| `-f`, `--framework` | The target framework for the project. | `net10.0`, `net9.0`, `net8.0` | `net10.0` |
+| `-av`, `--avalonia-version` | The target version of Avalonia NuGet packages. | | `11.3.12` |
+| `-cb`, `--compiled-bindings` | Enable CompiledBindings by default (11.0+). See [documentation](https://docs.avaloniaui.net/docs/data-binding/compiledbindings). | `true`, `false` | `true` |
+| `-m`, `--mvvm` | MVVM toolkit to use in the template. | `ReactiveUI`, `CommunityToolkit` | `ReactiveUI` |
+| `-rvl`, `--remove-view-locator` | Remove the default ViewLocator. Useful for code trimming scenarios as the default ViewLocator is not trimming-friendly. | `true`, `false` | `false` |
+| `--no-restore` | If specified, skips the automatic restore of the project on create. | | |
 
-``-f, --framework``
-
-*Description*: The target framework for the project.
-
-*Options*: **net10.0**, **net9.0**, **net8.0**
-
-*By default*: net10.0
-
-``-av, --avalonia-version``
-
-*Description*: The target version of Avalonia NuGet packages.
-
-*By default*: 11.3.12
-
-``-cb, --compiled-bindings``
-
-*Description*: Defines if CompiledBindings should be enabled by default in the project (only supported in 11.0 version and newer). See [documentation](https://docs.avaloniaui.net/docs/data-binding/compiledbindings) for more details.
-
-*Options*: **true**, **false**
-
-*By default*: true
-
-``-m, --mvvm``
-
-*Description*: MVVM toolkit to use in the template.
-
-*Options*: **ReactiveUI**, **CommunityToolkit**
-
-*By default*: ReactiveUI
-
-``-rvl, --remove-view-locator``
-
-*Description*: Defines if your app will use default ViewLocator made by Avalonia Team or you are planning to use a custom one. Removing ViewLocator may be useful in code trimming scenarios. Default ViewLocator is not trimming-friendly.
-
-*Options*: **true**, **false**
-
-*By default*: false
-
-``--no-restore``
-
-*Description*: If specified, skips the automatic restore of the project on create.
-
-# Creating a new Cross-Platform application
+## Creating a new Cross-Platform application
 
 To create a new Cross-Platform application in its own subdirectory, run:
 
 ```
 dotnet new avalonia.xplat 
 ```
-**Note:**
-This type of template allows you to create an application that will work on Desktop, Browser and Mobile (iOS & Android). Only available with 11.0 preview versions.
 
-Available parameters:
+This template creates an application that works on Desktop, Browser and Mobile (iOS & Android). Only available with 11.0 preview versions and newer.
 
-``-cb, --compiled-bindings``
+| Parameter | Description | Options | Default |
+|-----------|-------------|---------|---------|
+| `-av`, `--avalonia-version` | The target version of Avalonia NuGet packages. | | `11.3.12` |
+| `-cb`, `--compiled-bindings` | Enable CompiledBindings by default. See [documentation](https://docs.avaloniaui.net/docs/data-binding/compiledbindings). | `true`, `false` | `true` |
+| `-m`, `--mvvm` | MVVM toolkit to use in the template. | `ReactiveUI`, `CommunityToolkit` | `ReactiveUI` |
+| `-rvl`, `--remove-view-locator` | Remove the default ViewLocator. Useful for code trimming scenarios as the default ViewLocator is not trimming-friendly. | `true`, `false` | `false` |
+| `-cpm` | Use Central Package Management (CPM). If disabled, `Directory.Build.props` will be created with the shared Avalonia version. | `true`, `false` | `true` |
 
-*Description*: Defines if CompiledBindings should be enabled by default in the project. See [documentation](https://docs.avaloniaui.net/docs/data-binding/compiledbindings) for more details.
-
-*Options*: **true**, **false**
-
-*By default*: true
-
-``-m, --mvvm``
-
-*Description*: MVVM toolkit to use in the template.
-
-*Options*: **ReactiveUI**, **CommunityToolkit**
-
-*By default*: ReactiveUI
-
-``-av, --avalonia-version``
-
-*Description*: The target version of Avalonia NuGet packages.
-
-*By default*: 11.3.12
-
-``-rvl, --remove-view-locator``
-
-*Description*: Defines if your app will use default ViewLocator made by Avalonia Team or you are planning to use a custom one. Removing ViewLocator may be useful in code trimming scenarios. Default ViewLocator is not trimming-friendly.
-
-*Options*: **true**, **false**
-
-*By default*: false
-
-``-cpm``
-
-*Description*: Defines if your app will use Central Package Management (CPM). If disabled, Directory.Build.props will be created with shared Avalonia version.
-
-*Options*: **true**, **false**
-
-*By default*: true
-
-# Creating a new Window
+## Creating a new Window
 
 To create a new `Window` called `MyNewWindow`, in the namespace `MyApp` run:
 
@@ -180,7 +92,7 @@ To create a new `Window` called `MyNewWindow`, in the namespace `MyApp` run:
 dotnet new avalonia.window -na MyApp -n MyNewWindow
 ```
 
-# Creating a new UserControl
+## Creating a new UserControl
 
 To create a new `UserControl` called `MyNewView`, in the namespace `MyApp` run:
 
@@ -188,7 +100,7 @@ To create a new `UserControl` called `MyNewView`, in the namespace `MyApp` run:
 dotnet new avalonia.usercontrol -na MyApp -n MyNewView
 ```
 
-# Creating a new Styles list
+## Creating a new Styles list
 
 To create a new `Styles` list called `MyStyles`, run:
 
@@ -196,7 +108,7 @@ To create a new `Styles` list called `MyStyles`, run:
 dotnet new avalonia.styles -n MyStyles
 ```
 
-# Creating a new ResourceDictionary
+## Creating a new ResourceDictionary
 
 To create a new `ResourceDictionary` called `MyResources`, run:
 
