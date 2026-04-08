@@ -16,6 +16,10 @@
     "RemoveViewLocator": {
       "longName": "remove-view-locator"
     },
+    "MainViewPageType": {
+      "longName": "main-view-page-type",
+      "shortName": "page"
+    },
     "UseCentralPackageManagement": {
       "longName": "cpm",
       "shortName": "cpm"

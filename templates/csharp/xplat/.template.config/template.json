@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/template",
   "author": "AvaloniaUI",
-  "classifications": [ "Desktop", "Xaml", "Avalonia", "Browser", "Mobile" ],
+  "classifications": [ "Desktop", "Xaml", "Avalonia", "Browser", "Mobile", "Android", "iOS" ],
   "description": "A cross-platform Avalonia UI Application using the MVVM pattern targeting Desktop, Mobile and Browser with WebAssembly",
   "groupidentity": "Avalonia.App.CrossPlatform",
   "identity": "Avalonia.App.CrossPlatform",
@@ -53,6 +53,35 @@
       ],
       "defaultValue": "CommunityToolkit"
     },
+    "MainViewPageType": {
+      "type": "parameter",
+      "displayName": "Main View Page Type",
+      "description": "The type of main view page to create.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "None",
+          "description": "Create the main view as a UserControl"
+        },
+        {
+          "choice": "ContentPage",
+          "description": "Create the main view as a ContentPage"
+        },
+        {
+          "choice": "TabbedPage",
+          "description": "Create the main view as a TabbedPage"
+        },
+        {
+          "choice": "DrawerPage",
+          "description": "Create the main view as a DrawerPage with a child NavigationPage"
+        },
+        {
+          "choice": "NavigationPage",
+          "description": "Create the main view as a NavigationPage"
+        }
+      ],
+      "defaultValue": "None"
+    },
     "ReactiveUIToolkitChosen": {
       "type": "computed",
       "value": "(MVVMToolkit == \"ReactiveUI\")"
@@ -60,6 +89,26 @@
     "CommunityToolkitChosen": {
       "type": "computed",
       "value": "(MVVMToolkit == \"CommunityToolkit\")"
+    },
+    "DefaultMainPageChosen": {
+      "type": "computed",
+      "value": "(MainViewPageType == \"None\")"
+    },
+    "ContentMainPageChosen": {
+      "type": "computed",
+      "value": "(MainViewPageType == \"ContentPage\")"
+    },
+    "TabbedMainPageChosen": {
+      "type": "computed",
+      "value": "(MainViewPageType == \"TabbedPage\")"
+    },
+    "DrawerMainPageChosen": {
+      "type": "computed",
+      "value": "(MainViewPageType == \"DrawerPage\")"
+    },
+    "NavigationMainPageChosen": {
+      "type": "computed",
+      "value": "(MainViewPageType == \"NavigationPage\")"
     },
     "AvaloniaVersion": {
       "type": "parameter",
@@ -106,6 +155,22 @@
           "rename": {
             "App.RemoveViewLocator.axaml": "App.axaml"
           }
+        },
+        {
+          "condition": "(DefaultMainPageChosen || ContentMainPageChosen || TabbedMainPageChosen)",
+          "exclude": [
+            "AvaloniaTest/ViewModels/HomeViewModel.cs",
+            "AvaloniaTest/ViewModels/SettingsViewModel.cs"
+          ]
+        },
+        {
+          "condition": "(!NavigationMainPageChosen)",
+          "exclude": [
+            "AvaloniaTest/Views/HomeView.axaml.cs",
+            "AvaloniaTest/Views/SettingsView.axaml.cs",
+            "AvaloniaTest/Views/HomeView.axaml",
+            "AvaloniaTest/Views/SettingsView.axaml"
+          ]
         },
         {
           "condition": "(!RemoveViewLocator)",

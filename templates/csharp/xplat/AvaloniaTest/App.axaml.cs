@@ -29,14 +29,28 @@ public partial class App : Application
         }
         else if (ApplicationLifetime is IActivityApplicationLifetime singleViewFactoryApplicationLifetime)
         {
+#if (DefaultMainPageChosen)
             singleViewFactoryApplicationLifetime.MainViewFactory = () => new MainView { DataContext = new MainViewModel() };
+#else            
+            singleViewFactoryApplicationLifetime.MainViewFactory = () => new PageNavigationHost()
+            {
+                Page = new MainView { DataContext = new MainWindowViewModel() }
+            };
+#endif
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
+#if (DefaultMainPageChosen)
             singleViewPlatform.MainView = new MainView
             {
                 DataContext = new MainViewModel()
             };
+#else            
+            singleViewPlatform.MainView = new PageNavigationHost()
+            {
+                Page = new MainView { DataContext = new MainWindowViewModel() }
+            };
+#endif
         }
 
         base.OnFrameworkInitializationCompleted();
