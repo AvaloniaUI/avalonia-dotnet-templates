@@ -42,7 +42,7 @@ dotnet new avalonia.app -o MyApp
 | Parameter | Description | Options | Default |
 |-----------|-------------|---------|---------|
 | `-f`, `--framework` | The target framework for the project. | `net10.0`, `net9.0`, `net8.0` | `net10.0` |
-| `-av`, `--avalonia-version` | The target version of Avalonia NuGet packages. | | `12.0.0` |
+| `-av`, `--avalonia-version` | The target version of Avalonia NuGet packages. | | `12.0.1` |
 | `-cb`, `--compiled-bindings` | Enable CompiledBindings by default (11.0+). See [documentation](https://docs.avaloniaui.net/docs/data-binding/compiledbindings). | `true`, `false` | `true` |
 | `--no-restore` | If specified, skips the automatic restore of the project on create. | | |
 
@@ -60,7 +60,7 @@ dotnet new avalonia.mvvm -o MyApp
 | Parameter | Description | Options | Default |
 |-----------|-------------|---------|---------|
 | `-f`, `--framework` | The target framework for the project. | `net10.0`, `net9.0`, `net8.0` | `net10.0` |
-| `-av`, `--avalonia-version` | The target version of Avalonia NuGet packages. | | `12.0.0` |
+| `-av`, `--avalonia-version` | The target version of Avalonia NuGet packages. | | `12.0.1` |
 | `-cb`, `--compiled-bindings` | Enable CompiledBindings by default (11.0+). See [documentation](https://docs.avaloniaui.net/docs/data-binding/compiledbindings). | `true`, `false` | `true` |
 | `-m`, `--mvvm` | MVVM toolkit to use in the template. | `ReactiveUI`, `CommunityToolkit` | `ReactiveUI` |
 | `-rvl`, `--remove-view-locator` | Remove the default ViewLocator. Useful for code trimming scenarios as the default ViewLocator is not trimming-friendly. | `true`, `false` | `false` |
@@ -78,7 +78,7 @@ This template creates an application that works on Desktop, Browser and Mobile (
 
 | Parameter | Description | Options | Default |
 |-----------|-------------|---------|---------|
-| `-av`, `--avalonia-version` | The target version of Avalonia NuGet packages. | | `12.0.0` |
+| `-av`, `--avalonia-version` | The target version of Avalonia NuGet packages. | | `12.0.1` |
 | `-cb`, `--compiled-bindings` | Enable CompiledBindings by default. See [documentation](https://docs.avaloniaui.net/docs/data-binding/compiledbindings). | `true`, `false` | `true` |
 | `-m`, `--mvvm` | MVVM toolkit to use in the template. | `ReactiveUI`, `CommunityToolkit` | `ReactiveUI` |
 | `-rvl`, `--remove-view-locator` | Remove the default ViewLocator. Useful for code trimming scenarios as the default ViewLocator is not trimming-friendly. | `true`, `false` | `false` |
