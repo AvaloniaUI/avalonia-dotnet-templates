@@ -1,3 +1,5 @@
+#nowarn "FS3261" 
+#nowarn "FS3060"
 namespace AvaloniaAppTemplate
 
 open System
