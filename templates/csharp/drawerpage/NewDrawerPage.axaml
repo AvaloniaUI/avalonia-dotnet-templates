@@ -1,0 +1,23 @@
+<DrawerPage xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaAppTemplate.Namespace.NewDrawerPage">
+	<DrawerPage.DrawerHeader>
+		<DockPanel Margin="10" LastChildFill="True">
+			<Label HorizontalAlignment="Center">Welcome</Label>
+		</DockPanel>
+	</DrawerPage.DrawerHeader>
+
+	<DrawerPage.DrawerFooter>
+		<Grid Margin="10">
+			<Label HorizontalAlignment="Center">Avalonia</Label>
+		</Grid>
+	</DrawerPage.DrawerFooter>
+	<DrawerPage.Drawer>
+	</DrawerPage.Drawer>
+	<ContentPage>
+		Welcome to Avalonia!
+	</ContentPage>
+</DrawerPage>

@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "AvaloniaUI",
+  "classifications": [ "Desktop", "Xaml", "Avalonia", "Windows", "Linux", "macOS" ],
+  "defaultName": "ContentPage",
+  "description": "An Avalonia UI ContentPage",
+  "groupidentity": "Avalonia.ContentPage",
+  "identity": "Avalonia.ContentPage",
+  "name": "Avalonia ContentPage",
+  "primaryOutputs": [
+    { "path": "NewContentPage.axaml.cs" },
+    { "path": "NewContentPage.axaml" }
+  ],
+  "shortName": "avalonia.contentpage",
+  "sourceName": "NewContentPage",
+  "symbols": {
+    "namespace": {
+      "description": "Namespace for the generated code",
+      "type": "parameter"
+    },
+    "DefaultNamespace": {
+      "type": "bind",
+      "binding": "msbuild:RootNamespace"
+    },
+    "NamespaceReplacer": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "namespace",
+        "fallbackVariableName": "DefaultNamespace"
+      },
+      "replaces": "AvaloniaAppTemplate.Namespace"
+    }
+  },
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  },
+  "postActions": [
+    {
+        "id": "editor",
+        "condition": "(HostIdentifier != \"dotnetcli\" && HostIdentifier != \"dotnetcli-preview\")",
+        "description": "Opens ContentPage in the editor.",
+        "manualInstructions": [],
+        "actionId": "84C0DA21-51C8-4541-9940-6CA19AF04EE6",
+        "args": {
+            "files": "0;1"
+        },
+        "continueOnError": true
+    }
+  ],
+  "constraints": {
+    "Avalonia": {
+      "type": "project-capability",
+      "args": "Avalonia"
+    }
+  }
+}

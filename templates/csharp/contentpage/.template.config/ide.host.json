@@ -1,0 +1,6 @@
+{
+  "$schema": "http://json.schemastore.org/ide.host",
+  "icon": "icon.png",
+  "defaultItemExtension": "axaml",
+  "itemHierarchyPaths": [ "Avalonia" ]
+}
