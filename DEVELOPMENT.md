@@ -49,6 +49,8 @@ When you add a new template or parameter, add a matching `New-Case` row so it ge
 Add a new template under `templates/csharp/<your-template>/` (and `templates/fsharp/...` for an F# variant), with a unique `identity` and `shortName` in `template.json`, and update the CLI/IDE files if it takes parameters (see below).
 The existing templates are the best reference.
 
+The C# and F# variants share a `shortName` and `groupidentity`, but each `identity` must be unique — a duplicate makes the engine register only one, so `dotnet new <name> -lang C#` fails with *"Allowed values for '-lang' option are: 'F#'"*. Convention: suffix the F# identity with `.FSharp`.
+
 Finally, add build coverage with a `New-Case` row in `tests/build-test.ps1` and document it in [README.md](README.md).
 
 ## Adding a new parameter
@@ -56,4 +58,6 @@ Finally, add build coverage with a `New-Case` row in `tests/build-test.ps1` and 
 A parameter is a *symbol* in `template.json`, given a CLI name in `dotnetcli.host.json` and an IDE label in `ide.host.json`.
 **Make sure to update all three files**. Without the CLI and IDE entries, the parameter won't be usable from the command line or shown in IDEs.
 
-Add test coverage with a `New-Case` row in `tests/build-test.ps1` and document the parameter in [README.md](README.md).
+Mirror the parameter across the C# and F# variants — don't expose an option a language doesn't actually implement, or it becomes a silent no-op (F# `xplat` once declared `MainViewPageType` while its `MainView` ignored it). Removing a parameter also means deleting its computed symbols and `sources[].modifiers` conditions, not just the three host files; grep the template folder for the symbol name first.
+
+Add test coverage with a `New-Case` row in `tests/build-test.ps1` for **each** value of a choice/bool parameter, not just the default — `#if` branches only compile when the value is selected, so a broken non-default branch passes CI until something builds it. Document the parameter in [README.md](README.md).
