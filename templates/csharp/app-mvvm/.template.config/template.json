@@ -73,13 +73,6 @@
       "replaces": "AvaloniaVersionTemplateParameter",
       "defaultValue": "12.0.5"
     },
-    "UseCompiledBindings": {
-      "type": "parameter",
-      "description": "Defines if CompiledBindings should be enabled by default in the project (only supported in 11.0 version and newer).",
-      "datatype": "bool",
-      "displayName": "Use compiled Bindings",
-      "defaultValue": "true"
-    },
     "RemoveViewLocator": {
       "type": "parameter",
       "description": "Defines if your app will use default ViewLocator made by Avalonia Team or you are planning to use a custom one. Removing ViewLocator may be useful in code trimming scenarios. Default ViewLocator is not trimming-friendly.",

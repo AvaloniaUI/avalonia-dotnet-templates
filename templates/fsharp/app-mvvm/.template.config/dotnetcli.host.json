@@ -16,9 +16,6 @@
     },
     "MVVMToolkit": {
       "longName": "mvvm"
-    },
-    "UseCompiledBindings": {
-      "longName": "compiled-bindings"
     }
   },
   "usageExamples": [

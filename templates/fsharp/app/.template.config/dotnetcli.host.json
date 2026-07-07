@@ -10,9 +10,6 @@
     },
     "AvaloniaVersion": {
       "longName": "avalonia-version"
-    },
-    "UseCompiledBindings": {
-      "longName": "compiled-bindings"
     }
   },
   "usageExamples": [

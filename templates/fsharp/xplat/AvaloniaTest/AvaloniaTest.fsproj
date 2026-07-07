@@ -2,9 +2,6 @@
   <PropertyGroup>
     <TargetFramework>FrameworkParameter</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <!--#if (UseCompiledBindings) -->
-    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
-    <!--#endif -->
   </PropertyGroup>
 
   <ItemGroup>

@@ -8,13 +8,6 @@
         "text": "Avalonia Version"
       },
       "isVisible": false
-    },
-    {
-      "id": "UseCompiledBindings",
-      "name": {
-        "text": "Use Compiled Bindings"
-      },
-      "isVisible": true
     }
   ]
 }
