@@ -61,6 +61,10 @@ $builds = @(
     New-Case "avalonia.xplat" "AvaloniaXplat" "C#" "m"   "CommunityToolkit"
     New-Case "avalonia.xplat" "AvaloniaXplat" "C#" "rvl" "true"
     New-Case "avalonia.xplat" "AvaloniaXplat" "C#" "rvl" "false"
+    New-Case "avalonia.xplat" "AvaloniaXplat" "C#" "page" "ContentPage"
+    New-Case "avalonia.xplat" "AvaloniaXplat" "C#" "page" "TabbedPage"
+    New-Case "avalonia.xplat" "AvaloniaXplat" "C#" "page" "DrawerPage"
+    New-Case "avalonia.xplat" "AvaloniaXplat" "C#" "page" "NavigationPage"
 
     New-Case "avalonia.app"   "AvaloniaApp"   "F#" "f"   "net10.0"
     New-Case "avalonia.app"   "AvaloniaApp"   "F#" "av"  "12.0.5"
@@ -81,10 +85,15 @@ $builds = @(
 )
 
 $itemTemplates = @(
-    New-ItemCase "avalonia.resource"    "NewResourceDictionary"
-    New-ItemCase "avalonia.styles"      "NewStyles"
-    New-ItemCase "avalonia.usercontrol" "NewUserControl" -HasCodeBehind
-    New-ItemCase "avalonia.window"      "NewWindow"      -HasCodeBehind
+    New-ItemCase "avalonia.resource"         "NewResourceDictionary"
+    New-ItemCase "avalonia.styles"           "NewStyles"
+    New-ItemCase "avalonia.usercontrol"      "NewUserControl"      -HasCodeBehind
+    New-ItemCase "avalonia.window"           "NewWindow"           -HasCodeBehind
+    New-ItemCase "avalonia.templatedcontrol" "NewTemplatedControl" -HasCodeBehind
+    New-ItemCase "avalonia.contentpage"      "NewContentPage"      -HasCodeBehind
+    New-ItemCase "avalonia.drawerpage"       "NewDrawerPage"       -HasCodeBehind
+    New-ItemCase "avalonia.navigationpage"   "NewNavigationPage"   -HasCodeBehind
+    New-ItemCase "avalonia.tabbedpage"       "NewTabbedPage"       -HasCodeBehind
 )
 
 Write-Output "Clearing outputs from possible previous runs"
