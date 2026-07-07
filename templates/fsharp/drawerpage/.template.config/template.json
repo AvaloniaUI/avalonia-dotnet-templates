@@ -5,7 +5,7 @@
   "defaultName": "DrawerPage",
   "description": "An Avalonia UI DrawerPage",
   "groupidentity": "Avalonia.DrawerPage",
-  "identity": "Avalonia.DrawerPage",
+  "identity": "Avalonia.DrawerPage.FSharp",
   "name": "Avalonia DrawerPage",
   "primaryOutputs": [
     { "path": "NewDrawerPage.axaml.fs" },

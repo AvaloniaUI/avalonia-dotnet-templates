@@ -5,7 +5,7 @@
   "defaultName": "TabbedPage",
   "description": "An Avalonia UI TabbedPage",
   "groupidentity": "Avalonia.TabbedPage",
-  "identity": "Avalonia.TabbedPage",
+  "identity": "Avalonia.TabbedPage.FSharp",
   "name": "Avalonia TabbedPage",
   "primaryOutputs": [
     { "path": "NewTabbedPage.axaml.fs" },

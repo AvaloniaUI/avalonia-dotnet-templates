@@ -5,7 +5,7 @@
   "defaultName": "ContentPage",
   "description": "An Avalonia UI ContentPage",
   "groupidentity": "Avalonia.ContentPage",
-  "identity": "Avalonia.ContentPage",
+  "identity": "Avalonia.ContentPage.FSharp",
   "name": "Avalonia ContentPage",
   "primaryOutputs": [
     { "path": "NewContentPage.axaml.fs" },

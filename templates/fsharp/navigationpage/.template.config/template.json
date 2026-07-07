@@ -5,7 +5,7 @@
   "defaultName": "NavigationPage",
   "description": "An Avalonia UI NavigationPage",
   "groupidentity": "Avalonia.NavigationPage",
-  "identity": "Avalonia.NavigationPage",
+  "identity": "Avalonia.NavigationPage.FSharp",
   "name": "Avalonia NavigationPage",
   "primaryOutputs": [
     { "path": "NewNavigationPage.axaml.fs" },
