@@ -131,6 +131,7 @@ $results = $builds | ForEach-Object -ThrottleLimit $ThrottleLimit -Parallel {
         }
     }
 
+    $sw = [Diagnostics.Stopwatch]::StartNew()
     try {
         # Create the project.
         Invoke-Dotnet @("new", $b.Template, "-o", $projDir, "-$($b.Param)", $b.Value, "-lang", $b.Lang)
@@ -161,18 +162,18 @@ $results = $builds | ForEach-Object -ThrottleLimit $ThrottleLimit -Parallel {
 
         Remove-Item -Recurse -Force -ErrorAction SilentlyContinue $projDir
 
-        [pscustomobject]@{ Lang = $b.Lang; Name = $folderName; Success = $true;  Message = "" }
+        [pscustomobject]@{ Lang = $b.Lang; Name = $folderName; Success = $true;  Message = ""; Seconds = $sw.Elapsed.TotalSeconds }
     }
     catch {
-        [pscustomobject]@{ Lang = $b.Lang; Name = $folderName; Success = $false; Message = "$_" }
+        [pscustomobject]@{ Lang = $b.Lang; Name = $folderName; Success = $false; Message = "$_"; Seconds = $sw.Elapsed.TotalSeconds }
     }
 }
 
 # Report and fail the run if any build failed.
 Write-Output "`n================ Results ================"
-foreach ($r in ($results | Sort-Object Lang, Name)) {
+foreach ($r in ($results | Sort-Object Seconds -Descending)) {
     $status = if ($r.Success) { "PASS" } else { "FAIL" }
-    Write-Output ("{0}  {1,-3} {2}" -f $status, $r.Lang, $r.Name)
+    Write-Output ("{0}  {1,7:N1}s  {2,-3} {3}" -f $status, $r.Seconds, $r.Lang, $r.Name)
     if (-not $r.Success) { Write-Output "      $($r.Message)" }
 }
 
