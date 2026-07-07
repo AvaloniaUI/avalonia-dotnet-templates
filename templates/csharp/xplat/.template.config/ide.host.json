@@ -24,13 +24,6 @@
       "isVisible": true
     },
     {
-      "id": "UseCompiledBindings",
-      "name": {
-        "text": "Use Compiled Bindings"
-      },
-      "isVisible": true
-    },
-    {
       "id": "RemoveViewLocator",
       "name": {
         "text": "Remove View Locator"

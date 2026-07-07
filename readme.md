@@ -43,7 +43,6 @@ dotnet new avalonia.app -o MyApp
 |-----------|-------------|---------|---------|
 | `-f`, `--framework` | The target framework for the project. | `net10.0`, `net9.0`, `net8.0` | `net10.0` |
 | `-av`, `--avalonia-version` | The target version of Avalonia NuGet packages. | | `12.0.5` |
-| `-cb`, `--compiled-bindings` | Enable CompiledBindings by default (11.0+). See [documentation](https://docs.avaloniaui.net/docs/data-binding/compiledbindings). | `true`, `false` | `true` |
 | `--no-restore` | If specified, skips the automatic restore of the project on create. | | |
 
 ## Creating a new MVVM Application
@@ -61,7 +60,6 @@ dotnet new avalonia.mvvm -o MyApp
 |-----------|-------------|---------|---------|
 | `-f`, `--framework` | The target framework for the project. | `net10.0`, `net9.0`, `net8.0` | `net10.0` |
 | `-av`, `--avalonia-version` | The target version of Avalonia NuGet packages. | | `12.0.5` |
-| `-cb`, `--compiled-bindings` | Enable CompiledBindings by default (11.0+). See [documentation](https://docs.avaloniaui.net/docs/data-binding/compiledbindings). | `true`, `false` | `true` |
 | `-m`, `--mvvm` | MVVM toolkit to use in the template. | `ReactiveUI`, `CommunityToolkit` | `CommunityToolkit` |
 | `-rvl`, `--remove-view-locator` | Remove the default ViewLocator. Useful for code trimming scenarios as the default ViewLocator is not trimming-friendly. | `true`, `false` | `false` |
 | `--no-restore` | If specified, skips the automatic restore of the project on create. | | |
@@ -79,7 +77,6 @@ This template creates an application that works on Desktop, Browser and Mobile (
 | Parameter | Description | Options | Default |
 |-----------|-------------|---------|---------|
 | `-av`, `--avalonia-version` | The target version of Avalonia NuGet packages. | | `12.0.5` |
-| `-cb`, `--compiled-bindings` | Enable CompiledBindings by default. See [documentation](https://docs.avaloniaui.net/docs/data-binding/compiledbindings). | `true`, `false` | `true` |
 | `-m`, `--mvvm` | MVVM toolkit to use in the template. | `ReactiveUI`, `CommunityToolkit` | `CommunityToolkit` |
 | `-rvl`, `--remove-view-locator` | Remove the default ViewLocator. Useful for code trimming scenarios as the default ViewLocator is not trimming-friendly. | `true`, `false` | `false` |
 | `-cpm` | Use Central Package Management (CPM). If disabled, `Directory.Build.props` will be created with the shared Avalonia version. | `true`, `false` | `true` |

@@ -4,9 +4,6 @@
     <TargetFramework>FrameworkParameter</TargetFramework>
     <Nullable>enable</Nullable>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <!--#if (UseCompiledBindings) -->
-    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
-    <!--#endif -->
   </PropertyGroup>
 
   <ItemGroup>

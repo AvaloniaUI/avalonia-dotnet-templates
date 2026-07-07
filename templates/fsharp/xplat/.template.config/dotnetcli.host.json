@@ -7,9 +7,6 @@
     "AvaloniaVersion": {
       "longName": "avalonia-version"
     },
-    "UseCompiledBindings": {
-      "longName": "compiled-bindings"
-    },
     "MVVMToolkit": {
       "longName": "mvvm"
     },

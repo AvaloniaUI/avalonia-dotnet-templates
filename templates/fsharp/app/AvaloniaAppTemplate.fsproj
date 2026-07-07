@@ -3,9 +3,6 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>FrameworkParameter</TargetFramework>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <!--#if (UseCompiledBindings) -->
-    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
-    <!--#endif -->
   </PropertyGroup>
 
   <ItemGroup>
