@@ -27,6 +27,7 @@ jobs:
       - task: PowerShell@2
         displayName: 'Run Tests'
         inputs:
+          pwsh: true
           filePath: 'tests/build-test.ps1'
           failOnStdError: true
           workingDirectory: 'tests'
