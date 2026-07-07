@@ -10,10 +10,6 @@
     "MVVMToolkit": {
       "longName": "mvvm"
     },
-    "MainViewPageType": {
-      "longName": "main-view-page-type",
-      "shortName": "page"
-    },
     "RemoveViewLocator": {
       "longName": "remove-view-locator"
     }

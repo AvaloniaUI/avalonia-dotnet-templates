@@ -17,13 +17,6 @@
       "isVisible": true
     },
     {
-      "id": "MainViewPageType",
-      "name": {
-        "text": "Main View Page Type"
-      },
-      "isVisible": true
-    },
-    {
       "id": "RemoveViewLocator",
       "name": {
         "text": "Remove View Locator"

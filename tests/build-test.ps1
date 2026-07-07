@@ -82,10 +82,6 @@ $builds = @(
     New-Case "avalonia.xplat" "AvaloniaXplat" "F#" "m"   "CommunityToolkit"
     New-Case "avalonia.xplat" "AvaloniaXplat" "F#" "rvl" "true"
     New-Case "avalonia.xplat" "AvaloniaXplat" "F#" "rvl" "false"
-    New-Case "avalonia.xplat" "AvaloniaXplat" "F#" "page" "ContentPage"
-    New-Case "avalonia.xplat" "AvaloniaXplat" "F#" "page" "TabbedPage"
-    New-Case "avalonia.xplat" "AvaloniaXplat" "F#" "page" "DrawerPage"
-    New-Case "avalonia.xplat" "AvaloniaXplat" "F#" "page" "NavigationPage"
 )
 
 $itemTemplates = @(

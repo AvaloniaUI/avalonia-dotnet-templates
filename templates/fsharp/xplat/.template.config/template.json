@@ -52,35 +52,6 @@
         }
       ],
       "defaultValue": "CommunityToolkit"
-    },    
-    "MainViewPageType": {
-      "type": "parameter",
-      "displayName": "Main View Page Type",
-      "description": "The type of main view page to create.",
-      "datatype": "choice",
-      "choices": [
-        {
-          "choice": "None",
-          "description": "Create the main view as a UserControl"
-        },
-        {
-          "choice": "ContentPage",
-          "description": "Create the main view as a ContentPage"
-        },
-        {
-          "choice": "TabbedPage",
-          "description": "Create the main view as a TabbedPage"
-        },
-        {
-          "choice": "DrawerPage",
-          "description": "Create the main view as a DrawerPage with a child NavigationPage"
-        },
-        {
-          "choice": "NavigationPage",
-          "description": "Create the main view as a NavigationPage"
-        }
-      ],
-      "defaultValue": "None"
     },
     "ReactiveUIToolkitChosen": {
       "type": "computed",
@@ -89,26 +60,6 @@
     "CommunityToolkitChosen": {
       "type": "computed",
       "value": "(MVVMToolkit == \"CommunityToolkit\")"
-    },
-    "DefaultMainPageChosen": {
-      "type": "computed",
-      "value": "(MainViewPageType == \"None\")"
-    },
-    "ContentMainPageChosen": {
-      "type": "computed",
-      "value": "(MainViewPageType == \"ContentPage\")"
-    },
-    "TabbedMainPageChosen": {
-      "type": "computed",
-      "value": "(MainViewPageType == \"TabbedPage\")"
-    },
-    "DrawerMainPageChosen": {
-      "type": "computed",
-      "value": "(MainViewPageType == \"DrawerPage\")"
-    },
-    "NavigationMainPageChosen": {
-      "type": "computed",
-      "value": "(MainViewPageType == \"NavigationPage\")"
     },
     "AvaloniaVersion": {
       "type": "parameter",
