@@ -1,5 +1,8 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
+#if (!DefaultMainPageChosen)
+using Avalonia.Controls;
+#endif
 #if (CommunityToolkitChosen)
 using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
@@ -31,10 +34,10 @@ public partial class App : Application
         {
 #if (DefaultMainPageChosen)
             singleViewFactoryApplicationLifetime.MainViewFactory = () => new MainView { DataContext = new MainViewModel() };
-#else            
+#else
             singleViewFactoryApplicationLifetime.MainViewFactory = () => new PageNavigationHost()
             {
-                Page = new MainView { DataContext = new MainWindowViewModel() }
+                Page = new MainView { DataContext = new MainViewModel() }
             };
 #endif
         }
@@ -45,10 +48,10 @@ public partial class App : Application
             {
                 DataContext = new MainViewModel()
             };
-#else            
+#else
             singleViewPlatform.MainView = new PageNavigationHost()
             {
-                Page = new MainView { DataContext = new MainWindowViewModel() }
+                Page = new MainView { DataContext = new MainViewModel() }
             };
 #endif
         }
