@@ -4,6 +4,8 @@
 
 For more information about `dotnet new` templates see [here](https://blogs.msdn.microsoft.com/dotnet/2017/04/02/how-to-create-your-own-templates-for-dotnet-new/).
 
+Want to contribute? See [DEVELOPMENT.md](DEVELOPMENT.md) for how to build, test, and add templates or parameters.
+
 ## Installing the templates
 
 Run from a command line:
