@@ -38,21 +38,22 @@ cd tests
 ./build-test.ps1
 ```
 
-It creates every application template with different combinations of parameters and builds each one to make sure it compiles.
-A build binary log is written to `binlog/test.binlog`.
+It creates every application template with different combinations of parameters and builds each one, in parallel, to make sure it compiles.
+Each build writes its own binary log to `binlog/`; pass `-ThrottleLimit <n>` to change how many builds run at once (it defaults to the CPU count).
 
-When you add a new template or parameter, add matching lines to `build-test.ps1` so it gets built in CI.
+The build matrix is data-driven: every variant is a `New-Case` row in the `$builds` array, and the item templates instantiated into the MVVM projects are `New-ItemCase` rows in `$itemTemplates`.
+When you add a new template or parameter, add a matching `New-Case` row so it gets built in CI.
 
 ## Adding a new template
 
 Add a new template under `templates/csharp/<your-template>/` (and `templates/fsharp/...` for an F# variant), with a unique `identity` and `shortName` in `template.json`, and update the CLI/IDE files if it takes parameters (see below).
 The existing templates are the best reference.
 
-Finally, add build coverage in `tests/build-test.ps1` and document it in [README.md](README.md).
+Finally, add build coverage with a `New-Case` row in `tests/build-test.ps1` and document it in [README.md](README.md).
 
 ## Adding a new parameter
 
 A parameter is a *symbol* in `template.json`, given a CLI name in `dotnetcli.host.json` and an IDE label in `ide.host.json`.
 **Make sure to update all three files**. Without the CLI and IDE entries, the parameter won't be usable from the command line or shown in IDEs.
 
-Add test coverage in `tests/build-test.ps1` and document the parameter in [README.md](README.md).
+Add test coverage with a `New-Case` row in `tests/build-test.ps1` and document the parameter in [README.md](README.md).

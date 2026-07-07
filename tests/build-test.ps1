@@ -1,159 +1,185 @@
 # Enable common parameters e.g. -Verbose
 [CmdletBinding()]
-param()
+param(
+    # Number of template builds to run concurrently. Each build is limited to a
+    # single MSBuild node (-m:1), so script-level parallelism does the work
+    # instead of every build fanning out and oversubscribing the CPU.
+    [int]$ThrottleLimit = [Environment]::ProcessorCount
+)
 
 Set-StrictMode -Version latest
 $ErrorActionPreference = "Stop"
 
-# Taken from psake https://github.com/psake/psake
-<#
-.SYNOPSIS
-  This is a helper function that runs a scriptblock and checks the PS variable $lastexitcode
-  to see if an error occcured. If an error is detected then an exception is thrown.
-  This function allows you to run command-line programs without having to
-  explicitly check the $lastexitcode variable.
-.EXAMPLE
-  exec { svn info $repository_trunk } "Error executing SVN. Please verify SVN command-line client is installed"
-#>
-function Exec
-{
-    [CmdletBinding()]
-    param(
-        [Parameter(Position=0,Mandatory=1)][scriptblock]$cmd,
-        [Parameter(Position=1,Mandatory=0)][string]$errorMessage = ("Error executing command {0}" -f $cmd)
-    )    
+$env:DOTNET_CLI_TELEMETRY_OPTOUT = "1"
+$env:DOTNET_NOLOGO = "1"
 
-    # Convert the ScriptBlock to a string and expand the variables
-    $expandedCmdString = $ExecutionContext.InvokeCommand.ExpandString($cmd.ToString())    
-    Write-Verbose "Executing command: $expandedCmdString"
+# All paths are resolved relative to the repo root (the parent of /tests) so the
+# script behaves the same no matter what the current directory is.
+$repoRoot  = [IO.Path]::GetFullPath([IO.Path]::Combine($PSScriptRoot, ".."))
+$outDir    = [IO.Path]::Combine($repoRoot, "output")
+$binlogDir = [IO.Path]::Combine($repoRoot, "binlog")
 
-    Invoke-Command -ScriptBlock $cmd
-    
-    if ($lastexitcode -ne 0) {
-        throw ("Exec: " + $errorMessage)
+function New-Case($template, $name, $lang, $param, $value, [switch]$Items) {
+    [pscustomobject]@{
+        Template = $template
+        Name     = $name
+        Lang     = $lang
+        Param    = $param
+        Value    = $value
+        Items    = [bool]$Items
     }
 }
 
-function Test-Template {
-    param (
-        [Parameter(Position=0,Mandatory=1)][string]$template,
-        [Parameter(Position=1,Mandatory=1)][string]$name,
-        [Parameter(Position=2,Mandatory=1)][string]$lang,
-        [Parameter(Position=3,Mandatory=1)][string]$parameterName,
-        [Parameter(Position=4,Mandatory=1)][string]$value,
-        [Parameter(Position=5,Mandatory=0)][string]$bl
-    )
-
-    $outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "output"))
-    $folderName = $name + $parameterName + $value
-    
-    # Remove dots and - from folderName because in sln it will cause errors when building project
-    $folderName = $folderName -replace "[.-]"
-    
-    # Create the project
-    Exec { dotnet new $template -o $outDir/$lang/$folderName -$parameterName $value -lang $lang }
-
-    # Instantiate each item template in the project
-    Exec { dotnet new avalonia.resource -o $outDir/$lang/$folderName -n NewResourceDictionary }
-    Exec { dotnet new avalonia.styles -o $outDir/$lang/$folderName -n NewStyles }
-    Exec { dotnet new avalonia.usercontrol -o $outDir/$lang/$folderName -n NewUserControl -lang $lang }
-    Exec { dotnet new avalonia.window -o $outDir/$lang/$folderName -n NewWindow -lang $lang }
-    If($lang -eq "F#")
-    {
-        $fsprojPath = [IO.Path]::Combine($outDir, $lang, $folderName, $folderName + '.fsproj')
-
-        [xml]$doc = Get-Content $fsprojPath
-        $item = $doc.CreateElement('Compile')
-        $item.SetAttribute('Include', 'NewUserControl.axaml.fs')
-        $doc.Project.ItemGroup[0].PrependChild($item)
-        $item = $doc.CreateElement('Compile')
-        $item.SetAttribute('Include', 'NewWindow.axaml.fs')
-        $doc.Project.ItemGroup[0].PrependChild($item)
-        $doc.Save($fsprojPath)
+# -HasCodeBehind marks item templates that emit language-specific code-behind
+# (a .axaml.<cs|fs> next to the .axaml). Those are the ones that take -lang, and
+# the ones whose code-behind F# has to add to the .fsproj by hand. Pure-XAML
+# item templates (resource dictionary, styles) have neither.
+function New-ItemCase($template, $name, [switch]$HasCodeBehind) {
+    [pscustomobject]@{
+        Template      = $template
+        Name          = $name
+        HasCodeBehind = [bool]$HasCodeBehind
     }
-
-    # Build
-    Exec { dotnet build $outDir/$lang/$folderName -bl:$bl }
 }
 
-function Create-And-Build {
-    param (
-        [Parameter(Position=0,Mandatory=1)][string]$template,
-        [Parameter(Position=1,Mandatory=1)][string]$name,
-        [Parameter(Position=2,Mandatory=1)][string]$lang,
-        [Parameter(Position=3,Mandatory=1)][string]$parameterName,
-        [Parameter(Position=4,Mandatory=1)][string]$value,
-        [Parameter(Position=5,Mandatory=0)][string]$bl
-    )
-    
-    $folderName = $name + $parameterName + $value
-    
-    # Remove dots and - from folderName because in sln it will cause errors when building project
-    $folderName = $folderName -replace "[.-]"
+$builds = @(
+    New-Case "avalonia.app"   "AvaloniaApp"   "C#" "f"   "net10.0"
+    New-Case "avalonia.app"   "AvaloniaApp"   "C#" "av"  "12.0.5"
 
-    # Create the project
-    Exec { dotnet new $template -o output/$lang/$folderName -$parameterName $value -lang $lang }
+    New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "C#" "f"   "net10.0" -Items
+    New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "C#" "av"  "12.0.5"
+    New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "C#" "m"   "ReactiveUI"
+    New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "C#" "m"   "CommunityToolkit"
+    New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "C#" "rvl" "true"
+    New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "C#" "rvl" "false"
 
-    # Build
-    Exec { dotnet build output/$lang/$folderName -bl:$bl }
-}
+    New-Case "avalonia.xplat" "AvaloniaXplat" "C#" "f"   "net10.0"
+    New-Case "avalonia.xplat" "AvaloniaXplat" "C#" "cpm" "true"
+    New-Case "avalonia.xplat" "AvaloniaXplat" "C#" "cpm" "false"
+    New-Case "avalonia.xplat" "AvaloniaXplat" "C#" "av"  "12.0.5"
+    New-Case "avalonia.xplat" "AvaloniaXplat" "C#" "m"   "ReactiveUI"
+    New-Case "avalonia.xplat" "AvaloniaXplat" "C#" "m"   "CommunityToolkit"
+    New-Case "avalonia.xplat" "AvaloniaXplat" "C#" "rvl" "true"
+    New-Case "avalonia.xplat" "AvaloniaXplat" "C#" "rvl" "false"
 
-# Clear file system from possible previous runs
+    New-Case "avalonia.app"   "AvaloniaApp"   "F#" "f"   "net10.0"
+    New-Case "avalonia.app"   "AvaloniaApp"   "F#" "av"  "12.0.5"
+
+    New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "F#" "f"   "net10.0" -Items
+    New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "F#" "av"  "12.0.5"
+    New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "F#" "m"   "ReactiveUI"
+    New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "F#" "m"   "CommunityToolkit"
+    New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "F#" "rvl" "true"
+    New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "F#" "rvl" "false"
+
+    New-Case "avalonia.xplat" "AvaloniaXplat" "F#" "f"   "net10.0"
+    New-Case "avalonia.xplat" "AvaloniaXplat" "F#" "av"  "12.0.5"
+    New-Case "avalonia.xplat" "AvaloniaXplat" "F#" "m"   "ReactiveUI"
+    New-Case "avalonia.xplat" "AvaloniaXplat" "F#" "m"   "CommunityToolkit"
+    New-Case "avalonia.xplat" "AvaloniaXplat" "F#" "rvl" "true"
+    New-Case "avalonia.xplat" "AvaloniaXplat" "F#" "rvl" "false"
+)
+
+$itemTemplates = @(
+    New-ItemCase "avalonia.resource"    "NewResourceDictionary"
+    New-ItemCase "avalonia.styles"      "NewStyles"
+    New-ItemCase "avalonia.usercontrol" "NewUserControl" -HasCodeBehind
+    New-ItemCase "avalonia.window"      "NewWindow"      -HasCodeBehind
+)
+
 Write-Output "Clearing outputs from possible previous runs"
-if (Test-Path "output" -ErrorAction SilentlyContinue) {
-    Remove-Item -Recurse -Force "output"
+foreach ($dir in @($outDir, $binlogDir)) {
+    if (Test-Path $dir) { Remove-Item -Recurse -Force $dir }
 }
-$outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "output"))
-if (Test-Path $outDir -ErrorAction SilentlyContinue) {
-    Remove-Item -Recurse -Force $outDir
+New-Item -ItemType Directory -Force -Path $binlogDir | Out-Null
+
+Write-Output "Warming NuGet cache"
+$warmDir = [IO.Path]::Combine($outDir, "_warm")
+try {
+    & dotnet new avalonia.xplat -o $warmDir -lang "C#" 2>&1 | Out-Host
+    & dotnet restore $warmDir 2>&1 | Out-Host
 }
-$binLogDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "binlog"))
-if (Test-Path $binLogDir -ErrorAction SilentlyContinue) {
-    Remove-Item -Recurse -Force $binLogDir
+catch {
+    Write-Output "WARNING: NuGet warm-up failed (continuing): $_"
+}
+finally {
+    Remove-Item -Recurse -Force -ErrorAction SilentlyContinue $warmDir
 }
 
-# Use same log file for all executions
-$binlog = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "binlog", "test.binlog"))
+Write-Output "Building $($builds.Count) template variants (throttle: $ThrottleLimit)"
 
-Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "f" "net10.0" $binlog
-Create-And-Build "avalonia.app" "AvaloniaApp" "C#" "av" "12.0.5" $binlog
+$results = $builds | ForEach-Object -ThrottleLimit $ThrottleLimit -Parallel {
+    Set-StrictMode -Version latest
+    $ErrorActionPreference = "Stop"
 
-# Build the project only twice with all item templates,once with .net6.0 tfm and once with .net7.0 tfm for C# and F#
-Test-Template "avalonia.mvvm" "AvaloniaMvvm" "C#" "f" "net10.0" $binlog
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "av" "12.0.5" $binlog
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "m" "ReactiveUI" $binlog
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "m" "CommunityToolkit" $binlog
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "rvl" "true" $binlog
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "C#" "rvl" "false" $binlog
+    $b             = $_
+    $outDir        = $using:outDir
+    $binlogDir     = $using:binlogDir
+    $itemTemplates = $using:itemTemplates
 
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "f" "net10.0" $binlog
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "cpm" "true" $binlog
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "cpm" "false" $binlog
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "av" "12.0.5" $binlog
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "m" "ReactiveUI" $binlog
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "m" "CommunityToolkit" $binlog
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "rvl" "true" $binlog
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "C#" "rvl" "false" $binlog
+    # Remove dots and - from folderName; in a sln they cause build errors.
+    $folderName = ($b.Name + $b.Param + $b.Value) -replace "[.-]"
+    $projDir    = [IO.Path]::Combine($outDir, $b.Lang, $folderName)
+    $langTag    = $b.Lang -replace "#", "sharp"
+    $binlog     = [IO.Path]::Combine($binlogDir, "${langTag}_${folderName}.binlog")
 
-# Ignore errors when files are still used by another process
-Remove-Item -Recurse -Force -ErrorAction SilentlyContinue "output/C#"
+    # Run dotnet, route its output to the host and fail on a non-zero exit code.
+    function Invoke-Dotnet([string[]]$dotnetArgs) {
+        & dotnet @dotnetArgs 2>&1 | ForEach-Object { Write-Host $_ }
+        if ($LASTEXITCODE -ne 0) {
+            throw "dotnet $($dotnetArgs -join ' ') exited with $LASTEXITCODE"
+        }
+    }
 
-Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "f" "net10.0" $binlog
-Create-And-Build "avalonia.app" "AvaloniaApp" "F#" "av" "12.0.5" $binlog
+    $sw = [Diagnostics.Stopwatch]::StartNew()
+    try {
+        # Create the project.
+        Invoke-Dotnet @("new", $b.Template, "-o", $projDir, "-$($b.Param)", $b.Value, "-lang", $b.Lang)
 
-Test-Template "avalonia.mvvm" "AvaloniaMvvm" "F#" "f" "net10.0" $binlog
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "av" "12.0.5" $binlog
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "m" "ReactiveUI" $binlog
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "m" "CommunityToolkit" $binlog
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "rvl" "true" $binlog
-Create-And-Build "avalonia.mvvm" "AvaloniaMvvm" "F#" "rvl" "false" $binlog
+        # Instantiate each item template into the project.
+        if ($b.Items) {
+            foreach ($item in $itemTemplates) {
+                $newArgs = @("new", $item.Template, "-o", $projDir, "-n", $item.Name)
+                if ($item.HasCodeBehind) { $newArgs += @("-lang", $b.Lang) }
+                Invoke-Dotnet $newArgs
+            }
 
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "f" "net10.0" $binlog
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "av" "12.0.5" $binlog
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "m" "ReactiveUI" $binlog
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "m" "CommunityToolkit" $binlog
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "rvl" "true" $binlog
-Create-And-Build "avalonia.xplat" "AvaloniaXplat" "F#" "rvl" "false" $binlog
+            if ($b.Lang -eq "F#") {
+                # F# needs the item templates' code-behind added to the project,
+                $fsprojPath = [IO.Path]::Combine($projDir, $folderName + ".fsproj")
+                [xml]$doc = Get-Content $fsprojPath
+                foreach ($item in ($itemTemplates | Where-Object HasCodeBehind)) {
+                    $node = $doc.CreateElement("Compile")
+                    $node.SetAttribute("Include", "$($item.Name).axaml.fs")
+                    $doc.Project.ItemGroup[0].PrependChild($node) | Out-Null
+                }
+                $doc.Save($fsprojPath)
+            }
+        }
 
-# Ignore errors when files are still used by another process
-Remove-Item -Recurse -Force -ErrorAction SilentlyContinue "output/F#"
+        # Test build. Only run -t:Compile target to validate that this project is valid.
+        # We do not run full build that might involve slow packaging on android or browser targets. 
+        Invoke-Dotnet @("build", "-t:Compile", $projDir, "-m:1", "-bl:$binlog")
+
+        Remove-Item -Recurse -Force -ErrorAction SilentlyContinue $projDir
+
+        [pscustomobject]@{ Lang = $b.Lang; Name = $folderName; Success = $true;  Message = ""; Seconds = $sw.Elapsed.TotalSeconds }
+    }
+    catch {
+        [pscustomobject]@{ Lang = $b.Lang; Name = $folderName; Success = $false; Message = "$_"; Seconds = $sw.Elapsed.TotalSeconds }
+    }
+}
+
+# Report and fail the run if any build failed.
+Write-Output "`n================ Results ================"
+foreach ($r in ($results | Sort-Object Seconds -Descending)) {
+    $status = if ($r.Success) { "PASS" } else { "FAIL" }
+    Write-Output ("{0}  {1,7:N1}s  {2,-3} {3}" -f $status, $r.Seconds, $r.Lang, $r.Name)
+    if (-not $r.Success) { Write-Output "      $($r.Message)" }
+}
+
+$failed = @($results | Where-Object { -not $_.Success })
+if ($failed.Count -gt 0) {
+    throw "$($failed.Count) of $($results.Count) template build(s) failed."
+}
+Write-Output "All $($results.Count) template builds succeeded."
