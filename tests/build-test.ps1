@@ -47,6 +47,7 @@ $builds = @(
     New-Case "avalonia.app"   "AvaloniaApp"   "C#" "av"  "12.0.5"
 
     New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "C#" "f"   "net10.0" -Items
+    New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "C#" "f"   "net8.0"
     New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "C#" "av"  "12.0.5"
     New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "C#" "m"   "ReactiveUI"
     New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "C#" "m"   "CommunityToolkit"
@@ -70,6 +71,7 @@ $builds = @(
     New-Case "avalonia.app"   "AvaloniaApp"   "F#" "av"  "12.0.5"
 
     New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "F#" "f"   "net10.0" -Items
+    New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "F#" "f"   "net8.0"
     New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "F#" "av"  "12.0.5"
     New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "F#" "m"   "ReactiveUI"
     New-Case "avalonia.mvvm"  "AvaloniaMvvm"  "F#" "m"   "CommunityToolkit"

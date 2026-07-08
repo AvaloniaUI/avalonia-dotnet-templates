@@ -66,6 +66,10 @@
       "type": "computed",
       "value": "(MVVMToolkit == \"CommunityToolkit\")"
     },
+    "UsePartialProperties": {
+      "type": "computed",
+      "value": "(Framework != \"net8.0\" && Framework != \"net9.0\")"
+    },
     "AvaloniaVersion": {
       "type": "parameter",
       "description": "The target version of Avalonia NuGet packages.",

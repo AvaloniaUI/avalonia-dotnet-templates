@@ -18,7 +18,7 @@
         <PackageVersion Include="ReactiveUI.Avalonia" Version="11.3.8" />
         <!--#elif (CommunityToolkitChosen)-->
 
-        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+        <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.1" />
         <!--#endif -->
 
         <PackageVersion Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.15" />

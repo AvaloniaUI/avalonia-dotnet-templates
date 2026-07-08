@@ -56,9 +56,9 @@ to set the actual DataContext for runtime, set the DataContext property in code 
         <ContentPage.Icon>
             <PathIcon Data="{StaticResource HomeIcon}"/>
         </ContentPage.Icon>
-        <TextBlock Text="{Binding Greeting}"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
+        <TextBox Text="{Binding Greeting}"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"/>
     </ContentPage>
     <ContentPage Header="Settings">
         <ContentPage.Icon>
@@ -132,16 +132,16 @@ to set the actual DataContext for runtime, set the DataContext property in code 
                     <ContentPage.Icon>
                         <PathIcon Data="{StaticResource SettingsIcon}"/>
                     </ContentPage.Icon>
-                    <TextBlock Text="{Binding Greeting}"
-                            HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding Greeting}"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center"/>
                 </ContentPage>
             </DataTemplate>
         </ContentPage.DataTemplates>
     </ContentPage>
 <!--#elif (NavigationMainPageChosen) -->
 <!--#else-->
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <TextBox Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 <!--#endif -->
 <!--#if (ContentMainPageChosen) -->
 </ContentPage>
