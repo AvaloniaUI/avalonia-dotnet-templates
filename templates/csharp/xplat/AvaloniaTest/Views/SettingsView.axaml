@@ -1,17 +1,18 @@
 <ContentPage xmlns="https://github.com/avaloniaui"
-			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-			 Header="Settings"
-			 xmlns:vm="using:AvaloniaTest.ViewModels"
-			 x:DataType="vm:SettingsViewModel"
-			 x:Class="AvaloniaTest.SettingsView">
-	<Design.DataContext>
-		<!-- This only sets the DataContext for the previewer in an IDE,
-		to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-		<vm:HomeViewModel />
-	</Design.DataContext>
-	<TextBox Text="{Binding Greeting}" HorizontalAlignment="Center"
-			   VerticalAlignment="Center" />
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:AvaloniaTest.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             Header="Settings"
+             x:DataType="vm:SettingsViewModel"
+             x:Class="AvaloniaTest.SettingsView">
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:HomeViewModel />
+    </Design.DataContext>
+    <TextBox Text="{Binding Greeting}"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Center" />
 </ContentPage>

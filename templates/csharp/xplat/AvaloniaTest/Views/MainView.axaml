@@ -9,23 +9,23 @@
              x:DataType="vm:MainViewModel">
 <!--#elif (TabbedMainPageChosen) -->
 <TabbedPage xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                    xmlns:vm="using:AvaloniaTest.ViewModels"
-                    mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-                    x:Class="AvaloniaTest.Views.MainView"
-                    x:DataType="vm:MainViewModel">
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:vm="using:AvaloniaTest.ViewModels"
+            mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+            x:Class="AvaloniaTest.Views.MainView"
+            x:DataType="vm:MainViewModel">
 <!--#elif (DrawerMainPageChosen) -->
 <DrawerPage xmlns="https://github.com/avaloniaui"
-                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                xmlns:vm="using:AvaloniaTest.ViewModels"
-                mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-                Header="Avalonia"
-                x:Class="AvaloniaTest.Views.MainView"
-                x:DataType="vm:MainViewModel">
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:vm="using:AvaloniaTest.ViewModels"
+            mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+            Header="Avalonia"
+            x:Class="AvaloniaTest.Views.MainView"
+            x:DataType="vm:MainViewModel">
 <!--#elif (NavigationMainPageChosen) -->
 <NavigationPage xmlns="https://github.com/avaloniaui"
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -37,51 +37,49 @@
                 x:DataType="vm:MainViewModel">
 <!--#else -->
 <UserControl xmlns="https://github.com/avaloniaui"
-                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                xmlns:vm="using:AvaloniaTest.ViewModels"
-                mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-                x:Class="AvaloniaTest.Views.MainView"
-                x:DataType="vm:MainViewModel">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:AvaloniaTest.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaTest.Views.MainView"
+             x:DataType="vm:MainViewModel">
 <!--#endif -->
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
-to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainViewModel />
     </Design.DataContext>
 
 <!--#if (TabbedMainPageChosen)-->
     <ContentPage Header="Home">
         <ContentPage.Icon>
-            <PathIcon Data="{StaticResource HomeIcon}"/>
+            <PathIcon Data="{StaticResource HomeIcon}" />
         </ContentPage.Icon>
         <TextBox Text="{Binding Greeting}"
                  HorizontalAlignment="Center"
-                 VerticalAlignment="Center"/>
+                 VerticalAlignment="Center" />
     </ContentPage>
     <ContentPage Header="Settings">
         <ContentPage.Icon>
-            <PathIcon Data="{StaticResource SettingsIcon}"/>
+            <PathIcon Data="{StaticResource SettingsIcon}" />
         </ContentPage.Icon>
         <TextBlock Text="This is a test page"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center" />
     </ContentPage>
 <!--#elif (DrawerMainPageChosen) -->
     <!-- Define your drawer header here -->
     <DrawerPage.DrawerHeader>
         <DockPanel Margin="10" LastChildFill="True">
             <Label DockPanel.Dock="Bottom"
-                        FontSize="16"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center">Avalonia</Label>
-            <Image
-                Source="/Assets/Icon.png"
-                Width="150"
-                Margin="10"
-                Stretch="Uniform"
-            />
+                   FontSize="16"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center">Avalonia</Label>
+            <Image Source="/Assets/Icon.png"
+                   Width="150"
+                   Margin="10"
+                   Stretch="Uniform" />
         </DockPanel>
     </DrawerPage.DrawerHeader>
 
@@ -93,24 +91,24 @@ to set the actual DataContext for runtime, set the DataContext property in code 
     </DrawerPage.DrawerFooter>
     <DrawerPage.Drawer>
         <ListBox Name="DrawerList"
-                        SelectionMode="AlwaysSelected"
-                        SelectionChanged="DrawerList_SelectionChanged">
+                 SelectionMode="AlwaysSelected"
+                 SelectionChanged="DrawerList_SelectionChanged">
             <ListBoxItem>
                 <StackPanel Spacing="15" Orientation="Horizontal">
-                    <PathIcon Data="{StaticResource HomeIcon}"/>
+                    <PathIcon Data="{StaticResource HomeIcon}" />
                     <Label VerticalAlignment="Center"
-                                        FontSize="16"
-                                        VerticalContentAlignment="Center"
-                                        Padding="0">Home</Label>
+                           FontSize="16"
+                           VerticalContentAlignment="Center"
+                           Padding="0">Home</Label>
                 </StackPanel>
             </ListBoxItem>
             <ListBoxItem>
                 <StackPanel Spacing="15" Orientation="Horizontal">
-                    <PathIcon Data="{StaticResource SettingsIcon}"/>
+                    <PathIcon Data="{StaticResource SettingsIcon}" />
                     <Label VerticalAlignment="Center"
-                                        FontSize="16"
-                                        VerticalContentAlignment="Center"
-                                        Padding="0">Settings</Label>
+                           FontSize="16"
+                           VerticalContentAlignment="Center"
+                           Padding="0">Settings</Label>
                 </StackPanel>
             </ListBoxItem>
         </ListBox>
@@ -120,28 +118,30 @@ to set the actual DataContext for runtime, set the DataContext property in code 
             <DataTemplate x:DataType="vm:HomeViewModel">
                 <ContentPage Header="Home">
                     <ContentPage.Icon>
-                        <PathIcon Data="{StaticResource HomeIcon}"/>
+                        <PathIcon Data="{StaticResource HomeIcon}" />
                     </ContentPage.Icon>
                     <TextBlock Text="Welcome To Avalonia"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"/>
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center" />
                 </ContentPage>
             </DataTemplate>
             <DataTemplate x:DataType="vm:SettingsViewModel">
                 <ContentPage Header="Home">
                     <ContentPage.Icon>
-                        <PathIcon Data="{StaticResource SettingsIcon}"/>
+                        <PathIcon Data="{StaticResource SettingsIcon}" />
                     </ContentPage.Icon>
                     <TextBox Text="{Binding Greeting}"
                              HorizontalAlignment="Center"
-                             VerticalAlignment="Center"/>
+                             VerticalAlignment="Center" />
                 </ContentPage>
             </DataTemplate>
         </ContentPage.DataTemplates>
     </ContentPage>
 <!--#elif (NavigationMainPageChosen) -->
 <!--#else-->
-    <TextBox Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <TextBox Text="{Binding Greeting}"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Center" />
 <!--#endif -->
 <!--#if (ContentMainPageChosen) -->
 </ContentPage>
