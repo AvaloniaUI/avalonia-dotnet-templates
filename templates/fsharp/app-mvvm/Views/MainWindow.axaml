@@ -15,7 +15,7 @@
         <vm:MainViewModel/>
     </Design.DataContext>
 
-    <TextBox Text="{Binding Greeting, Mode=TwoWay}" Width="200"
+    <TextBox Text="{Binding Greeting}" Width="200"
              HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
 </Window>
