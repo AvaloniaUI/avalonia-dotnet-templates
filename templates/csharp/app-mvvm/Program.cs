@@ -27,7 +27,7 @@ sealed class Program
             .WithInterFont()
 #if (ReactiveUIToolkitChosen)
             .LogToTrace()
-            .UseReactiveUI();
+            .UseReactiveUI(_ => { });
 #else
             .LogToTrace();
 #endif

@@ -17,5 +17,5 @@ type Application(javaReference: nativeint, transfer: Android.Runtime.JniHandleOw
         base.CustomizeAppBuilder(builder)
             .WithInterFont()
 #if (ReactiveUIToolkitChosen)
-            .UseReactiveUI()
+            .UseReactiveUI(fun _ -> ())
 #endif

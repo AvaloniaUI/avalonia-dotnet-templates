@@ -17,7 +17,7 @@ internal sealed partial class Program
 #endif
 //+:cnd:noEmit
 #if (ReactiveUIToolkitChosen)
-            .UseReactiveUI()
+            .UseReactiveUI(_ => { })
 #endif
             .StartBrowserAppAsync("out");
 

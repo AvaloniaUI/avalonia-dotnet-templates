@@ -20,7 +20,7 @@ module Program =
 //+:cnd:noEmit
             .LogToTrace(areas = Array.empty)
 #if (ReactiveUIToolkitChosen)
-            .UseReactiveUI()
+            .UseReactiveUI(fun _ -> ())
 #endif
 
     [<EntryPoint; STAThread>]

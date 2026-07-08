@@ -25,7 +25,7 @@ public partial class AppDelegate : AvaloniaAppDelegate<App>
             .WithInterFont();
 #else
             .WithInterFont()
-            .UseReactiveUI();
+            .UseReactiveUI(_ => { });
 #endif
     }
 }
