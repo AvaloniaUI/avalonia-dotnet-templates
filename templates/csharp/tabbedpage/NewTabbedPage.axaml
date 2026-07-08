@@ -7,11 +7,11 @@
     <ContentPage Header="Page 1">
         <TextBlock Text="Page 1"
                    HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
+                   VerticalAlignment="Center" />
     </ContentPage>
     <ContentPage Header="Page 2">
         <TextBlock Text="Page 1"
                    HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
+                   VerticalAlignment="Center" />
     </ContentPage>
 </TabbedPage>

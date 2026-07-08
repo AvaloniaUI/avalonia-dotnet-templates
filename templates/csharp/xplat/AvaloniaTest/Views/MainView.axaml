@@ -54,19 +54,19 @@
 <!--#if (TabbedMainPageChosen)-->
     <ContentPage Header="Home">
         <ContentPage.Icon>
-            <PathIcon Data="{StaticResource HomeIcon}"/>
+            <PathIcon Data="{StaticResource HomeIcon}" />
         </ContentPage.Icon>
         <TextBox Text="{Binding Greeting}"
                  HorizontalAlignment="Center"
-                 VerticalAlignment="Center"/>
+                 VerticalAlignment="Center" />
     </ContentPage>
     <ContentPage Header="Settings">
         <ContentPage.Icon>
-            <PathIcon Data="{StaticResource SettingsIcon}"/>
+            <PathIcon Data="{StaticResource SettingsIcon}" />
         </ContentPage.Icon>
         <TextBlock Text="This is a test page"
                    HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
+                   VerticalAlignment="Center" />
     </ContentPage>
 <!--#elif (DrawerMainPageChosen) -->
     <!-- Define your drawer header here -->
@@ -95,7 +95,7 @@
                  SelectionChanged="DrawerList_SelectionChanged">
             <ListBoxItem>
                 <StackPanel Spacing="15" Orientation="Horizontal">
-                    <PathIcon Data="{StaticResource HomeIcon}"/>
+                    <PathIcon Data="{StaticResource HomeIcon}" />
                     <Label VerticalAlignment="Center"
                            FontSize="16"
                            VerticalContentAlignment="Center"
@@ -104,7 +104,7 @@
             </ListBoxItem>
             <ListBoxItem>
                 <StackPanel Spacing="15" Orientation="Horizontal">
-                    <PathIcon Data="{StaticResource SettingsIcon}"/>
+                    <PathIcon Data="{StaticResource SettingsIcon}" />
                     <Label VerticalAlignment="Center"
                            FontSize="16"
                            VerticalContentAlignment="Center"
@@ -118,21 +118,21 @@
             <DataTemplate x:DataType="vm:HomeViewModel">
                 <ContentPage Header="Home">
                     <ContentPage.Icon>
-                        <PathIcon Data="{StaticResource HomeIcon}"/>
+                        <PathIcon Data="{StaticResource HomeIcon}" />
                     </ContentPage.Icon>
                     <TextBlock Text="Welcome To Avalonia"
                                HorizontalAlignment="Center"
-                               VerticalAlignment="Center"/>
+                               VerticalAlignment="Center" />
                 </ContentPage>
             </DataTemplate>
             <DataTemplate x:DataType="vm:SettingsViewModel">
                 <ContentPage Header="Home">
                     <ContentPage.Icon>
-                        <PathIcon Data="{StaticResource SettingsIcon}"/>
+                        <PathIcon Data="{StaticResource SettingsIcon}" />
                     </ContentPage.Icon>
                     <TextBox Text="{Binding Greeting}"
                              HorizontalAlignment="Center"
-                             VerticalAlignment="Center"/>
+                             VerticalAlignment="Center" />
                 </ContentPage>
             </DataTemplate>
         </ContentPage.DataTemplates>
@@ -141,7 +141,7 @@
 <!--#else-->
     <TextBox Text="{Binding Greeting}"
              HorizontalAlignment="Center"
-             VerticalAlignment="Center"/>
+             VerticalAlignment="Center" />
 <!--#endif -->
 <!--#if (ContentMainPageChosen) -->
 </ContentPage>

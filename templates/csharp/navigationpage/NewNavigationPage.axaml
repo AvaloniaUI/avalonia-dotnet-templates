@@ -7,6 +7,6 @@
     <ContentPage Header="Welcome">
         <TextBlock Text="Welcome to Avalonia!"
                    HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
+                   VerticalAlignment="Center" />
     </ContentPage>
 </NavigationPage>
