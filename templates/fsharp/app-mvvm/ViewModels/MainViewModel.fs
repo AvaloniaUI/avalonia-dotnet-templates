@@ -1,6 +1,6 @@
 ﻿namespace AvaloniaAppTemplate.ViewModels
 
-type MainWindowViewModel() =
+type MainViewModel() =
     inherit ViewModelBase()
 
     member this.Greeting = "Welcome to Avalonia!"

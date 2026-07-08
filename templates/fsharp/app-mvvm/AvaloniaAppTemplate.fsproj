@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <Compile Include="ViewModels\ViewModelBase.fs" />
-    <Compile Include="ViewModels\MainWindowViewModel.fs" />
+    <Compile Include="ViewModels\MainViewModel.fs" />
     <Compile Include="Views\MainWindow.axaml.fs" />
     <!--#if (!RemoveViewLocator) -->
     <Compile Include="ViewLocator.fs" />
