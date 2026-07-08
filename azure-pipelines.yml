@@ -41,6 +41,6 @@ jobs:
       - task: PublishBuildArtifacts@1
         displayName: 'Publish Test Binlog Artifacts'
         inputs:
-          pathtoPublish: 'binlog/test.binlog'
+          pathtoPublish: 'binlog'
           artifactName: 'TestBinlog'
         condition: failed()
