@@ -26,7 +26,7 @@ module Program =
 #endif
 //+:cnd:noEmit
 #if (ReactiveUIToolkitChosen)
-            .UseReactiveUI()
+            .UseReactiveUI(fun _ -> ())
 #endif
             .StartBrowserAppAsync("out"))
         }

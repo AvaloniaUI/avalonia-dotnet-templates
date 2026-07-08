@@ -16,5 +16,5 @@ type [<Register("AppDelegate")>] AppDelegate() =
         base.CustomizeAppBuilder(builder)
             .WithInterFont()
 #if (ReactiveUIToolkitChosen)
-            .UseReactiveUI()
+            .UseReactiveUI(fun _ -> ())
 #endif

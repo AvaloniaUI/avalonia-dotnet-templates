@@ -22,7 +22,7 @@ namespace AvaloniaTest.Android
             .WithInterFont();
 #else
             .WithInterFont()
-            .UseReactiveUI();
+            .UseReactiveUI(_ => { });
 #endif
         }
     }
