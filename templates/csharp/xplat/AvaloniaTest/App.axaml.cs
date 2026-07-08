@@ -3,11 +3,6 @@ using Avalonia.Controls.ApplicationLifetimes;
 #if (!DefaultMainPageChosen)
 using Avalonia.Controls;
 #endif
-#if (CommunityToolkitChosen)
-using Avalonia.Data.Core;
-using Avalonia.Data.Core.Plugins;
-using System.Linq;
-#endif
 using Avalonia.Markup.Xaml;
 using AvaloniaTest.ViewModels;
 using AvaloniaTest.Views;
