@@ -1,28 +1,29 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:controls="using:AvaloniaAppTemplate.Namespace">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="using:AvaloniaAppTemplate.Namespace">
 
-  <!--
-    Additional resources 
-    Using Control Themes:
-         https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes
-    Using Theme Variants:
-         https://docs.avaloniaui.net/docs/guides/styles-and-resources/how-to-use-theme-variants
-  -->
-  
-  <Design.PreviewWith>
-    <StackPanel Width="400" Spacing="10">      
-        <StackPanel Background="{DynamicResource SystemRegionBrush}">
-          <controls:NewTemplatedControl />
+    <!--
+        Additional resources
+        Using Control Themes:
+            https://docs.avaloniaui.net/docs/basics/user-interface/styling/control-themes
+        Using Theme Variants:
+            https://docs.avaloniaui.net/docs/guides/styles-and-resources/how-to-use-theme-variants
+    -->
+
+    <Design.PreviewWith>
+        <StackPanel Width="400" Spacing="10">
+            <StackPanel Background="{DynamicResource SystemRegionBrush}">
+                <controls:NewTemplatedControl />
+            </StackPanel>
         </StackPanel>
-    </StackPanel>
-  </Design.PreviewWith>
- 
-  <ControlTheme x:Key="{x:Type controls:NewTemplatedControl}" TargetType="controls:NewTemplatedControl">
-    <Setter Property="Template">
-      <ControlTemplate>
-        <TextBlock Text="Templated Control" />
-      </ControlTemplate>
-    </Setter>
-  </ControlTheme>
+    </Design.PreviewWith>
+
+    <ControlTheme x:Key="{x:Type controls:NewTemplatedControl}"
+                  TargetType="controls:NewTemplatedControl">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <TextBlock Text="Templated Control" />
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
 </ResourceDictionary>
