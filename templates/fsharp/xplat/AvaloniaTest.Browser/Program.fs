@@ -20,11 +20,6 @@ module Program =
         task {
             do! (buildAvaloniaApp()
             .WithInterFont()
-//-:cnd:noEmit
-#if DEBUG
-            .WithDeveloperTools()
-#endif
-//+:cnd:noEmit
 #if (ReactiveUIToolkitChosen)
             .UseReactiveUI(fun _ -> ())
 #endif

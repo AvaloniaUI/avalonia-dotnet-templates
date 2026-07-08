@@ -15,6 +15,11 @@ type App() =
 
     override this.Initialize() =
             AvaloniaXamlLoader.Load(this)
+//-:cnd:noEmit
+#if DEBUG
+            this.AttachDeveloperTools() |> ignore
+#endif
+//+:cnd:noEmit
 
     override this.OnFrameworkInitializationCompleted() =
         match this.ApplicationLifetime with

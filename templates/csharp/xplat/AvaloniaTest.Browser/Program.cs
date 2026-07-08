@@ -11,11 +11,6 @@ internal sealed partial class Program
 {
     private static Task Main(string[] args) => BuildAvaloniaApp()
             .WithInterFont()
-//-:cnd:noEmit
-#if DEBUG
-            .WithDeveloperTools()
-#endif
-//+:cnd:noEmit
 #if (ReactiveUIToolkitChosen)
             .UseReactiveUI(_ => { })
 #endif
