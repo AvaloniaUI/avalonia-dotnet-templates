@@ -15,7 +15,7 @@
     <StackPanel HorizontalAlignment="Center" 
                 VerticalAlignment="Center"
                 Spacing="10">
-        <TextBox Text="{Binding Greeting}" Width="200" />
+        <TextBox Text="{Binding Greeting}" />
     <Button Name="SettingButton" HorizontalAlignment="Center" Click="SettingButton_Click">Open Settings</Button>
     </StackPanel>
 </ContentPage>

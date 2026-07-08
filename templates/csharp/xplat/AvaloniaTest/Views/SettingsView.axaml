@@ -12,6 +12,6 @@
 		to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
 		<vm:HomeViewModel />
 	</Design.DataContext>
-	<TextBox Text="{Binding Greeting}" Width="200" HorizontalAlignment="Center"
+	<TextBox Text="{Binding Greeting}" HorizontalAlignment="Center"
 			   VerticalAlignment="Center" />
 </ContentPage>
