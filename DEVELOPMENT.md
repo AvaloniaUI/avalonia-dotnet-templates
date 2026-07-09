@@ -41,6 +41,8 @@ cd tests
 It creates every application template with different combinations of parameters and builds each one, in parallel, to make sure it compiles.
 Each build writes its own binary log to `binlog/`; pass `-ThrottleLimit <n>` to change how many builds run at once (it defaults to the CPU count).
 
+Pass `-NuGetSource <url>` to restore from an extra feed, e.g. to test the templates against an Avalonia nightly build.
+
 The build matrix is data-driven: every variant is a `New-Case` row in the `$builds` array, and the item templates instantiated into the MVVM projects are `New-ItemCase` rows in `$itemTemplates`.
 When you add a new template or parameter, add a matching `New-Case` row so it gets built in CI.
 

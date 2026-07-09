@@ -30,6 +30,7 @@ jobs:
         inputs:
           pwsh: true
           filePath: 'tests/build-test.ps1'
+          arguments: '-NuGetSource https://release-manager-internal.avaloniaui.net/nuget/avalonia/index.json'
           failOnStdError: true
           workingDirectory: 'tests'
       - task: PublishBuildArtifacts@1

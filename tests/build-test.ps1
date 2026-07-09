@@ -4,7 +4,11 @@ param(
     # Number of template builds to run concurrently. Each build is limited to a
     # single MSBuild node (-m:1), so script-level parallelism does the work
     # instead of every build fanning out and oversubscribing the CPU.
-    [int]$ThrottleLimit = [Environment]::ProcessorCount
+    [int]$ThrottleLimit = [Environment]::ProcessorCount,
+
+    # Extra NuGet feed to restore from. Used to test the templates against packages
+    # that aren't on nuget.org yet (e.g. an Avalonia nightly feed).
+    [string]$NuGetSource
 )
 
 Set-StrictMode -Version latest
@@ -102,7 +106,21 @@ Write-Output "Clearing outputs from possible previous runs"
 foreach ($dir in @($outDir, $binlogDir)) {
     if (Test-Path $dir) { Remove-Item -Recurse -Force $dir }
 }
+New-Item -ItemType Directory -Force -Path $outDir | Out-Null
 New-Item -ItemType Directory -Force -Path $binlogDir | Out-Null
+
+$nuGetConfigFile = [IO.Path]::Combine($outDir, "nuget.config")
+Copy-Item -Path ([IO.Path]::Combine($repoRoot, "nuget.config")) -Destination $nuGetConfigFile
+
+if ($NuGetSource) {
+    Write-Output "Adding NuGet source $NuGetSource"
+    $nuGetSourceName = "avalonia-templates-build-test"
+    # Drop a previous registration first: `dotnet nuget add source` fails if the
+    # name is already taken, which would break a second run of the script.
+    & dotnet nuget remove source $nuGetSourceName --configfile "$nuGetConfigFile" 2>&1 | Out-Null
+    & dotnet nuget add source $NuGetSource --name $nuGetSourceName --configfile "$nuGetConfigFile" 2>&1 | Out-Host
+    if ($LASTEXITCODE -ne 0) { throw "dotnet nuget add source $NuGetSource exited with $LASTEXITCODE" }
+}
 
 Write-Output "Warming NuGet cache"
 $warmDir = [IO.Path]::Combine($outDir, "_warm")
@@ -170,7 +188,7 @@ $results = $builds | ForEach-Object -ThrottleLimit $ThrottleLimit -Parallel {
 
         # Test build. Only run -t:Compile target to validate that this project is valid.
         # We do not run full build that might involve slow packaging on android or browser targets. 
-        Invoke-Dotnet @("build", "-t:Compile", $projDir, "-m:1", "-bl:$binlog")
+        Invoke-Dotnet @("build", "-t:Compile", $projDir, "-m:1", "-bl:$binlog", "-nowarn:NU1507")
 
         Remove-Item -Recurse -Force -ErrorAction SilentlyContinue $projDir
 
