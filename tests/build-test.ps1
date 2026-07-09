@@ -188,7 +188,7 @@ $results = $builds | ForEach-Object -ThrottleLimit $ThrottleLimit -Parallel {
 
         # Test build. Only run -t:Compile target to validate that this project is valid.
         # We do not run full build that might involve slow packaging on android or browser targets. 
-        Invoke-Dotnet @("build", "-t:Compile", $projDir, "-m:1", "-bl:$binlog")
+        Invoke-Dotnet @("build", "-t:Compile", $projDir, "-m:1", "-bl:$binlog", "-nowarn:NU1507")
 
         Remove-Item -Recurse -Force -ErrorAction SilentlyContinue $projDir
 
