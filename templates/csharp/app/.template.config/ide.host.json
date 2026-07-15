@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json.schemastore.org/ide.host",
+  "$schema": "https://json.schemastore.org/ide.host",
   "icon": "icon.png",
   "symbolInfo": [
     {
@@ -9,5 +9,6 @@
       },
       "isVisible": false
     }
-  ]
+  ],
+  "unsupportedHosts": [{ "id": "vs" }]
 }
