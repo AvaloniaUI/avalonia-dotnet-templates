@@ -3,7 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using AvaloniaTest.ViewModels;
 
-namespace AvaloniaTest;
+namespace AvaloniaTest.Views;
 
 public partial class HomeView : ContentPage
 {
